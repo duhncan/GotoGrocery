@@ -149,6 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Members.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="ExportReport.cs" />
     <Compile Include="Program.cs" />

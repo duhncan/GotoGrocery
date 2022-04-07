@@ -14,19 +14,19 @@ namespace GoToGrocery
 
         //foreach row in databse, make new sublist with data from each
         //column and add to big list
-        foreach (row in databse)
-        {
-            myList.Add(new List<string> { "id", "fname", "lname" etc.(item stuff not member stuff) });
-        }
+        //foreach (row in databse)
+        //{
+        //    myList.Add(new List<string> { "id", "fname", "lname" etc.(item stuff not member stuff) });
+        //}
 
-        // To iterate over it.
-        foreach (List<string> subList in myList)
-        {
-            foreach (string item in subList)
-            {
-                //put csv export stuff in here
-                Console.WriteLine(item);
-            }
-        }
+        //// To iterate over it.
+        //foreach (List<string> subList in myList)
+        //{
+        //    foreach (string item in subList)
+        //    {
+        //        //put csv export stuff in here
+        //        Console.WriteLine(item);
+        //    }
+        //}
     }
 }
