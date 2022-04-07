@@ -1,11 +1,13 @@
 ﻿#define MEMBERTESTING
-
+#define DATABASETESTING
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 
 
@@ -32,6 +34,31 @@ namespace GoToGrocery
                 );
 
             #endif
+            #if DATABASETESTING
+            DatabaseConnection db = new DatabaseConnection();
+
+            string firstname;
+            string lastname;
+            string _dob;
+            string phone;
+            string email;
+            string start;
+
+
+            int i = 0;
+
+            string productname = "BossCoffeeBlack";
+            int invlevel = 100;
+            string productsize = "350ml";
+            int shelfqua = 25;
+            int orderamo = 50;
+
+            List<string> _row = new List<string>();
+
+            int test = db.HighestMemberID();
+            Console.WriteLine(test);
+            #endif
+
 
             Console.WriteLine("\nThe application has run successfully!");
             Console.WriteLine("Type Enter to Exit Program...");
