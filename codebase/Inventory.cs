@@ -18,7 +18,7 @@ namespace GoToGrocery
         //{
         //    myList.Add(new List<string> { "id", "fname", "lname" etc.(item stuff not member stuff) });
         //}
-
+        // inventory class should take data from gui, check it for integrity/verification purposes, then send to the databse class to be uploaded to the database
         //// To iterate over it.
         //foreach (List<string> subList in myList)
         //{
