@@ -8,7 +8,7 @@ using System.IO;
 namespace GoToGrocery
 
 {
-    public class DatabaseConnection
+    public partial class DatabaseConnection
     {
         MySqlConnection Connect;
         public DatabaseConnection() //Connects to the local database
@@ -24,9 +24,9 @@ namespace GoToGrocery
             Connect = new MySqlConnection(_connectionString);
             Connect.Open();
         }
-        
+
         //MEMBER TABLE METHODS
-        public void DataBaseMembersCollection() //Does a full search of the Members Table
+        public void MembersCollection() //Does a full search of the Members Table
         {
             string query = "SELECT * FROM members";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
@@ -62,7 +62,7 @@ namespace GoToGrocery
 
         public int HighestMemberID()
         {
-            string query =  "SELECT * FROM members ORDER BY Member_Id DESC LIMIT 1";
+            string query = "SELECT * FROM members ORDER BY Member_Id DESC LIMIT 1";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Read();
@@ -72,14 +72,23 @@ namespace GoToGrocery
         }
 
 
-        public void AddMember(string _firstname, string _lastname, string _dob, string _phone, string email, string start) //Used to add a new Member to the table
+        public bool AddMember(string _firstname, string _lastname, string _dob, string _phone, string email, string start) //Used to add a new Member to the table
         {
-            int _id;
-            _id = NumberOfMembers() + 1;
-            string query = "INSERT INTO members (Member_Id, Member_FirstName, Member_LastName, Member_DOB, Member_phoneNumber, Member_Email, Member_Status, Member_StartDate) " +
-                "Values(" + _id.ToString() + ", '" + _firstname + "', '" + _lastname + "', '" + _dob + "', '" + _phone + "', '" + email + "', True, '" + start + "')";
-            MySqlCommand cmd = new MySqlCommand(query, Connect);
-            cmd.ExecuteNonQuery();
+            if (CheckMemberExists(email))
+            {
+                Console.WriteLine("Customer with that email already exists");
+                return false;
+            }
+            else
+            {
+                int _id;
+                _id = HighestMemberID() + 1;
+                string query = "INSERT INTO members (Member_Id, Member_FirstName, Member_LastName, Member_DOB, Member_phoneNumber, Member_Email, Member_Status, Member_StartDate) " +
+                    "Values(" + _id.ToString() + ", '" + _firstname + "', '" + _lastname + "', '" + _dob + "', '" + _phone + "', '" + email + "', True, '" + start + "')";
+                MySqlCommand cmd = new MySqlCommand(query, Connect);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
         }
 
 
@@ -90,10 +99,10 @@ namespace GoToGrocery
             cmd.ExecuteNonQuery();
         }
 
-        
-        public int GetMemberId(string firstname, string lastname, string dob) //Returns the ID of a member based on Name and DOB
+
+        public int GetMemberId(string email) //Returns the ID of a member based on their Email
         {
-            string query = "select * from members Where Member_FirstName='" + firstname + "' AND Member_LastName = '" + lastname + "' AND Member_DOB = '" + dob + "'";
+            string query = "select * from members Where Member_Email='" + email + "'";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Read();
@@ -102,26 +111,55 @@ namespace GoToGrocery
             return id;
         }
 
-        public bool CheckMemberExists(string firstname, string lastname, string dob)
+        public bool CheckMemberExists(string email)
         {
             string query = "SELECT * FROM members";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
             List<string> _row = new List<string>();
 
-            string test = firstname + lastname + dob + " 12:00:00 AM";
-
             while (rdr.Read())
             {
-                _row.Add(rdr["Member_FirstName"].ToString() + rdr["Member_LastName"].ToString() + rdr["Member_DOB"].ToString());
+                _row.Add(rdr["Member_Email"].ToString());
             }
             rdr.Close();
 
-            
-             if (_row.Contains(test)) return true;
-             return false;
-            
+
+            if (_row.Contains(email)) return true;
+            return false;
+
         }
+
+        public List<string> MembertoString(int id)
+        {
+            string query = "SELECT * FROM members WHERE Member_Id='" + id.ToString() + "'";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            rdr.Read();
+            List<string> _row = new List<string>();
+            _row.Add(rdr["Member_Id"].ToString());
+            _row.Add(rdr["Member_FirstName"].ToString());
+            _row.Add(rdr["Member_LastName"].ToString());
+            _row.Add(rdr["Member_DOB"].ToString());
+            _row.Add(rdr["Member_phoneNumber"].ToString());
+            _row.Add(rdr["Member_Email"].ToString());
+            _row.Add(rdr["Member_Status"].ToString());
+            _row.Add(rdr["Member_StartDate"].ToString());
+
+            rdr.Close();
+            return _row;
+        }
+
+        public void UpdateMember(string email, string update, string value) //Update the Member Based on their email,
+        { //Update is = Member_FirstName, Member_LastName, Member_LastName, Member_DOB, Member_phoneNumber, Member_Email, Member_Status
+            string query = "UPDATE members"
+                + " SET " + update + " = '" + value + "'" 
+                + " WHERE Member_Email = " + "'" + email + "'";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            cmd.ExecuteNonQuery();
+        }
+
 
 
         //Inventory Methods
@@ -141,8 +179,19 @@ namespace GoToGrocery
                 Console.WriteLine(rdr["shelf_quantity"]);
                 Console.WriteLine(rdr["order_amount"]);
             }
+            rdr.Close();
         }
 
+        public int HighestProductID()
+        {
+            string query = "SELECT * FROM inventory ORDER BY product_id DESC LIMIT 1";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            rdr.Read();
+            int id = Int32.Parse(rdr["product_id"].ToString()); //Converts the given Value to string then to Int
+            rdr.Close();
+            return id;
+        }
         public int NumberOfProducts() //Returns the Numbers in the products table
         {
             int i = 0;
@@ -160,16 +209,16 @@ namespace GoToGrocery
         public void AddProduct(string _productname, int _inventorylevel, string _productsize, int _shelfquantity, int _orderamount) //Used to add a new products to the table
         {
             int _id;
-            _id = NumberOfProducts() + 1;
+            _id = HighestProductID() + 1;
             string query = "INSERT INTO inventory (product_id, product_name, inventory_level, product_size, shelf_quantity, order_amount) " +
-                "Values(" + _id.ToString() + ", '" + _productname + "', " + _inventorylevel.ToString() + ", '" + _productsize + "', " + _shelfquantity.ToString() + ", " + _orderamount.ToString()+ ")";
+                "Values(" + _id.ToString() + ", '" + _productname + "', " + _inventorylevel.ToString() + ", '" + _productsize + "', " + _shelfquantity.ToString() + ", " + _orderamount.ToString() + ")";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             cmd.ExecuteNonQuery();
         }
 
         public List<string> SearchInventoryById(int _id)
         {
-            string query = "SELECT * FROM inventory WHERE product_id="+_id.ToString();
+            string query = "SELECT * FROM inventory WHERE product_id=" + _id.ToString();
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -188,7 +237,7 @@ namespace GoToGrocery
 
         public List<string> ProductRowToString(string name)
         {
-            string query = "SELECT * FROM inventory WHERE product_name='" + name +"'";
+            string query = "SELECT * FROM inventory WHERE product_name='" + name + "'";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -207,11 +256,11 @@ namespace GoToGrocery
 
         public bool CheckIfProductExists(string name)
         {
-            string query = "SELECT * FROM inventory WHERE product_name ='" + name +"'";
+            string query = "SELECT * FROM inventory WHERE product_name ='" + name + "'";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            if(rdr.Read())
+            if (rdr.Read())
             {
                 rdr.Close();
                 return true;
@@ -220,6 +269,16 @@ namespace GoToGrocery
             return false;
         }
 
+        public void UpdateProduct(string productname, string update, string value)
+        {
+            string query = "UPDATE inventory"
+                + " SET " + update + " = '" + value + "'"
+                + " WHERE product_name = " + "'" + productname + "'";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            cmd.ExecuteNonQuery();
+        }
+
+
         //set up the csv
         StringBuilder csv = new StringBuilder();
 
@@ -227,23 +286,25 @@ namespace GoToGrocery
         {
             string _filePath = @"c:\CSV\data.csv";
 
-            string query = "SELECT * FROM members";
+            string query = "SELECT * FROM inventory";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
+
+            string firstline = string.Format("{0},{1},{2},{3},{4},{5}", "Product ID", "Product Name", "Inventory Level",
+                "Product Size", "Shelf Quantity", "Order Amount");
+            csv.AppendLine(firstline);
 
             while (rdr.Read())
             {
                 //loops for each row
-                string id = rdr["Member_ID"].ToString();
-                string first = rdr["Member_FirstName"].ToString();
-                string last = rdr["Member_LastName"].ToString();
-                string dob = rdr["Member_DOB"].ToString();
-                string phone = rdr["Member_phoneNumber"].ToString();
-                string email = rdr["Member_Email"].ToString();
-                string status = rdr["Member_Status"].ToString();
-                string start = rdr["Member_StartDate"].ToString();
+                string id = rdr["product_id"].ToString();
+                string name = rdr["product_name"].ToString();
+                string level = rdr["inventory_level"].ToString();
+                string size = rdr["product_size"].ToString();
+                string shelf = rdr["shelf_quantity"].ToString();
+                string amount = rdr["order_amount"].ToString();
 
-                string newLine = string.Format("{0},{1},{2},{3},{4},{5},{6},{7}", id, first, last, dob, phone, email, status, start);
+                string newLine = string.Format("{0},{1},{2},{3},{4},{5}", id, name, level, size, shelf, amount);
                 //add new line to the csv
                 csv.AppendLine(newLine);
             }
