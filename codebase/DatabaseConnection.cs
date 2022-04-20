@@ -5,7 +5,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.IO;
 
-namespace GoToGrocery
+namespace GotoGrocery
 
 {
     public partial class DatabaseConnection
