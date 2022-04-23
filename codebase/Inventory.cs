@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +24,36 @@ namespace GotoGrocery
             }
 
             //change this to return an int, value of int is determined by which input failed the check
-            public bool validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
+            public int validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
             {
                 DatabaseConnection db = new DatabaseConnection();
 
                 //check strings not empty and counts not less than or equal to zero
-                if (_productname == "" || _inventorylevel <= 0 || _productsize == "" || _shelfquantity <= 0 || _orderamount <= 0)
+                if (_productname == "")
                 {
-                    db.AddProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
-                    return true;
+                    return 1;
                 }
-                return false;
+                else if (_inventorylevel <= 0)
+                {
+                    return 2;
+                }
+                else if (_productsize == "")
+                {
+                    return 3;
+                }
+                else if (_shelfquantity <= 0)
+                {
+                    return 4;
+                }
+                else if(_orderamount <= 0)
+                {
+                    return 5;
+                }
+
+                //All tests pass
+                db.AddProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
+                return 0;
+                    
             }
             
 
