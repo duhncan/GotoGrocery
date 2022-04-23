@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GotoGrocery
 {
@@ -18,6 +20,7 @@ namespace GotoGrocery
             InitializeComponent();
             Grid_Load();
             LoadMembersIntoTable();
+          //  BindGrid();
         }
 
         //member table creation
@@ -41,7 +44,9 @@ namespace GotoGrocery
         }
         private void LoadMembersIntoTable()
         {
+            DatabaseConnection db = new DatabaseConnection();
 
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             /*
              * (highestNumberById?)
             while next member exists return true
@@ -54,37 +59,41 @@ namespace GotoGrocery
             dr[2] = memer.phone;
             dt.Rows.Add(dr);
              
-             */
+            
 
 
             //new data row
 
-            DataRow dr1 = dt.NewRow();
-            String ID = "01293";
-            String fName = "John";
-            String lName = "Johanson";
-            //YMD
-            DateTime dob = new DateTime(2000, 11, 1);
-            string formattedDOB = dob.ToString("dd/M/yyyy");
-            String email = "johnJ@hotmail.com";
-            String phone = "0409150111";
-            DateTime startDate = new DateTime(2020, 11, 1);
-            string formattedDate = startDate.ToString("dd/M/yyyy");
-            bool status = true;
+            //DataRow dr1 = dt.NewRow();
+            //String ID = "01293";
+            //String fName = "John";
+            //String lName = "Johanson";
+            ////YMD
+            //DateTime dob = new DateTime(2000, 11, 1);
+            //string formattedDOB = dob.ToString("dd/M/yyyy");
+            //String email = "johnJ@hotmail.com";
+            //String phone = "0409150111";
+            //DateTime startDate = new DateTime(2020, 11, 1);
+            //string formattedDate = startDate.ToString("dd/M/yyyy");
+            //bool status = true;
 
-            //rows are created
-            dr1[0] = ID;
-            dr1[1] = fName;
-            dr1[2] = lName;
-            dr1[3] = formattedDOB;
-            dr1[4] = email;
-            dr1[5] = phone;
-            dr1[6] = formattedDate;
-            dr1[7] = status;
+            ////rows are created
+            //dr1[0] = ID;
+            //dr1[1] = fName;
+            //dr1[2] = lName;
+            //dr1[3] = formattedDOB;
+            //dr1[4] = email;
+            //dr1[5] = phone;
+            //dr1[6] = formattedDate;
+            //dr1[7] = status;
 
-            dt.Rows.Add(dr1);
+            //dt.Rows.Add(dr1);
+            
 
-            DatabaseConnection db = new DatabaseConnection();
+
+
+
+
            
             DataRow dr2 = dt.NewRow();
           int ID2= db.NumberOfMembers();
@@ -110,9 +119,13 @@ namespace GotoGrocery
             dr2[7] = status2;
 
             dt.Rows.Add(dr2);
+          //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            */
+
+            membersdataGridView.DataSource = db.GetMembersList();
 
         }
-
+        
         private void AddMemberBtn_Click(object sender, EventArgs e)
         {
             //Create and Open form to add new member
@@ -123,26 +136,31 @@ namespace GotoGrocery
         //edit button event for members
         private void EditSelectedMemberBtn_Click(object sender, EventArgs e)
         {
-            string IDvalue1 = "";
+            string ID1 = "";
 
             foreach (DataGridViewRow row in membersdataGridView.SelectedRows)
             {
 
 
-                IDvalue1 = row.Cells[0].Value.ToString();
+                ID1 = row.Cells[0].Value.ToString();
 
 
             }
             //open edit form
-            if (IDvalue1 != null)
+            if (ID1 != null)
             {
                 //Search database for MemberID wherevalue1 == memberID
+                
                 //^if exists then 
+                DatabaseConnection db = new DatabaseConnection();
+                List<String> m = new List<string>();
+                m = db.MembertoString(11); 
 
-                //+++++++++++++++ or member object++++++++++++++++++++++
+
+               
 
 
-                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(IDvalue1);
+                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(ID1);
                 f.Show();
 
             }

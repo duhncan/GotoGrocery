@@ -43,9 +43,7 @@ namespace GotoGrocery
 
             Members m = new Members(fName, lName, email, dob);
 
-            //create new member
-            //AddMemeber(fName,lName,)
-           // Members m = new Members(fName,lName,email,dob);
+           
 
         }
 

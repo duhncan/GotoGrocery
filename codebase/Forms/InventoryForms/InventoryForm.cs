@@ -16,7 +16,7 @@ namespace GotoGrocery
         {
             InitializeComponent();
             Grid_Load();
-            LoadMemberIntoTable();
+            LoadItemIntoTable();
 
         }
 
@@ -42,24 +42,10 @@ namespace GotoGrocery
             InventorydataGridView.DataSource = dt;
 
         }
-        private void LoadMemberIntoTable()
+        private void LoadItemIntoTable()
         {
 
-            /*              TODO
-             * +++++++++++++++++++++++++++++++++++
-             * change for inventory
-             * (highestNumberById?)
-            while next item exists return true
-            loop -
-            method return item info ->
-            new member()
-
-            dr[0] = item.name;
-            dr[1] = item.size;
-            dr[2] = item.ShelfQty;
-            dt.Rows.Add(dr);   
-            +++++++++++++++++++++++++++++++++++++
-             */
+            
             
             //new data row test
             DataRow dr1 = dt.NewRow();

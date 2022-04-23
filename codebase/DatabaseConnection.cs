@@ -4,6 +4,7 @@ using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Data;
 
 namespace GotoGrocery
 
@@ -25,7 +26,19 @@ namespace GotoGrocery
             Connect.Open();
         }
 
+
         //MEMBER TABLE METHODS
+
+        public DataTable GetMembersList()
+        {
+            DataTable dtMembers = new DataTable();
+            string query = "SELECT * FROM members";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtMembers.Load(rdr);
+            return dtMembers;
+        }
+
         public void MembersCollection() //Does a full search of the Members Table
         {
             string query = "SELECT * FROM members";
