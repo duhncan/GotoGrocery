@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GotoGrocery.GoToGrocery;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,28 +46,9 @@ namespace GotoGrocery
         }
         private void LoadItemIntoTable()
         {
+            DatabaseConnection db = new DatabaseConnection();
 
-            
-            
-            //new data row test
-            DataRow dr1 = dt.NewRow();
-            String id = "10237";
-            String prodName = "Bean";
-            String inventoryLevel = "3";
-            String size = "200ml";
-            String ShelfQty = "5";
-            String orderQty = "5";
-
-            //rows are created
-            dr1[0] = id;
-            dr1[1] = prodName;
-            dr1[2] = inventoryLevel;
-            dr1[3] = size;
-            dr1[4] = ShelfQty;
-            dr1[5] = orderQty;
-
-            dt.Rows.Add(dr1);
-
+            InventorydataGridView.DataSource = db.GetInventoryList();
         }
 
         private void EditSelectedItemBtn_Click(object sender, EventArgs e)

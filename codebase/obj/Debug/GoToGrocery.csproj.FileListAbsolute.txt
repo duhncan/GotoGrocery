@@ -108,7 +108,6 @@ C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.cs
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CopyComplete
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.pdb
-C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.AssemblyReference.cache
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe.config
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.DashboardForm.resources
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.AddItemForm.resources
