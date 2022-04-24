@@ -17,7 +17,7 @@ namespace GotoGrocery
             string _server = "localhost";
             string _database = "grotogodb";
             string _username = "root";
-            string _password = "student85";
+            string _password = "Password";
 
             string _connectionString = "SERVER=" + _server + ";" + "DATABASE=" + _database + ";" +
                 "UID=" + _username + ";" + "PASSWORD=" + _password + ";";
@@ -176,6 +176,16 @@ namespace GotoGrocery
 
 
         //Inventory Methods
+
+        public DataTable GetInventoryList()
+        {
+            DataTable dtInventory = new DataTable();
+            string query = "SELECT * FROM inventory";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtInventory.Load(rdr);
+            return dtInventory;
+        }
 
         public void InventoryCollection() //Does a full search of the Inventory Table
         {
