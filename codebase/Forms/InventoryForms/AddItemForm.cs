@@ -20,11 +20,17 @@ namespace GotoGrocery
         private int _orderamount;
         private Inventory inv;
 
+        private InventoryForm _inventoryForm;
 
-        //private
         public AddItemForm()
         {
+        }
+
+        //private
+        public AddItemForm(InventoryForm inventoryForm):this()
+        {
             InitializeComponent();
+            this._inventoryForm = inventoryForm;
             inv = new Inventory();
         }
 
@@ -100,13 +106,14 @@ namespace GotoGrocery
                     MessageBox.Show("Order amount is not valid");
                     Console.WriteLine("Order amount is not valid");
                     break;
-
+                    
                 default:
                     MessageBox.Show("Item could not be added to database");
                     Console.WriteLine("Item could not be added to database");
                     break;
             }
 
+            _inventoryForm.LoadItemIntoTable();
 
 
         }
