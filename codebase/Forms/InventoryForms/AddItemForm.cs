@@ -19,7 +19,7 @@ namespace GotoGrocery
         private int _shelfquantity;
         private int _orderamount;
         private Inventory inv;
-        
+
 
         //private
         public AddItemForm()
@@ -31,12 +31,12 @@ namespace GotoGrocery
         private void AddItemDetailsBtn_Click(object sender, EventArgs e)
         {
             //Set product name
-            _productname = ItemNameTB.Text;
-            
+            _productname = ItemNameTB.Text.ToLower();
+
             //Set inventory level
             try
             {
-                _inventorylevel = Int32.Parse(InventoryLevelTB.Text);
+                _inventorylevel = int.Parse(InventoryLevelTB.Text);
             }
             catch (FormatException)
             {
@@ -44,7 +44,7 @@ namespace GotoGrocery
             }
 
             //Set product size
-            _productsize = ItemSizeTB.Text;
+            _productsize = ItemSizeTB.Text.ToLower();
 
             //Set shelf quantity
             try
@@ -66,15 +66,47 @@ namespace GotoGrocery
                 Console.WriteLine($"Order Amount is not a valid integer");
             }
 
-            //expand this to a switch case to determine which input failed
-            if (inv.validateProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount))
+
+            switch (inv.validateProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount))
             {
-                //Make a form pop up saying item added successfully and close add new item form
+                case 0:
+                    MessageBox.Show("Item added successfully");
+                    Console.WriteLine("Item added successfully");
+                    break;
+
+                case 1:
+                    MessageBox.Show("Product name is not valid");
+                    Console.WriteLine("Product name is not valid");
+                    break;
+
+                case 2:
+                    MessageBox.Show("Inventory level is not valid");
+                    Console.WriteLine("Inventory level is not valid");
+                    break;
+
+                case 3:
+                    MessageBox.Show("Product size is not valid");
+                    Console.WriteLine("Product size is not valid");
+                    break;
+
+                case 4:
+                    MessageBox.Show("Shelf quantity is not valid");
+                    Console.WriteLine("Shelf quantity is not valid");
+                    break;
+
+                case 5:
+                    MessageBox.Show("Order amount is not valid");
+                    Console.WriteLine("Order amount is not valid");
+                    break;
+
+                default:
+                    MessageBox.Show("Item could not be added to database");
+                    Console.WriteLine("Item could not be added to database");
+                    break;
             }
-            else
-            {
-                //Make a form pop up saying could not add item and close new item form
-            }
+
+            //close new item form
+            this.Close();
 
         }
 
@@ -82,6 +114,6 @@ namespace GotoGrocery
         {
             this.Close();
         }
-       
+
     }
 }
