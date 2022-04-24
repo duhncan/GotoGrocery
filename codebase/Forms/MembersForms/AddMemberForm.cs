@@ -11,17 +11,13 @@ using System.Windows.Forms;
 
 namespace GotoGrocery
 {
-    public partial class AddMemberForm : Form 
+    public partial class AddMemberForm : Form
     {
         public AddMemberForm()
         {
             InitializeComponent();
         }
 
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void CancelNewMemberBtn_Click(object sender, EventArgs e)
         {
@@ -30,20 +26,20 @@ namespace GotoGrocery
 
         private void AddMemberDetailsBtn_Click(object sender, EventArgs e)
         {
-
             String fName = FNameTB.Text;
-
             String lName = LNameTB.Text;
-
-            String dob = DOBTB.Text;
-
+            String dob = DOBTB.Text; // This needs to change to other format for procesing in database
             String Phone = PhoneTB.Text;
-
             String email = EmailTB.Text;
+            //Members m = new Members(fName, lName, email, dob);
 
-            Members m = new Members(fName, lName, email, dob);
 
-           
+
+            DatabaseConnection db = new DatabaseConnection(); // Hard coded date "dob"
+            db.AddMember(fName, lName, "2002-12-28", Phone, email, DateTime.UtcNow.ToString("yyyy-MM-dd"));
+             
+            this.Close();
+          //  MemberForm.membersdataGridView.DataSource = db.GetMembersList();
 
         }
 

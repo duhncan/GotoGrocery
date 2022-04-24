@@ -47,14 +47,14 @@ namespace GotoGrocery
         private void LoadItemIntoTable()
         {
             DatabaseConnection db = new DatabaseConnection();
-
+            //get inventory from db
             InventorydataGridView.DataSource = db.GetInventoryList();
         }
 
         private void EditSelectedItemBtn_Click(object sender, EventArgs e)
         {
             string id1 = "";
-           //get selected prodID from grid to edit
+            //get selected prodID from grid to edit
             foreach (DataGridViewRow row in InventorydataGridView.SelectedRows)
             {
 
@@ -63,14 +63,7 @@ namespace GotoGrocery
 
             if (id1 != null)
             {
-                /*                          TODO
-                 * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                //Search database for ProdID where id1 == memberID
-                //^if exists then 
-                //open edit form ++++++ pass item Obj through? 
-                ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                */
-                ////load form to edit member details
+
                 Forms.InventoryForms.EditItemForm f = new Forms.InventoryForms.EditItemForm(id1);
                 f.Show();
 
@@ -79,7 +72,7 @@ namespace GotoGrocery
             {
                 MessageBox.Show("Select row from table to edit");
             }
-            
+
 
         }
     }

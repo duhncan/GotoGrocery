@@ -12,25 +12,45 @@ namespace GotoGrocery.Forms.InventoryForms
 {
     public partial class EditItemForm : Form
     {
-        public EditItemForm(string id)//change to member ?
-        {
-            InitializeComponent();
-            //InsertItemDetails(ID);+++unused, implement with working inventory Obj++++
-            String ID = id;
+        private string _productname;
+        private string _inventorylevel;
+        private string _productsize;
+        private string _shelfquantity;
+        private string _orderamount;
+        private List<String> m = new List<string>();
+        public EditItemForm(string id)
 
-            String prodName = "Beans";
-            String inventoryLevel = "3";
-            String size = "200ml";
-            String shelfQty = "5";
-            String orderAmount = "5";
+        {
+
+            InitializeComponent();
+            DatabaseConnection db = new DatabaseConnection();
+
+
+
+            try
+            {
+                int result = Int32.Parse(id);
+                m = db.SearchInventoryById(result);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"Unable to parse '{id}'");
+            }
+
+            String ID = m[0];
+            _productname = m[1];
+            _inventorylevel = m[2];
+            _productsize = m[3];
+            _shelfquantity = m[4];
+            _orderamount = m[5];
 
 
             ItemIdTB.Text = ID;
-            EditItemNameTB.Text = prodName;
-            EditInventoryLevel.Text = inventoryLevel;
-            EditProdSizeTB.Text = size;
-            EditShelfQty.Text = shelfQty;
-            EditOrderAmount.Text = orderAmount;
+            EditItemNameTB.Text = _productname;
+            EditInventoryLevelTB.Text = _inventorylevel;
+            EditProdSizeTB.Text = _productsize;
+            EditShelfQtyTB.Text = _shelfquantity;
+            EditOrderAmountTB.Text = _orderamount;
         }
 
 
@@ -39,17 +59,38 @@ namespace GotoGrocery.Forms.InventoryForms
             this.Close();
         }
 
-        ////  private void InsertItemDetails(String id)//Member?
-        //  {
-        //      //member.getMember()
-        //      ItemIdTB.Text = id;
-        //      EditItemNameTB.Text = name;
-        //      // TODO
-        //  }
 
         private void AcceptEditItemDetailsBtn_Click(object sender, EventArgs e)
         {
-            //TODO send updated item details to method
+
+
+            //Set product name
+            _productname = EditItemNameTB.Text.ToLower();
+
+            //Set inventory level
+            _inventorylevel = EditInventoryLevelTB.Text;
+
+
+            //Set product size
+            _productsize = EditProdSizeTB.Text.ToLower();
+
+            //Set shelf quantity
+
+            _shelfquantity = EditShelfQtyTB.Text;
+            //int.Parse(ShelfQuantityTB.Text);
+
+
+            //Set order amount ++++try catch example for input verification+++++
+            try
+            {
+                _orderamount = EditOrderAmountTB.Text;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"Order Amount is not a valid integer");
+            }
+
+            //+++++++++++change item details++++++++++++++
         }
     }
 }

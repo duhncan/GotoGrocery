@@ -41,6 +41,7 @@ namespace GotoGrocery
             catch (FormatException)
             {
                 Console.WriteLine($"Inventory Level is not a valid integer");
+
             }
 
             //Set product size
@@ -72,6 +73,7 @@ namespace GotoGrocery
                 case 0:
                     MessageBox.Show("Item added successfully");
                     Console.WriteLine("Item added successfully");
+                    this.Close();
                     break;
 
                 case 1:
@@ -105,8 +107,7 @@ namespace GotoGrocery
                     break;
             }
 
-            //close new item form
-            this.Close();
+
 
         }
 

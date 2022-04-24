@@ -31,7 +31,7 @@ namespace GotoGrocery
         {
             this.AddProductTitleLbl = new System.Windows.Forms.Label();
             this.CancelNewMember = new System.Windows.Forms.Button();
-            this.AddMemberDetailsBtn = new System.Windows.Forms.Button();
+            this.AddItemDetailsBtn = new System.Windows.Forms.Button();
             this.OrderAmountTB = new System.Windows.Forms.TextBox();
             this.ShelfQuantityTB = new System.Windows.Forms.TextBox();
             this.ItemSizeTB = new System.Windows.Forms.TextBox();
@@ -47,136 +47,123 @@ namespace GotoGrocery
             // AddProductTitleLbl
             // 
             this.AddProductTitleLbl.AutoSize = true;
-            this.AddProductTitleLbl.Location = new System.Drawing.Point(227, 26);
-            this.AddProductTitleLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddProductTitleLbl.Location = new System.Drawing.Point(340, 40);
             this.AddProductTitleLbl.Name = "AddProductTitleLbl";
-            this.AddProductTitleLbl.Size = new System.Drawing.Size(97, 13);
+            this.AddProductTitleLbl.Size = new System.Drawing.Size(142, 20);
             this.AddProductTitleLbl.TabIndex = 26;
             this.AddProductTitleLbl.Text = "Enter New Product";
             // 
             // CancelNewMember
             // 
-            this.CancelNewMember.Location = new System.Drawing.Point(109, 245);
-            this.CancelNewMember.Margin = new System.Windows.Forms.Padding(2);
+            this.CancelNewMember.Location = new System.Drawing.Point(164, 377);
             this.CancelNewMember.Name = "CancelNewMember";
-            this.CancelNewMember.Size = new System.Drawing.Size(57, 22);
+            this.CancelNewMember.Size = new System.Drawing.Size(86, 34);
             this.CancelNewMember.TabIndex = 25;
             this.CancelNewMember.Text = "Cancel";
             this.CancelNewMember.UseVisualStyleBackColor = true;
             this.CancelNewMember.Click += new System.EventHandler(this.CancelNewItem_Click);
             // 
-            // AddMemberDetailsBtn
+            // AddItemDetailsBtn
             // 
-            this.AddMemberDetailsBtn.Location = new System.Drawing.Point(360, 245);
-            this.AddMemberDetailsBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.AddMemberDetailsBtn.Name = "AddMemberDetailsBtn";
-            this.AddMemberDetailsBtn.Size = new System.Drawing.Size(94, 22);
-            this.AddMemberDetailsBtn.TabIndex = 24;
-            this.AddMemberDetailsBtn.Text = "Add Member";
-            this.AddMemberDetailsBtn.UseVisualStyleBackColor = true;
-            this.AddMemberDetailsBtn.Click += new System.EventHandler(this.AddItemDetailsBtn_Click);
+            this.AddItemDetailsBtn.Location = new System.Drawing.Point(540, 377);
+            this.AddItemDetailsBtn.Name = "AddItemDetailsBtn";
+            this.AddItemDetailsBtn.Size = new System.Drawing.Size(141, 34);
+            this.AddItemDetailsBtn.TabIndex = 24;
+            this.AddItemDetailsBtn.Text = "Add Item";
+            this.AddItemDetailsBtn.UseVisualStyleBackColor = true;
+            this.AddItemDetailsBtn.Click += new System.EventHandler(this.AddItemDetailsBtn_Click);
             // 
             // OrderAmountTB
             // 
-            this.OrderAmountTB.Location = new System.Drawing.Point(181, 201);
-            this.OrderAmountTB.Margin = new System.Windows.Forms.Padding(2);
+            this.OrderAmountTB.Location = new System.Drawing.Point(272, 309);
             this.OrderAmountTB.Name = "OrderAmountTB";
-            this.OrderAmountTB.Size = new System.Drawing.Size(249, 20);
+            this.OrderAmountTB.Size = new System.Drawing.Size(372, 26);
             this.OrderAmountTB.TabIndex = 22;
             // 
             // ShelfQuantityTB
             // 
-            this.ShelfQuantityTB.Location = new System.Drawing.Point(181, 164);
-            this.ShelfQuantityTB.Margin = new System.Windows.Forms.Padding(2);
+            this.ShelfQuantityTB.Location = new System.Drawing.Point(272, 252);
             this.ShelfQuantityTB.Name = "ShelfQuantityTB";
-            this.ShelfQuantityTB.Size = new System.Drawing.Size(144, 20);
+            this.ShelfQuantityTB.Size = new System.Drawing.Size(214, 26);
             this.ShelfQuantityTB.TabIndex = 21;
             // 
             // ItemSizeTB
             // 
-            this.ItemSizeTB.Location = new System.Drawing.Point(183, 133);
-            this.ItemSizeTB.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemSizeTB.Location = new System.Drawing.Point(274, 205);
             this.ItemSizeTB.Name = "ItemSizeTB";
-            this.ItemSizeTB.Size = new System.Drawing.Size(106, 20);
+            this.ItemSizeTB.Size = new System.Drawing.Size(157, 26);
             this.ItemSizeTB.TabIndex = 20;
             // 
             // ItemNameTB
             // 
-            this.ItemNameTB.Location = new System.Drawing.Point(181, 70);
-            this.ItemNameTB.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemNameTB.Location = new System.Drawing.Point(272, 108);
             this.ItemNameTB.Name = "ItemNameTB";
-            this.ItemNameTB.Size = new System.Drawing.Size(249, 20);
+            this.ItemNameTB.Size = new System.Drawing.Size(372, 26);
             this.ItemNameTB.TabIndex = 19;
             // 
             // InventoryLevelLbl
             // 
             this.InventoryLevelLbl.AutoSize = true;
-            this.InventoryLevelLbl.Location = new System.Drawing.Point(76, 106);
-            this.InventoryLevelLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.InventoryLevelLbl.Location = new System.Drawing.Point(114, 163);
             this.InventoryLevelLbl.Name = "InventoryLevelLbl";
-            this.InventoryLevelLbl.Size = new System.Drawing.Size(80, 13);
+            this.InventoryLevelLbl.Size = new System.Drawing.Size(115, 20);
             this.InventoryLevelLbl.TabIndex = 16;
             this.InventoryLevelLbl.Text = "Inventory Level";
             // 
             // ItemSizeLbl
             // 
             this.ItemSizeLbl.AutoSize = true;
-            this.ItemSizeLbl.Location = new System.Drawing.Point(25, 133);
-            this.ItemSizeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ItemSizeLbl.Location = new System.Drawing.Point(38, 205);
             this.ItemSizeLbl.Name = "ItemSizeLbl";
-            this.ItemSizeLbl.Size = new System.Drawing.Size(157, 13);
+            this.ItemSizeLbl.Size = new System.Drawing.Size(231, 20);
             this.ItemSizeLbl.TabIndex = 15;
             this.ItemSizeLbl.Text = "Size of Product (e.g. ml, cm, kg)";
             // 
             // ProductNameLbl
             // 
             this.ProductNameLbl.AutoSize = true;
-            this.ProductNameLbl.Location = new System.Drawing.Point(79, 70);
-            this.ProductNameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ProductNameLbl.Location = new System.Drawing.Point(118, 108);
             this.ProductNameLbl.Name = "ProductNameLbl";
-            this.ProductNameLbl.Size = new System.Drawing.Size(75, 13);
+            this.ProductNameLbl.Size = new System.Drawing.Size(110, 20);
             this.ProductNameLbl.TabIndex = 14;
             this.ProductNameLbl.Text = "Product Name";
             // 
             // InventoryLevelTB
             // 
-            this.InventoryLevelTB.Location = new System.Drawing.Point(181, 104);
-            this.InventoryLevelTB.Margin = new System.Windows.Forms.Padding(2);
+            this.InventoryLevelTB.Location = new System.Drawing.Point(272, 160);
             this.InventoryLevelTB.Name = "InventoryLevelTB";
-            this.InventoryLevelTB.Size = new System.Drawing.Size(122, 20);
+            this.InventoryLevelTB.Size = new System.Drawing.Size(181, 26);
             this.InventoryLevelTB.TabIndex = 27;
             // 
             // ShelfQuantityLbl
             // 
             this.ShelfQuantityLbl.AutoSize = true;
-            this.ShelfQuantityLbl.Location = new System.Drawing.Point(76, 166);
-            this.ShelfQuantityLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ShelfQuantityLbl.Location = new System.Drawing.Point(114, 255);
             this.ShelfQuantityLbl.Name = "ShelfQuantityLbl";
-            this.ShelfQuantityLbl.Size = new System.Drawing.Size(73, 13);
+            this.ShelfQuantityLbl.Size = new System.Drawing.Size(109, 20);
             this.ShelfQuantityLbl.TabIndex = 28;
             this.ShelfQuantityLbl.Text = "Shelf Quantity";
             // 
             // OrderAmountLbl
             // 
             this.OrderAmountLbl.AutoSize = true;
-            this.OrderAmountLbl.Location = new System.Drawing.Point(76, 201);
-            this.OrderAmountLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OrderAmountLbl.Location = new System.Drawing.Point(114, 309);
             this.OrderAmountLbl.Name = "OrderAmountLbl";
-            this.OrderAmountLbl.Size = new System.Drawing.Size(72, 13);
+            this.OrderAmountLbl.Size = new System.Drawing.Size(109, 20);
             this.OrderAmountLbl.TabIndex = 29;
             this.OrderAmountLbl.Text = "Order Amount";
             // 
             // AddItemForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.OrderAmountLbl);
             this.Controls.Add(this.ShelfQuantityLbl);
             this.Controls.Add(this.InventoryLevelTB);
             this.Controls.Add(this.AddProductTitleLbl);
             this.Controls.Add(this.CancelNewMember);
-            this.Controls.Add(this.AddMemberDetailsBtn);
+            this.Controls.Add(this.AddItemDetailsBtn);
             this.Controls.Add(this.OrderAmountTB);
             this.Controls.Add(this.ShelfQuantityTB);
             this.Controls.Add(this.ItemSizeTB);
@@ -184,7 +171,6 @@ namespace GotoGrocery
             this.Controls.Add(this.InventoryLevelLbl);
             this.Controls.Add(this.ItemSizeLbl);
             this.Controls.Add(this.ProductNameLbl);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddItemForm";
@@ -197,7 +183,7 @@ namespace GotoGrocery
 
         private System.Windows.Forms.Label AddProductTitleLbl;
         private System.Windows.Forms.Button CancelNewMember;
-        private System.Windows.Forms.Button AddMemberDetailsBtn;
+        private System.Windows.Forms.Button AddItemDetailsBtn;
         private System.Windows.Forms.TextBox OrderAmountTB;
         private System.Windows.Forms.TextBox ShelfQuantityTB;
         private System.Windows.Forms.TextBox ItemSizeTB;

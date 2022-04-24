@@ -135,7 +135,6 @@ namespace GotoGrocery
             this.DOBTB.Name = "DOBTB";
             this.DOBTB.Size = new System.Drawing.Size(93, 20);
             this.DOBTB.TabIndex = 10;
-            this.DOBTB.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // AddMemberDetailsBtn
             // 
