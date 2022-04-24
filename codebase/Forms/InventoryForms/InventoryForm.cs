@@ -50,7 +50,7 @@ namespace GotoGrocery
             //new data row test
             DataRow dr1 = dt.NewRow();
             String id = "10237";
-            String prodName = "Beans";
+            String prodName = "Bean";
             String inventoryLevel = "3";
             String size = "200ml";
             String ShelfQty = "5";
