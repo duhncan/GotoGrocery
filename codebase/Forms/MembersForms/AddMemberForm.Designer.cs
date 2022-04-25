@@ -190,7 +190,6 @@ namespace GotoGrocery
             this.Name = "AddMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMemberForm";
-            this.Load += new System.EventHandler(this.AddMemberForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

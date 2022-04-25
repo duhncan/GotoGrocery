@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
+    "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
+    "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "projectUniqueName": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj",
         "projectName": "GotoGrocery",
-        "projectPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
-        "packagesPath": "C:\\Users\\duhnc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\obj\\",
+        "projectPath": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "packagesPath": "C:\\Users\\AidenH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\duhnc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AidenH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,6 +38,10 @@
       "frameworks": {
         "net472": {
           "dependencies": {
+            "BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"

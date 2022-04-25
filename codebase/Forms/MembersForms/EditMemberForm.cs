@@ -14,15 +14,16 @@ namespace GotoGrocery.Forms.MembersForms
         private String _phone;
         private string _status;
         private string _startDate;
+        private MembersForm mf;
 
         // DateTime startDate = new DateTime(2020, 11, 1);
 
         // string formattedDate = startDate.ToString("dd/M/yyyy");
 
-        public EditMemberForm(String id)//member as peram?
+        public EditMemberForm(String id, MembersForm membersForm)
         {
             InitializeComponent();
-
+            mf = membersForm;
             int formattedID = -1;
             try { formattedID = Int32.Parse(id); }
             catch (FormatException) { Console.WriteLine($"Unable to parse '{id}'"); }
@@ -144,6 +145,7 @@ namespace GotoGrocery.Forms.MembersForms
                 MessageBox.Show("Member added successfully!");
                 Console.WriteLine("Member added successfully!");
                 this.Close();
+                mf.LoadMembersIntoTable();
             }
             else if (!passDB)
             {

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "BouncyCastle/1.8.5": {
+      "BouncyCastle/1.8.9": {
         "type": "package",
         "compile": {
           "lib/BouncyCastle.Crypto.dll": {}
@@ -448,7 +448,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "BouncyCastle/1.8.5": {
+      "BouncyCastle/1.8.9": {
         "type": "package",
         "compile": {
           "lib/BouncyCastle.Crypto.dll": {}
@@ -894,7 +894,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "BouncyCastle/1.8.5": {
+      "BouncyCastle/1.8.9": {
         "type": "package",
         "compile": {
           "lib/BouncyCastle.Crypto.dll": {}
@@ -1340,7 +1340,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "BouncyCastle/1.8.5": {
+      "BouncyCastle/1.8.9": {
         "type": "package",
         "compile": {
           "lib/BouncyCastle.Crypto.dll": {}
@@ -1787,15 +1787,15 @@
     }
   },
   "libraries": {
-    "BouncyCastle/1.8.5": {
-      "sha512": "196QWfvglefGd/Cr2C4hIdmA9HYkLFZovxJ7L0BAOFlNn+qlmVxqpxpcKGoC5AF4rOuoUq3ylzLgKZW5j4nmDQ==",
+    "BouncyCastle/1.8.9": {
+      "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
       "type": "package",
-      "path": "bouncycastle/1.8.5",
+      "path": "bouncycastle/1.8.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "bouncycastle.1.8.5.nupkg.sha512",
+        "bouncycastle.1.8.9.nupkg.sha512",
         "bouncycastle.nuspec",
         "lib/BouncyCastle.Crypto.dll"
       ]
@@ -2552,30 +2552,31 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "BouncyCastle >= 1.8.9",
       "MySql.Data >= 8.0.28",
       "MySql.Data.EntityFrameworkCore >= 8.0.22",
       "MySqlConnector >= 2.1.8"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\duhnc\\.nuget\\packages\\": {},
+    "C:\\Users\\AidenH\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+      "projectUniqueName": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj",
       "projectName": "GotoGrocery",
-      "projectPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
-      "packagesPath": "C:\\Users\\duhnc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\obj\\",
+      "projectPath": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+      "packagesPath": "C:\\Users\\AidenH\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AidenH\\Desktop\\MSP\\GotoGrocery\\codebase\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\duhnc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AidenH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2595,6 +2596,10 @@
     "frameworks": {
       "net472": {
         "dependencies": {
+          "BouncyCastle": {
+            "target": "Package",
+            "version": "[1.8.9, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.28, )"

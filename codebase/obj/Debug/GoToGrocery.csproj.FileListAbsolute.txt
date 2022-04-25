@@ -45,7 +45,6 @@ C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.MainForm.
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.AddMemberForm.resources
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.Forms.MembersForms.EditMemberForm.resources
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.MembersForm.resources
-C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.SalesForm.resources
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.Properties.Resources.resources
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.GenerateResource.cache
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CoreCompileInputs.cache
@@ -109,3 +108,4 @@ C:\Users\duhnc\Desktop\MSPV3\GotoGrocery\codebase\bin\Debug\System.Numerics.Vect
 C:\Users\duhnc\Desktop\MSPV3\GotoGrocery\codebase\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\duhnc\Desktop\MSPV3\GotoGrocery\codebase\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\duhnc\Desktop\MSPV3\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CopyComplete
+C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.Forms.ReportForm.resources

@@ -13,8 +13,10 @@ namespace GotoGrocery
 {
     public partial class AddMemberForm : Form
     {
-        public AddMemberForm()
+      private MembersForm mf;
+        public AddMemberForm(MembersForm membersForm)
         {
+            mf = membersForm;
             InitializeComponent();
         }
 
@@ -37,15 +39,11 @@ namespace GotoGrocery
 
             DatabaseConnection db = new DatabaseConnection(); // Hard coded date "dob"
             db.AddMember(fName, lName, "2002-12-28", Phone, email, DateTime.UtcNow.ToString("yyyy-MM-dd"));
-             
+            
+            //close and load members
             this.Close();
-          //  MemberForm.membersdataGridView.DataSource = db.GetMembersList();
-
+            mf.LoadMembersIntoTable();
         }
 
-        private void AddMemberForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

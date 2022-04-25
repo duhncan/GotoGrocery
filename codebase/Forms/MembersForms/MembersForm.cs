@@ -25,7 +25,9 @@ namespace GotoGrocery
 
         //member table creation
         DataTable dt = new DataTable();
+        DataColumn dcRowString;
         //method to load table
+
         private void Grid_Load()
         {
 
@@ -38,21 +40,34 @@ namespace GotoGrocery
             dt.Columns.Add("ContactNumber");
             dt.Columns.Add("Start-Date");
             dt.Columns.Add("Status");
-
+             dcRowString = dt.Columns.Add("_RowString", typeof(string));
             membersdataGridView.DataSource = dt;
 
         }
-        private void LoadMembersIntoTable()
+        public void LoadMembersIntoTable()
         {
             DatabaseConnection db = new DatabaseConnection();
             membersdataGridView.DataSource = db.GetMembersList();
-
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < dt.Columns.Count - 1; i++)
+                {
+                    sb.Append(dataRow[i].ToString());
+                    sb.Append("\t");
+                }
+                dataRow[dcRowString] = sb.ToString();
+            }
+        }
+        private void MembersSearchTB_TextChanged(object sender, EventArgs e)
+        {
+            dt.DefaultView.RowFilter = string.Format("[_RowString] LIKE '%{0}%'", MembersSearchTB.Text);
         }
 
         private void AddMemberBtn_Click(object sender, EventArgs e)
         {
             //Create and Open form to add new member
-            AddMemberForm f = new AddMemberForm();
+            AddMemberForm f = new AddMemberForm(this);
             f.Show();
         }
 
@@ -81,7 +96,7 @@ namespace GotoGrocery
 
 
 
-                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(id);
+                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(id,this);
                 f.Show();
 
             }
