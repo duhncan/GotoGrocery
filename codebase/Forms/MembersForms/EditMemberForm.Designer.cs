@@ -57,7 +57,7 @@ namespace GotoGrocery.Forms.MembersForms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(152, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 16);
+            this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Edit Member information";
             // 
@@ -271,6 +271,7 @@ namespace GotoGrocery.Forms.MembersForms
             this.Name = "EditMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMemberForm";
+            this.Load += new System.EventHandler(this.EditMemberForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

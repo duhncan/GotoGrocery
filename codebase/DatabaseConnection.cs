@@ -164,15 +164,25 @@ namespace GotoGrocery
             return _row;
         }
 
-        public void UpdateMember(string email, string update, string value) //Update the Member Based on their email,
-        { //Update is = Member_FirstName, Member_LastName, Member_LastName, Member_DOB, Member_phoneNumber, Member_Email, Member_Status
-            string query = "UPDATE members"
-                + " SET " + update + " = '" + value + "'" 
-                + " WHERE Member_Email = " + "'" + email + "'";
-            MySqlCommand cmd = new MySqlCommand(query, Connect);
-            cmd.ExecuteNonQuery();
-        }
 
+        public bool UpdateMember(string email, string update, string value) //Update the Member Based on their email,
+        { //Update is = Member_FirstName, Member_LastName, Member_LastName, Member_DOB, Member_phoneNumber, Member_Email, Member_Status
+            if (CheckMemberExists(email) == false)
+            {
+                Console.WriteLine("Customer with that email doesn't exists");
+                return false;
+            }
+            else
+            {
+                string query = "UPDATE members"
+                            + " SET " + update + " = '" + value + "'"
+                            + " WHERE Member_Email = " + "'" + email + "'";
+                MySqlCommand cmd = new MySqlCommand(query, Connect);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+
+        }
 
 
         //Inventory Methods
