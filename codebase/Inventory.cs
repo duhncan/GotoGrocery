@@ -23,7 +23,6 @@ namespace GotoGrocery
                 
             }
 
-            //change this to return an int, value of int is determined by which input failed the check
             public int validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
             {
                 DatabaseConnection db = new DatabaseConnection();
@@ -51,28 +50,8 @@ namespace GotoGrocery
                 }
 
                 //All tests pass
-                db.AddProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
-                return 0;
-              
-                    
+                return 0;       
             }
-            
-
-            // inventory class should take data from gui, check it for integrity/verification purposes, then send to the databse class to be uploaded to the database
-            //// To iterate over it.
-            //foreach (List<string> subList in myList)
-            //{
-            //    foreach (string item in subList)
-            //    {
-            //        //put csv export stuff in here
-            //        Console.WriteLine(item);
-            //    }
-            //}
-
-
-            //after input checking, add to database with this:
-
         }
     }
-
 }
