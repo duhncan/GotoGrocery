@@ -112,11 +112,11 @@
     <Compile Include="Forms\MembersForms\MembersForm.Designer.cs">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesForm.cs">
+    <Compile Include="Forms\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesForm.Designer.cs">
-      <DependentUpon>SalesForm.cs</DependentUpon>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
     <Compile Include="Members.cs" />
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="Forms\MembersForms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesForm.resx">
-      <DependentUpon>SalesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
@@ -213,6 +213,9 @@
     <Folder Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.9</Version>
+    </PackageReference>
     <PackageReference Include="MySql.Data">
       <Version>8.0.28</Version>
     </PackageReference>

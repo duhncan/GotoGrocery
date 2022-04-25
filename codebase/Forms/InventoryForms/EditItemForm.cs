@@ -18,11 +18,11 @@ namespace GotoGrocery.Forms.InventoryForms
         private string _shelfquantity;
         private string _orderamount;
         private List<String> m = new List<string>();
+        InventoryForm _inventoryForm;
        
-        public EditItemForm(string id)
-
+        public EditItemForm(string id, InventoryForm inv)
         {
-
+            _inventoryForm = inv;
             InitializeComponent();
             DatabaseConnection db = new DatabaseConnection();
 
@@ -90,8 +90,21 @@ namespace GotoGrocery.Forms.InventoryForms
             {
                 Console.WriteLine($"Order Amount is not a valid integer");
             }
+            
+             //+++++++++++change item details here++++++++++++++
 
-            //+++++++++++change item details++++++++++++++
+           
+            
+            
+            
+            
+            
+            //close and Refresh table
+           this.Close();
+            _inventoryForm.LoadItemIntoTable();
+            
+
+           
         }
     }
 }

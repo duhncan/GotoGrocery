@@ -359,7 +359,9 @@ namespace GotoGrocery
 
         public void ExportInventoryReport()
         {
-            string _filePath = @"c:\CSV\data.csv";
+           // string _filePath = fileLocation;
+           string _filePath = @"c:\CSV\data.csv";
+
 
             string query = "SELECT * FROM inventory";
             MySqlCommand cmd = new MySqlCommand(query, Connect);

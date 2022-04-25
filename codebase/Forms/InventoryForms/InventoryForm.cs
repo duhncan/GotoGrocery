@@ -65,7 +65,7 @@ namespace GotoGrocery
             if (id1 != null)
             {
 
-                Forms.InventoryForms.EditItemForm f = new Forms.InventoryForms.EditItemForm(id1);
+                Forms.InventoryForms.EditItemForm f = new Forms.InventoryForms.EditItemForm(id1,this);
                 f.Show();
 
             }

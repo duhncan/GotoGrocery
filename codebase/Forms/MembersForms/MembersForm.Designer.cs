@@ -55,10 +55,10 @@ namespace GotoGrocery
             // 
             // AddMemberBtn
             // 
-            this.AddMemberBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddMemberBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddMemberBtn.Location = new System.Drawing.Point(50, 231);
             this.AddMemberBtn.Name = "AddMemberBtn";
-            this.AddMemberBtn.Size = new System.Drawing.Size(230, 60);
+            this.AddMemberBtn.Size = new System.Drawing.Size(209, 52);
             this.AddMemberBtn.TabIndex = 1;
             this.AddMemberBtn.Text = "Add new Member";
             this.AddMemberBtn.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@ namespace GotoGrocery
             this.membersdataGridView.AllowUserToDeleteRows = false;
             this.membersdataGridView.AllowUserToOrderColumns = true;
             this.membersdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.membersdataGridView.Location = new System.Drawing.Point(332, 231);
+            this.membersdataGridView.Location = new System.Drawing.Point(334, 191);
             this.membersdataGridView.MultiSelect = false;
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
@@ -82,7 +82,7 @@ namespace GotoGrocery
             // 
             // EditSelectedMemberBtn
             // 
-            this.EditSelectedMemberBtn.Location = new System.Drawing.Point(392, 720);
+            this.EditSelectedMemberBtn.Location = new System.Drawing.Point(394, 680);
             this.EditSelectedMemberBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EditSelectedMemberBtn.Name = "EditSelectedMemberBtn";
             this.EditSelectedMemberBtn.Size = new System.Drawing.Size(112, 35);
@@ -95,7 +95,7 @@ namespace GotoGrocery
             // 
             this.SearchLbl.AutoSize = true;
             this.SearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLbl.Location = new System.Drawing.Point(834, 128);
+            this.SearchLbl.Location = new System.Drawing.Point(836, 88);
             this.SearchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchLbl.Name = "SearchLbl";
             this.SearchLbl.Size = new System.Drawing.Size(75, 25);
@@ -107,7 +107,7 @@ namespace GotoGrocery
             this.SearchByIDCheck.AutoSize = true;
             this.SearchByIDCheck.Checked = true;
             this.SearchByIDCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SearchByIDCheck.Location = new System.Drawing.Point(500, 165);
+            this.SearchByIDCheck.Location = new System.Drawing.Point(502, 125);
             this.SearchByIDCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchByIDCheck.Name = "SearchByIDCheck";
             this.SearchByIDCheck.Size = new System.Drawing.Size(52, 24);
@@ -119,7 +119,7 @@ namespace GotoGrocery
             // SearchByEmailCheck
             // 
             this.SearchByEmailCheck.AutoSize = true;
-            this.SearchByEmailCheck.Location = new System.Drawing.Point(598, 165);
+            this.SearchByEmailCheck.Location = new System.Drawing.Point(600, 125);
             this.SearchByEmailCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchByEmailCheck.Name = "SearchByEmailCheck";
             this.SearchByEmailCheck.Size = new System.Drawing.Size(74, 24);
@@ -130,15 +130,16 @@ namespace GotoGrocery
             // 
             // MembersSearchTB
             // 
-            this.MembersSearchTB.Location = new System.Drawing.Point(712, 157);
+            this.MembersSearchTB.Location = new System.Drawing.Point(714, 117);
             this.MembersSearchTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MembersSearchTB.Name = "MembersSearchTB";
             this.MembersSearchTB.Size = new System.Drawing.Size(394, 26);
             this.MembersSearchTB.TabIndex = 7;
+            this.MembersSearchTB.TextChanged += new System.EventHandler(this.MembersSearchTB_TextChanged);
             // 
             // MemberSearchBtn
             // 
-            this.MemberSearchBtn.Location = new System.Drawing.Point(1148, 157);
+            this.MemberSearchBtn.Location = new System.Drawing.Point(1150, 117);
             this.MemberSearchBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MemberSearchBtn.Name = "MemberSearchBtn";
             this.MemberSearchBtn.Size = new System.Drawing.Size(112, 34);
