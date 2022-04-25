@@ -46,15 +46,16 @@ namespace GotoGrocery.Forms.MembersForms
             DatabaseConnection db = new DatabaseConnection();
             List<String> m = db.MembertoString(id);
 
+
             // Convert from list of strings to Member Object
             member.MembID = id;
             member.FName = m[1];
             member.LName = m[2];
-            member.Dob = m[3];
+            member.Dob = datefix(m[3]);
             member.PhoneNo = m[4];
             member.Email = m[5];
             member.MembershipStatus = m[6];
-            member.MembershipStartDate = m[7];
+            member.MembershipStartDate = datefix(m[7]);
 
             // Membership Status Logic
             if (member.MembershipStatus == "True")
@@ -176,6 +177,14 @@ namespace GotoGrocery.Forms.MembersForms
         private void EditMemberForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private string datefix(string givenDate)
+        {
+            // DateTime startDate = new DateTime(2020, 11, 1);
+            // string formattedDate = startDate.ToString("dd/M/yyyy");
+            string[] split = givenDate.Split('/');
+            return split[2] + "-" + split[0] + "-" + split[1];
         }
     }
 }
