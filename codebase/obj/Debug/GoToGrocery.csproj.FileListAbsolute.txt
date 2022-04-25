@@ -52,3 +52,4 @@ C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.Co
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CopyComplete
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.pdb
+C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.AssemblyReference.cache
