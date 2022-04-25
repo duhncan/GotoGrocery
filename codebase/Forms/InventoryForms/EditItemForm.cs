@@ -18,6 +18,7 @@ namespace GotoGrocery.Forms.InventoryForms
         private string _shelfquantity;
         private string _orderamount;
         private List<String> m = new List<string>();
+       
         public EditItemForm(string id)
 
         {
