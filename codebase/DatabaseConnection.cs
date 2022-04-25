@@ -174,12 +174,24 @@ namespace GotoGrocery
             }
             else
             {
-                string query = "UPDATE members"
-                            + " SET " + update + " = '" + value + "'"
-                            + " WHERE Member_Email = " + "'" + email + "'";
-                MySqlCommand cmd = new MySqlCommand(query, Connect);
-                cmd.ExecuteNonQuery();
-                return true;
+                if (update == "Member_Status")
+                {
+                    string query = "UPDATE members"
+                                + " SET " + update + " = " + value
+                                + " WHERE Member_Email = " + "'" + email + "'";
+                    MySqlCommand cmd = new MySqlCommand(query, Connect);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                else
+                {
+                    string query = "UPDATE members"
+                                + " SET " + update + " = '" + value + "'"
+                                + " WHERE Member_Email = " + "'" + email + "'";
+                    MySqlCommand cmd = new MySqlCommand(query, Connect);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
             }
 
         }
@@ -239,14 +251,23 @@ namespace GotoGrocery
             return i;
         }
 
-        public void AddProduct(string _productname, int _inventorylevel, string _productsize, int _shelfquantity, int _orderamount) //Used to add a new products to the table
+        public bool AddProduct(string _productname, int _inventorylevel, string _productsize, int _shelfquantity, int _orderamount) //Used to add a new products to the table
         {
-            int _id;
-            _id = HighestProductID() + 1;
-            string query = "INSERT INTO inventory (product_id, product_name, inventory_level, product_size, shelf_quantity, order_amount) " +
-                "Values(" + _id.ToString() + ", '" + _productname + "', " + _inventorylevel.ToString() + ", '" + _productsize + "', " + _shelfquantity.ToString() + ", " + _orderamount.ToString() + ")";
-            MySqlCommand cmd = new MySqlCommand(query, Connect);
-            cmd.ExecuteNonQuery();
+            if (CheckIfProductExists(_productname))
+            {
+                Console.WriteLine("Product already exists, please edit it");
+                return false;
+            }
+            else
+            {
+                int _id;
+                _id = HighestProductID() + 1;
+                string query = "INSERT INTO inventory (product_id, product_name, inventory_level, product_size, shelf_quantity, order_amount) " +
+                    "Values(" + _id.ToString() + ", '" + _productname + "', " + _inventorylevel.ToString() + ", '" + _productsize + "', " + _shelfquantity.ToString() + ", " + _orderamount.ToString() + ")";
+                MySqlCommand cmd = new MySqlCommand(query, Connect);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
         }
 
         public List<string> SearchInventoryById(int _id)
@@ -302,13 +323,34 @@ namespace GotoGrocery
             return false;
         }
 
-        public void UpdateProduct(string productname, string update, string value)
-        {
-            string query = "UPDATE inventory"
-                + " SET " + update + " = '" + value + "'"
-                + " WHERE product_name = " + "'" + productname + "'";
-            MySqlCommand cmd = new MySqlCommand(query, Connect);
-            cmd.ExecuteNonQuery();
+        public bool UpdateProduct(string productname, string update, string value)
+        { //Updating = product_name, inventory_level, product_size, shelf_quantity, order_amount
+            if (CheckIfProductExists(productname))
+            {
+                if (update == "inventory_level" || update == "shelf_quantity" || update == "order_amount")
+                {
+                    string query = "UPDATE inventory"
+                        + " SET " + update + " = " + value
+                        + " WHERE product_name = " + "'" + productname + "'";
+                    MySqlCommand cmd = new MySqlCommand(query, Connect);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                else
+                {
+                    string query = "UPDATE inventory"
+                        + " SET " + update + " = '" + value + "'"
+                        + " WHERE product_name = " + "'" + productname + "'";
+                    MySqlCommand cmd = new MySqlCommand(query, Connect);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Product does not exist yet");
+                return false;
+            }
         }
 
 

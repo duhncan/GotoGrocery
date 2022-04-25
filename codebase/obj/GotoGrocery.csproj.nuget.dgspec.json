@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
+    "C:\\Git\\PULLME\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
+    "C:\\Git\\PULLME\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "projectUniqueName": "C:\\Git\\PULLME\\GotoGrocery\\codebase\\GotoGrocery.csproj",
         "projectName": "GotoGrocery",
-        "projectPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\GotoGrocery.csproj",
-        "packagesPath": "C:\\Users\\duhnc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duhnc\\Desktop\\MSPV3\\GotoGrocery\\codebase\\obj\\",
+        "projectPath": "C:\\Git\\PULLME\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "packagesPath": "C:\\Users\\Ron-Dogg\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\PULLME\\GotoGrocery\\codebase\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\duhnc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ron-Dogg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
