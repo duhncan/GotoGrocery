@@ -91,7 +91,6 @@ C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\bin\Debug\System.Memory.
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.AssemblyReference.cache
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe.config
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.DashboardForm.resources
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.AddItemForm.resources
@@ -108,6 +107,7 @@ C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.cs
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CopyComplete
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe
 C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe.config
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.DashboardForm.resources
 C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\GoTo_Gro\GotoGrocery\GotoGrocery\codebase\obj\Debug\GotoGrocery.AddItemForm.resources
@@ -217,3 +217,6 @@ C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.Co
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.CopyComplete
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.exe
 C:\Users\AidenH\Desktop\MSP\GotoGrocery\codebase\obj\Debug\GotoGrocery.pdb
+=======
+C:\Users\AidenH\source\repos\GotoG\GotoGrocery\codebase\obj\Debug\GotoGrocery.csproj.AssemblyReference.cache
+>>>>>>> c1d74d41d33a140546d3f63880513129f5e9e0cd
