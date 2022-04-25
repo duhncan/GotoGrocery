@@ -51,11 +51,11 @@ namespace GotoGrocery.Forms.MembersForms
             member.MembID = id;
             member.FName = m[1];
             member.LName = m[2];
-            member.Dob = datefix(m[3]);
+            member.Dob = m[3];
             member.PhoneNo = m[4];
             member.Email = m[5];
             member.MembershipStatus = m[6];
-            member.MembershipStartDate = datefix(m[7]);
+            member.MembershipStartDate = m[7];
 
             // Membership Status Logic
             if (member.MembershipStatus == "True")
@@ -178,7 +178,7 @@ namespace GotoGrocery.Forms.MembersForms
         {
 
         }
-
+        //ahhhhhhhhhhhhh
         private string datefix(string givenDate)
         {
             // DateTime startDate = new DateTime(2020, 11, 1);

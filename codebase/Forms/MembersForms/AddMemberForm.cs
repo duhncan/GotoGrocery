@@ -30,7 +30,7 @@ namespace GotoGrocery
         {
             String fName = FNameTB.Text;
             String lName = LNameTB.Text;
-            String dob = DOBTB.Text; // This needs to change to other format for procesing in database
+            String dob = datefix(DOBTB.Text); // This needs to change to other format for procesing in database
             String Phone = PhoneTB.Text;
             String email = EmailTB.Text;
             //Members m = new Members(fName, lName, email, dob);
@@ -38,11 +38,18 @@ namespace GotoGrocery
 
 
             DatabaseConnection db = new DatabaseConnection(); // Hard coded date "dob"
-            db.AddMember(fName, lName, "2002-12-28", Phone, email, DateTime.UtcNow.ToString("yyyy-MM-dd"));
+            db.AddMember(fName, lName, dob, Phone, email, DateTime.UtcNow.ToString("yyyy-MM-dd"));
             
             //close and load members
             this.Close();
             mf.LoadMembersIntoTable();
+        }
+        private string datefix(string givenDate)
+        {
+            // DateTime startDate = new DateTime(2020, 11, 1);
+            // string formattedDate = startDate.ToString("dd/M/yyyy");
+            string[] split = givenDate.Split('/');
+            return split[2] + "-" + split[0] + "-" + split[1];
         }
 
     }
