@@ -26,6 +26,7 @@ namespace GotoGrocery.Forms.MembersForms
         // string formattedDate = startDate.ToString("dd/M/yyyy");
 
         public EditMemberForm(String id)//member as peram?
+        
         {
             InitializeComponent();
             DatabaseConnection db = new DatabaseConnection();

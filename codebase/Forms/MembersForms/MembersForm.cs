@@ -21,7 +21,6 @@ namespace GotoGrocery
             InitializeComponent();
             Grid_Load();
             LoadMembersIntoTable();
-            //  BindGrid();
         }
 
         //member table creation

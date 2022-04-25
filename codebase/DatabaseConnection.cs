@@ -24,7 +24,7 @@ namespace GotoGrocery
 
             Connect = new MySqlConnection(_connectionString);
             Connect.Open();
-        } // Im a nigga
+        } 
 
 
         //MEMBER TABLE METHODS

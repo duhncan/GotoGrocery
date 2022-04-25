@@ -25,7 +25,8 @@ namespace GotoGrocery
         private void AddItemBtn_Click(object sender, EventArgs e)
         {
             //creates form to add a new item
-            AddItemForm f = new AddItemForm();
+            AddItemForm f = new AddItemForm(this);
+            
             f.Show();
         }
         //inventory table creation
@@ -44,7 +45,7 @@ namespace GotoGrocery
             InventorydataGridView.DataSource = dt;
 
         }
-        private void LoadItemIntoTable()
+        public void LoadItemIntoTable()
         {
             DatabaseConnection db = new DatabaseConnection();
             //get inventory from db
