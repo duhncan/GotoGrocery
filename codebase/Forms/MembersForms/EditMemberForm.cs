@@ -30,9 +30,10 @@ namespace GotoGrocery.Forms.MembersForms
             Members memb = new Members();
             memb = GetMemberFromDB(memb, formattedID);
 
+            // TO DO CAPITALISE WHEN DISPLAYING
             MemberIdTB.Text = memb.MembID.ToString();
-            EditFNameTB.Text = memb.FName;
-            EditLNameTB.Text = memb.LName;
+            EditFNameTB.Text = memb.FName.Normalize();
+            EditLNameTB.Text = memb.LName.Normalize();
             EditDOBInput.Text = memb.Dob;
             EditEmailTB.Text = memb.Email;
             EditPhoneTB.Text = memb.PhoneNo;
@@ -108,12 +109,12 @@ namespace GotoGrocery.Forms.MembersForms
             if (!IsBitSet(pass, 0)) { errorMsg += "\nID Invalid"; }
             if (!IsBitSet(pass, 1)) { errorMsg += "\nFirst Name Invalid"; }
             if (!IsBitSet(pass, 2)) { errorMsg += "\nLast Name Invalid"; }
-            if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; }
+            //if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; }
             if (!IsBitSet(pass, 4)) { errorMsg += "\nMembership Status Name Invalid"; }
             if (!IsBitSet(pass, 5)) { errorMsg += "\nPhone Number Invalid"; }
             if (!IsBitSet(pass, 6)) { errorMsg += "\nDoB Invalid"; }
             if (!IsBitSet(pass, 7)) { errorMsg += "\nMembership Start Date Invalid"; }
-
+                // Fix up Date based on SQL requirements
 
             // Push to database
             DatabaseConnection db = new DatabaseConnection();
