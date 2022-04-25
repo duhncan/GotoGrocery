@@ -304,16 +304,11 @@ namespace GoToGrocery
         { //Updating = product_name, inventory_level, product_size, shelf_quantity, order_amount
             if (CheckIfProductExists(productname))
             {
-                Console.WriteLine("Product already exists, please edit it");
-                return false;
-            }
-            else
-            {
-                if(update == "inventory_level" || update == "shelf_quantity" || update == "order_amount")
+                if (update == "inventory_level" || update == "shelf_quantity" || update == "order_amount")
                 {
                     string query = "UPDATE inventory"
                         + " SET " + update + " = " + value +
-                        + " WHERE product_name = " + "'" + productname + "'";
+                        +" WHERE product_name = " + "'" + productname + "'";
                     MySqlCommand cmd = new MySqlCommand(query, Connect);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -327,6 +322,11 @@ namespace GoToGrocery
                     cmd.ExecuteNonQuery();
                     return true;
                 }
+            }
+            else
+            {
+                Console.WriteLine("Product does not exist yet");
+                return false;
             }
         }
 
