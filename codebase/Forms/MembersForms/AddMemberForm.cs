@@ -11,17 +11,15 @@ using System.Windows.Forms;
 
 namespace GotoGrocery
 {
-    public partial class AddMemberForm : Form 
+    public partial class AddMemberForm : Form
     {
-        public AddMemberForm()
+      private MembersForm mf;
+        public AddMemberForm(MembersForm membersForm)
         {
+            mf = membersForm;
             InitializeComponent();
         }
 
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void CancelNewMemberBtn_Click(object sender, EventArgs e)
         {
@@ -30,26 +28,29 @@ namespace GotoGrocery
 
         private void AddMemberDetailsBtn_Click(object sender, EventArgs e)
         {
-
             String fName = FNameTB.Text;
-
             String lName = LNameTB.Text;
-
-            String dob = DOBTB.Text;
-
+            String dob = datefix(DOBTB.Text); // This needs to change to other format for procesing in database
             String Phone = PhoneTB.Text;
-
             String email = EmailTB.Text;
+            //Members m = new Members(fName, lName, email, dob);
 
-            Members m = new Members(fName, lName, email, dob);
 
-           
 
+            DatabaseConnection db = new DatabaseConnection(); // Hard coded date "dob"
+            db.AddMember(fName, lName, dob, Phone, email, DateTime.UtcNow.ToString("yyyy-MM-dd"));
+            
+            //close and load members
+            this.Close();
+            mf.LoadMembersIntoTable();
         }
-
-        private void AddMemberForm_Load(object sender, EventArgs e)
+        private string datefix(string givenDate)
         {
-
+            // DateTime startDate = new DateTime(2020, 11, 1);
+            // string formattedDate = startDate.ToString("dd/M/yyyy");
+            string[] split = givenDate.Split('/');
+            return split[2] + "-" + split[0] + "-" + split[1];
         }
+
     }
 }

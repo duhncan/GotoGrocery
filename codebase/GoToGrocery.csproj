@@ -48,17 +48,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="bin\Debug\InventorySystem.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\GotoGrocery.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\GotoGrocery.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\GotoGrocery.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\GotoGrocery.exe.config" />
-    <None Include="obj\Debug\InventorySystem.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\InventorySystem.csproj.CopyComplete" />
-    <None Include="obj\Debug\InventorySystem.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\InventorySystem.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\InventorySystem.csproj.SuggestedBindingRedirects.cache" />
     <None Include="obj\GotoGrocery.csproj.nuget.dgspec.json" />
     <None Include="obj\GotoGrocery.csproj.nuget.g.props" />
     <None Include="obj\GotoGrocery.csproj.nuget.g.targets" />
@@ -123,11 +112,11 @@
     <Compile Include="Forms\MembersForms\MembersForm.Designer.cs">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesForm.cs">
+    <Compile Include="Forms\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesForm.Designer.cs">
-      <DependentUpon>SalesForm.cs</DependentUpon>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
     <Compile Include="Members.cs" />
@@ -147,12 +136,6 @@
     <Content Include="bin\Debug\Syncfusion.Licensing.dll" />
     <Content Include="bin\Debug\Syncfusion.Shared.Base.dll" />
     <Content Include="bin\Debug\Syncfusion.Shared.Base.xml" />
-    <Content Include="obj\Debug\GotoGrocery.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\GotoGrocery.exe" />
-    <Content Include="obj\Debug\GotoGrocery.pdb" />
-    <Content Include="obj\Debug\InventorySystem.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\InventorySystem.exe" />
-    <Content Include="obj\Debug\InventorySystem.pdb" />
     <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\MonoAndroid10.0\Syncfusion.Licensing.dll" />
     <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\MonoAndroid90\Syncfusion.Licensing.dll" />
     <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net20\Syncfusion.Licensing.dll" />
@@ -220,36 +203,19 @@
     <EmbeddedResource Include="Forms\MembersForms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesForm.resx">
-      <DependentUpon>SalesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.AddItemForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.AddMemberForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.DashboardForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.Forms.InventoryForms.EditItemForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.Forms.MembersForms.EditMemberForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.InventoryForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.MainForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.MembersForm.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\GotoGrocery.SalesForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.AddMemberForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.DashboardForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.Forms.InventoryForms.EditItemForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.Forms.MembersForms.EditMemberForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.InventoryForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.MainForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.MembersForm.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\InventorySystem.SalesForm.resources" />
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="Connected Services\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.9</Version>
+    </PackageReference>
     <PackageReference Include="MySql.Data">
       <Version>8.0.28</Version>
     </PackageReference>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GotoGrocery.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,9 +58,9 @@ namespace GotoGrocery
             LoadForm(new DashboardForm());
         }
 
-        private void SalesBtn_Click(object sender, EventArgs e)
+        private void ReportsBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new SalesForm());
+            LoadForm(new ReportForm());
         }
     }
 }

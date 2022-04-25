@@ -1,61 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GotoGrocery.Forms.MembersForms
 {
     public partial class EditMemberForm : Form
     {
-        public EditMemberForm(String id)//member as peram?
+        private String _id;
+        private String _fName;
+        private String _lName;
+        private String _DOB;
+        private String _email;
+        private String _phone;
+        private string _status;
+        private string _startDate;
+        private MembersForm mf;
+
+        // DateTime startDate = new DateTime(2020, 11, 1);
+
+        // string formattedDate = startDate.ToString("dd/M/yyyy");
+
+        public EditMemberForm(String id, MembersForm membersForm)
         {
             InitializeComponent();
+            mf = membersForm;
+            int formattedID = -1;
+            try { formattedID = Int32.Parse(id); }
+            catch (FormatException) { Console.WriteLine($"Unable to parse '{id}'"); }
+
+            Members memb = new Members();
+            memb = GetMemberFromDB(memb, formattedID);
+
+            MemberIdTB.Text = memb.MembID.ToString();
+            EditFNameTB.Text = memb.FName;
+            EditLNameTB.Text = memb.LName;
+            EditDOBInput.Text = memb.Dob;
+            EditEmailTB.Text = memb.Email;
+            EditPhoneTB.Text = memb.PhoneNo;
+            EditdateStartInput.Text = memb.MembershipStartDate;
+
+        }
+
+        private Members GetMemberFromDB(Members member, int id)
+        {
             DatabaseConnection db = new DatabaseConnection();
-            //TODO put member details into display text bar using MemberToString
-            //Testing data
-            List<String> m = new List<string>();
-            string input = String.Empty;
-            try
-            {
-                int result = Int32.Parse(id);
-                m = db.MembertoString(result);
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine($"Unable to parse '{id}'");
-            }
+            List<String> m = db.MembertoString(id);
 
-            String ID = m[0];         //"01293";
-            String fName = m[1];
-            String lName = m[2];
 
-            //YMD
-            //++++++++++++++++++++++++++++++++++++++++++++++TODO - dates+++++++++++++++++++++++++++++++
-            //DateTime dob = new DateTime(2000, 11, 1);
-            //string formattedDOB = dob.ToString("dd/M/yyyy");
-            String DOB = m[3];
-            String email = m[4];
-            String phone = m[5];
-            // DateTime startDate = new DateTime(2020, 11, 1);
+            // Convert from list of strings to Member Object
+            member.MembID = id;
+            member.FName = m[1];
+            member.LName = m[2];
+            member.Dob = m[3];
+            member.PhoneNo = m[4];
+            member.Email = m[5];
+            member.MembershipStatus = m[6];
+            member.MembershipStartDate = m[7];
 
-            // string formattedDate = startDate.ToString("dd/M/yyyy");
-            bool status = true;
-
-            MemberIdTB.Text = ID;
-            EditFNameTB.Text = fName;
-            EditLNameTB.Text = lName;
-            //  EditDOBInput.Text = formattedDOB;
-            EditDOBInput.Text = DOB;
-            EditEmailTB.Text = email;
-            EditPhoneTB.Text = phone;
-            // EditdateStartInput.Text = formattedDate;
-            //Check checkboxes according to current status
-            if (status)
+            // Membership Status Logic
+            if (member.MembershipStatus == "True")
             {
                 StatusTrueCheck.Checked = true;
                 StatusFalseCheck.Checked = false;
@@ -66,24 +69,95 @@ namespace GotoGrocery.Forms.MembersForms
                 StatusFalseCheck.Checked = true;
             }
 
+            //YMD
+            //++++++++++++++++++++++++++++++++++++++++++++++TODO - dates+++++++++++++++++++++++++++++++
+            //DateTime dob = new DateTime(2000, 11, 1);
+            //string formattedDOB = dob.ToString("dd/M/yyyy");
+            // DateTime startDate = new DateTime(2020, 11, 1);
+
+            // string formattedDate = startDate.ToString("dd/M/yyyy");
+
+            return member;
         }
 
         private void CancelEditMemberBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        // Method to change member details
-        ////String id, String fName, String Lname, String DOB, String Phone, String Em
-        ////private void InsertMemberDetails(Member m)
-        //{
-        //    MemberIdTB.Text = member.GetId(m);
-        //    EditFNameTB.Text = fName;
-        //    // TODO
-        //}
+
 
         private void AcceptEditMemberDetailsBtn_Click(object sender, EventArgs e)
         {
-            //send new edited member details to database
+            // Push all information from textbox to Member Object
+            Members memb = new Members();
+
+            memb.MembID = Int32.Parse(MemberIdTB.Text);
+            memb.FName = EditFNameTB.Text;
+            memb.LName = EditLNameTB.Text;
+            memb.Dob = EditDOBInput.Text;
+            memb.Email = EditEmailTB.Text;
+            memb.PhoneNo = EditPhoneTB.Text;
+            memb.MembershipStartDate = EditdateStartInput.Text;
+            // Membership Status Logic
+            if (StatusTrueCheck.Checked == true && StatusTrueCheck.Checked == false)
+                memb.MembershipStatus = "true";
+            else
+                memb.MembershipStatus = "false";
+
+            // Validate
+            uint pass = memb.Validate();
+            string errorMsg = "";
+            if (!IsBitSet(pass, 0)) { errorMsg += "\nID Invalid"; }
+            if (!IsBitSet(pass, 1)) { errorMsg += "\nFirst Name Invalid"; }
+            if (!IsBitSet(pass, 2)) { errorMsg += "\nLast Name Invalid"; }
+            if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; }
+            if (!IsBitSet(pass, 4)) { errorMsg += "\nMembership Status Name Invalid"; }
+            if (!IsBitSet(pass, 5)) { errorMsg += "\nPhone Number Invalid"; }
+            if (!IsBitSet(pass, 6)) { errorMsg += "\nDoB Invalid"; }
+            if (!IsBitSet(pass, 7)) { errorMsg += "\nMembership Start Date Invalid"; }
+
+
+            // Push to database
+            DatabaseConnection db = new DatabaseConnection();
+            //bool passDB = db.AddMember(memb.FName, memb.LName, memb.Dob, memb.PhoneNo, memb.Email, memb.MembershipStartDate);
+            bool passDB = false;
+            passDB = db.UpdateMember(memb.Email, "Member_FirstName", memb.FName);
+            passDB = db.UpdateMember(memb.Email, "Member_LastName", memb.LName);
+            //passDB = db.UpdateMember(memb.Email, "Member_DOB", memb.Dob);
+            passDB = db.UpdateMember(memb.Email, "Member_DOB", "2000-10-19");
+            passDB = db.UpdateMember(memb.Email, "Member_phoneNumber", memb.PhoneNo);
+            //passDB = db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
+            passDB = db.UpdateMember(memb.Email, "Member_StartDate", "2000-10-19");
+
+            //if(memb.MembershipStatus == "true") passDB = db.UpdateMember(memb.Email, "Member_Status", "true");
+
+
+
+            //bool passDB = db.AddMember(memb.FName, memb.LName, "2000-12-19", memb.PhoneNo, memb.Email, "2000-12-19");
+
+            // Error Messages
+            if (errorMsg != "")
+            {
+                MessageBox.Show(errorMsg + "\n" + pass);
+                Console.WriteLine(errorMsg);
+            }
+            else if (passDB)
+            {
+                MessageBox.Show("Member added successfully!");
+                Console.WriteLine("Member added successfully!");
+                this.Close();
+                mf.LoadMembersIntoTable();
+            }
+            else if (!passDB)
+            {
+                MessageBox.Show("Error pushing to database!");
+                Console.WriteLine("Error pushing to database!");
+            }
+        }
+
+        bool IsBitSet(uint b, int pos)
+        {
+            return (b & (1 << pos)) != 0;
         }
 
         private void StatusFalseCheck_CheckedChanged(object sender, EventArgs e)
@@ -100,6 +174,17 @@ namespace GotoGrocery.Forms.MembersForms
 
         }
 
+        private void EditMemberForm_Load(object sender, EventArgs e)
+        {
 
+        }
+        //ahhhhhhhhhhhhh
+        private string datefix(string givenDate)
+        {
+            // DateTime startDate = new DateTime(2020, 11, 1);
+            // string formattedDate = startDate.ToString("dd/M/yyyy");
+            string[] split = givenDate.Split('/');
+            return split[2] + "-" + split[0] + "-" + split[1];
+        }
     }
 }
