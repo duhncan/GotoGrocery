@@ -35,10 +35,9 @@ namespace GotoGrocery
             this.membersdataGridView = new System.Windows.Forms.DataGridView();
             this.EditSelectedMemberBtn = new System.Windows.Forms.Button();
             this.SearchLbl = new System.Windows.Forms.Label();
-            this.SearchByIDCheck = new System.Windows.Forms.CheckBox();
-            this.SearchByEmailCheck = new System.Windows.Forms.CheckBox();
             this.MembersSearchTB = new System.Windows.Forms.TextBox();
             this.MemberSearchBtn = new System.Windows.Forms.Button();
+            this.MemberClearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,69 +93,53 @@ namespace GotoGrocery
             // SearchLbl
             // 
             this.SearchLbl.AutoSize = true;
-            this.SearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLbl.Location = new System.Drawing.Point(836, 88);
+            this.SearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLbl.Location = new System.Drawing.Point(519, 97);
             this.SearchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchLbl.Name = "SearchLbl";
-            this.SearchLbl.Size = new System.Drawing.Size(75, 25);
+            this.SearchLbl.Size = new System.Drawing.Size(407, 33);
             this.SearchLbl.TabIndex = 4;
-            this.SearchLbl.Text = "Search";
-            // 
-            // SearchByIDCheck
-            // 
-            this.SearchByIDCheck.AutoSize = true;
-            this.SearchByIDCheck.Checked = true;
-            this.SearchByIDCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SearchByIDCheck.Location = new System.Drawing.Point(502, 125);
-            this.SearchByIDCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SearchByIDCheck.Name = "SearchByIDCheck";
-            this.SearchByIDCheck.Size = new System.Drawing.Size(52, 24);
-            this.SearchByIDCheck.TabIndex = 5;
-            this.SearchByIDCheck.Text = "ID";
-            this.SearchByIDCheck.UseVisualStyleBackColor = true;
-            this.SearchByIDCheck.Click += new System.EventHandler(this.StatusIDCheck_CheckedChanged);
-            // 
-            // SearchByEmailCheck
-            // 
-            this.SearchByEmailCheck.AutoSize = true;
-            this.SearchByEmailCheck.Location = new System.Drawing.Point(600, 125);
-            this.SearchByEmailCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SearchByEmailCheck.Name = "SearchByEmailCheck";
-            this.SearchByEmailCheck.Size = new System.Drawing.Size(74, 24);
-            this.SearchByEmailCheck.TabIndex = 6;
-            this.SearchByEmailCheck.Text = "Email";
-            this.SearchByEmailCheck.UseVisualStyleBackColor = true;
-            this.SearchByEmailCheck.Click += new System.EventHandler(this.StatusEmailCheck_CheckedChanged);
+            this.SearchLbl.Text = "Search First Name or Last Name";
             // 
             // MembersSearchTB
             // 
-            this.MembersSearchTB.Location = new System.Drawing.Point(714, 117);
+            this.MembersSearchTB.Location = new System.Drawing.Point(523, 142);
             this.MembersSearchTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MembersSearchTB.Name = "MembersSearchTB";
-            this.MembersSearchTB.Size = new System.Drawing.Size(394, 26);
+            this.MembersSearchTB.Size = new System.Drawing.Size(477, 26);
             this.MembersSearchTB.TabIndex = 7;
-            this.MembersSearchTB.TextChanged += new System.EventHandler(this.MembersSearchTB_TextChanged);
+            this.MembersSearchTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_KeyDown);
             // 
             // MemberSearchBtn
             // 
-            this.MemberSearchBtn.Location = new System.Drawing.Point(1150, 117);
+            this.MemberSearchBtn.Location = new System.Drawing.Point(1008, 140);
             this.MemberSearchBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MemberSearchBtn.Name = "MemberSearchBtn";
             this.MemberSearchBtn.Size = new System.Drawing.Size(112, 34);
             this.MemberSearchBtn.TabIndex = 8;
-            this.MemberSearchBtn.Text = "Go";
+            this.MemberSearchBtn.Text = "Search";
             this.MemberSearchBtn.UseVisualStyleBackColor = true;
             this.MemberSearchBtn.Click += new System.EventHandler(this.MemberSearchBtn_Click);
+            // 
+            // MemberClearBtn
+            // 
+            this.MemberClearBtn.Location = new System.Drawing.Point(1128, 138);
+            this.MemberClearBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MemberClearBtn.Name = "MemberClearBtn";
+            this.MemberClearBtn.Size = new System.Drawing.Size(112, 34);
+            this.MemberClearBtn.TabIndex = 9;
+            this.MemberClearBtn.Text = "Clear";
+            this.MemberClearBtn.UseVisualStyleBackColor = true;
+            this.MemberClearBtn.Click += new System.EventHandler(this.MemberClearBtn_Click);
             // 
             // MembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1612, 900);
+            this.Controls.Add(this.MemberClearBtn);
             this.Controls.Add(this.MemberSearchBtn);
             this.Controls.Add(this.MembersSearchTB);
-            this.Controls.Add(this.SearchByEmailCheck);
-            this.Controls.Add(this.SearchByIDCheck);
             this.Controls.Add(this.SearchLbl);
             this.Controls.Add(this.EditSelectedMemberBtn);
             this.Controls.Add(this.membersdataGridView);
@@ -182,9 +165,8 @@ namespace GotoGrocery
         private System.Windows.Forms.DataGridView membersdataGridView;
         private System.Windows.Forms.Button EditSelectedMemberBtn;
         private System.Windows.Forms.Label SearchLbl;
-        private System.Windows.Forms.CheckBox SearchByIDCheck;
-        private System.Windows.Forms.CheckBox SearchByEmailCheck;
         private System.Windows.Forms.TextBox MembersSearchTB;
         private System.Windows.Forms.Button MemberSearchBtn;
+        private System.Windows.Forms.Button MemberClearBtn;
     }
 }

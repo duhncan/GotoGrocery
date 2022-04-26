@@ -195,6 +195,20 @@ namespace GotoGrocery
             }
 
         }
+        public DataTable SearchMemberByName(string _name)
+        {
+
+            string fLName = _name;
+            DataTable dtInventory = new DataTable();
+           
+            string query = "SELECT * FROM "+ "members "+"WHERE (Member_FirstName like '%"+ fLName + "%') OR (Member_LastName like '%" + fLName + "%') OR (Member_FirstName + ' ' + Member_LastName like '%" + fLName + "%')";
+           
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtInventory.Load(rdr);
+            return dtInventory;
+
+        }
 
 
         //Inventory Methods
@@ -208,6 +222,20 @@ namespace GotoGrocery
             dtInventory.Load(rdr);
             return dtInventory;
         }
+
+        public DataTable SearchInventoryByName(string _name)
+        {
+
+            string qwe = "'%"+_name+"%'";
+            DataTable dtInventory = new DataTable();
+            string query = "SELECT * FROM inventory WHERE product_name Like " +qwe;
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtInventory.Load(rdr);
+            return dtInventory;
+        
+        }
+
 
         public void InventoryCollection() //Does a full search of the Inventory Table
         {
