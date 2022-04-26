@@ -18,9 +18,10 @@ namespace GotoGrocery
         private string _productsize;
         private int _shelfquantity;
         private int _orderamount;
+        private int _errorcode;
         private Inventory inv;
-
         private InventoryForm _inventoryForm;
+        private DatabaseConnection db;
 
         public AddItemForm()
         {
@@ -32,10 +33,13 @@ namespace GotoGrocery
             InitializeComponent();
             this._inventoryForm = inventoryForm;
             inv = new Inventory();
+            db = new DatabaseConnection();
         }
 
         private void AddItemDetailsBtn_Click(object sender, EventArgs e)
         {
+            _errorcode = inv.validateProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
+
             //Set product name
             _productname = ItemNameTB.Text.ToLower();
 
@@ -46,7 +50,7 @@ namespace GotoGrocery
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Inventory Level is not a valid integer");
+                _errorcode = 2;
 
             }
 
@@ -60,7 +64,7 @@ namespace GotoGrocery
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Shelf Quantity is not a valid integer");
+                _errorcode = 4;
             }
 
             //Set order amount
@@ -70,46 +74,47 @@ namespace GotoGrocery
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Order Amount is not a valid integer");
+                _errorcode = 5;
             }
 
 
-            switch (inv.validateProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount))
+            switch (_errorcode)
             {
                 case 0:
+                    db.AddProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
                     MessageBox.Show("Item added successfully");
-                    Console.WriteLine("Item added successfully");
+                    //Console.WriteLine("Item added successfully");
                     this.Close();
                     break;
 
                 case 1:
                     MessageBox.Show("Product name is not valid");
-                    Console.WriteLine("Product name is not valid");
+                    //Console.WriteLine("Product name is not valid");
                     break;
 
                 case 2:
                     MessageBox.Show("Inventory level is not valid");
-                    Console.WriteLine("Inventory level is not valid");
+                    //Console.WriteLine("Inventory level is not valid");
                     break;
 
                 case 3:
                     MessageBox.Show("Product size is not valid");
-                    Console.WriteLine("Product size is not valid");
+                    //Console.WriteLine("Product size is not valid");
                     break;
 
                 case 4:
                     MessageBox.Show("Shelf quantity is not valid");
-                    Console.WriteLine("Shelf quantity is not valid");
+                    //Console.WriteLine("Shelf quantity is not valid");
                     break;
 
                 case 5:
                     MessageBox.Show("Order amount is not valid");
-                    Console.WriteLine("Order amount is not valid");
+                    //Console.WriteLine("Order amount is not valid");
                     break;
 
                 default:
                     MessageBox.Show("Item could not be added to database");
-                    Console.WriteLine("Item could not be added to database");
+                    //Console.WriteLine("Item could not be added to database");
                     break;
             }
 
