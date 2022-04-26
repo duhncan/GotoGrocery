@@ -7,25 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GotoGrocery.GoToGrocery;
 
 namespace GotoGrocery.Forms.InventoryForms
 {
     public partial class EditItemForm : Form
     {
         private string _productname;
-        private string _inventorylevel;
+        private string _newproductname;
+        private int _inventorylevel;
         private string _productsize;
-        private string _shelfquantity;
-        private string _orderamount;
+        private int _shelfquantity;
+        private int _orderamount;
+        private int _errorcode;
         private List<String> m = new List<string>();
-        InventoryForm _inventoryForm;
+        private Inventory _inventory;
+        private InventoryForm _inventoryForm;
+        private DatabaseConnection db;
        
         public EditItemForm(string id, InventoryForm inv)
         {
-            _inventoryForm = inv;
             InitializeComponent();
-            DatabaseConnection db = new DatabaseConnection();
-
+            db = new DatabaseConnection();
+            _inventory = new Inventory();
+            _inventoryForm = inv;
 
 
             try
@@ -40,18 +45,19 @@ namespace GotoGrocery.Forms.InventoryForms
 
             String ID = m[0];
             _productname = m[1];
-            _inventorylevel = m[2];
+            _inventorylevel = int.Parse(m[2]);
             _productsize = m[3];
-            _shelfquantity = m[4];
-            _orderamount = m[5];
-
+            _shelfquantity = int.Parse(m[4]);
+            _orderamount = int.Parse(m[5]);
 
             ItemIdTB.Text = ID;
             EditItemNameTB.Text = _productname;
-            EditInventoryLevelTB.Text = _inventorylevel;
+            EditInventoryLevelTB.Text = _inventorylevel.ToString();
             EditProdSizeTB.Text = _productsize;
-            EditShelfQtyTB.Text = _shelfquantity;
-            EditOrderAmountTB.Text = _orderamount;
+            EditShelfQtyTB.Text = _shelfquantity.ToString();
+            EditOrderAmountTB.Text = _orderamount.ToString();
+
+
         }
 
 
@@ -63,44 +69,93 @@ namespace GotoGrocery.Forms.InventoryForms
 
         private void AcceptEditItemDetailsBtn_Click(object sender, EventArgs e)
         {
-
+            _errorcode = _inventory.validateProduct(_newproductname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
 
             //Set product name
-            _productname = EditItemNameTB.Text.ToLower();
+            _newproductname = EditItemNameTB.Text.ToLower();
 
             //Set inventory level
-            _inventorylevel = EditInventoryLevelTB.Text;
-
+            try
+            {
+                _inventorylevel = int.Parse(EditInventoryLevelTB.Text);
+            }
+            catch (FormatException)
+            {
+                _errorcode = 2;
+            }
 
             //Set product size
             _productsize = EditProdSizeTB.Text.ToLower();
 
             //Set shelf quantity
-
-            _shelfquantity = EditShelfQtyTB.Text;
-            //int.Parse(ShelfQuantityTB.Text);
-
-
-            //Set order amount ++++try catch example for input verification+++++
             try
             {
-                _orderamount = EditOrderAmountTB.Text;
+                _shelfquantity = int.Parse(EditShelfQtyTB.Text);
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Order Amount is not a valid integer");
+                _errorcode = 4;
             }
-            
-             //+++++++++++change item details here++++++++++++++
 
-           
-            
-            
-            
-            
-            
+            //Set order amount
+            try
+            {
+                _orderamount = int.Parse(EditOrderAmountTB.Text);
+            }
+            catch (FormatException)
+            {
+                _errorcode = 5;
+            }
+
+            switch (_errorcode)
+            {
+                case 0:
+                    //Fields that can be updated: product_name, inventory_level, product_size, shelf_quantity, order_amount
+                    //UpdateProduct(_productname, field to update, value)
+                    db.UpdateProduct(_productname, "product_name", _newproductname);
+                    db.UpdateProduct(_newproductname, "inventory_level", _inventorylevel.ToString()); 
+                    db.UpdateProduct(_newproductname, "product_size", _productsize);
+                    db.UpdateProduct(_newproductname, "shelf_quantity", _shelfquantity.ToString());
+                    db.UpdateProduct(_newproductname, "order_amount", _orderamount.ToString());
+
+                    MessageBox.Show("Item edited successfully");
+                    //Console.WriteLine("Item edited successfully");
+                    this.Close();
+                    break;
+
+                case 1:
+                    MessageBox.Show("Product name is not valid");
+                    //Console.WriteLine("Product name is not valid");
+                    break;
+
+                case 2:
+                    MessageBox.Show("Inventory level is not valid");
+                    //Console.WriteLine("Inventory level is not valid");
+                    break;
+
+                case 3:
+                    MessageBox.Show("Product size is not valid");
+                    //Console.WriteLine("Product size is not valid");
+                    break;
+
+                case 4:
+                    MessageBox.Show("Shelf quantity is not valid");
+                    //Console.WriteLine("Shelf quantity is not valid");
+                    break;
+
+                case 5:
+                    MessageBox.Show("Order amount is not valid");
+                    //Console.WriteLine("Order amount is not valid");
+                    break;
+
+                default:
+                    MessageBox.Show("Item could not be added to database");
+                    //Console.WriteLine("Item could not be added to database");
+                    break;
+            }
+
             //close and Refresh table
-           this.Close();
+            this.Close();
             _inventoryForm.LoadItemIntoTable();
             
 
