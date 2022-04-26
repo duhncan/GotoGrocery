@@ -87,14 +87,9 @@ namespace GotoGrocery
             get => membershipStatus;
             set
             {
-                if (value.ToLower() != "active" || value.ToLower() != "inactive")
-                {
-                    membershipStatus = "";
-                }
-                else
-                {
-                    membershipStatus = value.ToLower();
-                }
+                if(value == "true" || value == "false") { membershipStatus = value.ToLower(); }
+                else { membershipStatus = ""; }
+                
             }
 
         }

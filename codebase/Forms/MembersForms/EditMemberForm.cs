@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace GotoGrocery.Forms.MembersForms
 {
     public partial class EditMemberForm : Form
     {
-        private String _id;
-        private String _fName;
-        private String _lName;
-        private String _DOB;
-        private String _email;
-        private String _phone;
-        private string _status;
-        private string _startDate;
         private MembersForm mf;
-
-        // DateTime startDate = new DateTime(2020, 11, 1);
-
-        // string formattedDate = startDate.ToString("dd/M/yyyy");
 
         public EditMemberForm(String id, MembersForm membersForm)
         {
@@ -32,13 +21,18 @@ namespace GotoGrocery.Forms.MembersForms
             memb = GetMemberFromDB(memb, formattedID);
 
             MemberIdTB.Text = memb.MembID.ToString();
-            EditFNameTB.Text = memb.FName;
-            EditLNameTB.Text = memb.LName;
+            EditFNameTB.Text = Capitalize(memb.FName);
+            EditLNameTB.Text = Capitalize(memb.LName);
             EditDOBInput.Text = memb.Dob;
             EditEmailTB.Text = memb.Email;
             EditPhoneTB.Text = memb.PhoneNo;
             EditdateStartInput.Text = memb.MembershipStartDate;
 
+        }
+
+        private string Capitalize(string word)
+        {
+            return word.Substring(0, 1).ToUpper() + word.Substring(1).ToLower();
         }
 
         private Members GetMemberFromDB(Members member, int id)
@@ -54,28 +48,18 @@ namespace GotoGrocery.Forms.MembersForms
             member.Dob = m[3];
             member.PhoneNo = m[4];
             member.Email = m[5];
-            member.MembershipStatus = m[6];
+            member.MembershipStatus = m[6].ToLower();
             member.MembershipStartDate = m[7];
 
             // Membership Status Logic
-            if (member.MembershipStatus == "True")
+            if (member.MembershipStatus == "true")
             {
                 StatusTrueCheck.Checked = true;
-                StatusFalseCheck.Checked = false;
             }
-            else
+            else if (member.MembershipStatus == "false")
             {
-                StatusTrueCheck.Checked = false;
                 StatusFalseCheck.Checked = true;
             }
-
-            //YMD
-            //++++++++++++++++++++++++++++++++++++++++++++++TODO - dates+++++++++++++++++++++++++++++++
-            //DateTime dob = new DateTime(2000, 11, 1);
-            //string formattedDOB = dob.ToString("dd/M/yyyy");
-            // DateTime startDate = new DateTime(2020, 11, 1);
-
-            // string formattedDate = startDate.ToString("dd/M/yyyy");
 
             return member;
         }
@@ -98,8 +82,10 @@ namespace GotoGrocery.Forms.MembersForms
             memb.Email = EditEmailTB.Text;
             memb.PhoneNo = EditPhoneTB.Text;
             memb.MembershipStartDate = EditdateStartInput.Text;
-            // Membership Status Logic
-            if (StatusTrueCheck.Checked == true && StatusTrueCheck.Checked == false)
+            memb.MembershipStatus = "true";
+
+            //Membership Status Logic
+            if (StatusTrueCheck.Checked == true)
                 memb.MembershipStatus = "true";
             else
                 memb.MembershipStatus = "false";
@@ -110,7 +96,7 @@ namespace GotoGrocery.Forms.MembersForms
             if (!IsBitSet(pass, 0)) { errorMsg += "\nID Invalid"; }
             if (!IsBitSet(pass, 1)) { errorMsg += "\nFirst Name Invalid"; }
             if (!IsBitSet(pass, 2)) { errorMsg += "\nLast Name Invalid"; }
-            if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; }
+            //if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; } Email Validation not needed at is used as first point of reference and validated upon adding
             if (!IsBitSet(pass, 4)) { errorMsg += "\nMembership Status Name Invalid"; }
             if (!IsBitSet(pass, 5)) { errorMsg += "\nPhone Number Invalid"; }
             if (!IsBitSet(pass, 6)) { errorMsg += "\nDoB Invalid"; }
@@ -123,28 +109,21 @@ namespace GotoGrocery.Forms.MembersForms
             bool passDB = false;
             passDB = db.UpdateMember(memb.Email, "Member_FirstName", memb.FName);
             passDB = db.UpdateMember(memb.Email, "Member_LastName", memb.LName);
-            //passDB = db.UpdateMember(memb.Email, "Member_DOB", memb.Dob);
-            passDB = db.UpdateMember(memb.Email, "Member_DOB", "2000-10-19");
+            passDB = db.UpdateMember(memb.Email, "Member_DOB", datefix(memb.Dob));
             passDB = db.UpdateMember(memb.Email, "Member_phoneNumber", memb.PhoneNo);
-            //passDB = db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
-            passDB = db.UpdateMember(memb.Email, "Member_StartDate", "2000-10-19");
-
-            //if(memb.MembershipStatus == "true") passDB = db.UpdateMember(memb.Email, "Member_Status", "true");
-
-
-
-            //bool passDB = db.AddMember(memb.FName, memb.LName, "2000-12-19", memb.PhoneNo, memb.Email, "2000-12-19");
+            passDB = db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
+            passDB = db.UpdateMember(memb.Email, "Member_StartDate", datefix(memb.MembershipStartDate));
 
             // Error Messages
             if (errorMsg != "")
             {
-                MessageBox.Show(errorMsg + "\n" + pass);
+                MessageBox.Show(errorMsg + "\n" + Convert.ToString(pass, 2));
                 Console.WriteLine(errorMsg);
             }
             else if (passDB)
             {
-                MessageBox.Show("Member added successfully!");
-                Console.WriteLine("Member added successfully!");
+                MessageBox.Show("Member edited successfully!");
+                Console.WriteLine("Member edited successfully!");
                 this.Close();
                 mf.LoadMembersIntoTable();
             }
@@ -181,10 +160,13 @@ namespace GotoGrocery.Forms.MembersForms
         //ahhhhhhhhhhhhh
         private string datefix(string givenDate)
         {
-            // DateTime startDate = new DateTime(2020, 11, 1);
-            // string formattedDate = startDate.ToString("dd/M/yyyy");
             string[] split = givenDate.Split('/');
-            return split[2] + "-" + split[0] + "-" + split[1];
+            return split[2] + "-" + split[1] + "-" + split[0];
+        }
+
+        private void StatusTrueCheck_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

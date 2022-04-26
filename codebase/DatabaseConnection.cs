@@ -176,12 +176,19 @@ namespace GotoGrocery
             {
                 if (update == "Member_Status")
                 {
+
+                    bool status = false;
+                    if (value == "true")
+                        status = true;
+
                     string query = "UPDATE members"
-                                + " SET " + update + " = " + value
-                                + " WHERE Member_Email = " + "'" + email + "'";
+                                    + " SET " + update + " = " + status
+                                    + " WHERE Member_Email = " + "'" + email + "'";
+
                     MySqlCommand cmd = new MySqlCommand(query, Connect);
                     cmd.ExecuteNonQuery();
                     return true;
+
                 }
                 else
                 {
