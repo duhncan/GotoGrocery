@@ -14,7 +14,7 @@ namespace GotoGrocery
 {
     public partial class MembersForm : Form
     {
-        List<String> m; 
+        List<String> m;
 
         public MembersForm()
         {
@@ -22,10 +22,9 @@ namespace GotoGrocery
             Grid_Load();
             LoadMembersIntoTable();
         }
-
+        DatabaseConnection db = new DatabaseConnection();
         //member table creation
         DataTable dt = new DataTable();
-        DataColumn dcRowString;
         //method to load table
 
         private void Grid_Load()
@@ -40,7 +39,7 @@ namespace GotoGrocery
             dt.Columns.Add("ContactNumber");
             dt.Columns.Add("Start-Date");
             dt.Columns.Add("Status");
-             dcRowString = dt.Columns.Add("_RowString", typeof(string));
+
             membersdataGridView.DataSource = dt;
 
         }
@@ -48,21 +47,35 @@ namespace GotoGrocery
         {
             DatabaseConnection db = new DatabaseConnection();
             membersdataGridView.DataSource = db.GetMembersList();
-            foreach (DataRow dataRow in dt.Rows)
+
+        }
+       
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if ((this.ActiveControl == MembersSearchTB) && (keyData == Keys.Return))
+        //    {
+        //        //do something
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return base.ProcessCmdKey(ref msg, keyData);
+        //    }
+          
+        
+
+        private void Tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < dt.Columns.Count - 1; i++)
-                {
-                    sb.Append(dataRow[i].ToString());
-                    sb.Append("\t");
-                }
-                dataRow[dcRowString] = sb.ToString();
+                //enter key is down
+                String name = MembersSearchTB.Text;
+                membersdataGridView.DataSource = db.SearchMemberByName(name);
             }
         }
-        private void MembersSearchTB_TextChanged(object sender, EventArgs e)
-        {
-            dt.DefaultView.RowFilter = string.Format("[_RowString] LIKE '%{0}%'", MembersSearchTB.Text);
-        }
+
+
+
 
         private void AddMemberBtn_Click(object sender, EventArgs e)
         {
@@ -75,7 +88,7 @@ namespace GotoGrocery
         private void EditSelectedMemberBtn_Click(object sender, EventArgs e)
         {
             string id = "";
-             m = new List<string>();
+            m = new List<string>();
             foreach (DataGridViewRow row in membersdataGridView.SelectedRows)
             {
 
@@ -87,16 +100,8 @@ namespace GotoGrocery
             //open edit form
             if (id != null)
             {
-                
-                DatabaseConnection db = new DatabaseConnection();
-              
                 m = db.MembertoString(11);
-
-
-
-
-
-                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(id,this);
+                Forms.MembersForms.EditMemberForm f = new Forms.MembersForms.EditMemberForm(id, this);
                 f.Show();
 
             }
@@ -110,32 +115,17 @@ namespace GotoGrocery
 
         private void MemberSearchBtn_Click(object sender, EventArgs e)
         {
-            if (SearchByIDCheck.Checked)
-            {
-                String ID = MembersSearchTB.Text;
 
-                /*           TODO
-                 *+++++++++++++++++++++++++++ 
-                 
-                //getMemberById()
-                //method to update table
-                +++++++++++++++++++++++++++++++
-                */
-            }
-        }
-
-        private void StatusIDCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            SearchByIDCheck.Checked = true;
-            SearchByEmailCheck.Checked = false;
+            String name = MembersSearchTB.Text;
+            membersdataGridView.DataSource = db.SearchMemberByName(name);
 
         }
 
-        private void StatusEmailCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            SearchByIDCheck.Checked = false;
-            SearchByEmailCheck.Checked = true;
 
+        private void MemberClearBtn_Click(object sender, EventArgs e)
+        {
+            MembersSearchTB.Text = "";
+            membersdataGridView.DataSource = db.GetMembersList();
         }
     }
 }

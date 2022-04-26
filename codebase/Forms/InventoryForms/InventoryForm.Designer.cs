@@ -33,6 +33,10 @@ namespace GotoGrocery
             this.InventorydataGridView = new System.Windows.Forms.DataGridView();
             this.EditSelectedItemBtn = new System.Windows.Forms.Button();
             this.inventoryTitle = new System.Windows.Forms.Label();
+            this.SearchProdLbl = new System.Windows.Forms.Label();
+            this.ItemSearchTB = new System.Windows.Forms.TextBox();
+            this.ItemSearchBtn = new System.Windows.Forms.Button();
+            this.InvClearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InventorydataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +88,53 @@ namespace GotoGrocery
             this.inventoryTitle.TabIndex = 5;
             this.inventoryTitle.Text = "Inventory";
             // 
+            // SearchProdLbl
+            // 
+            this.SearchProdLbl.AutoSize = true;
+            this.SearchProdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchProdLbl.Location = new System.Drawing.Point(528, 116);
+            this.SearchProdLbl.Name = "SearchProdLbl";
+            this.SearchProdLbl.Size = new System.Drawing.Size(183, 22);
+            this.SearchProdLbl.TabIndex = 6;
+            this.SearchProdLbl.Text = "Search Product name";
+            // 
+            // ItemSearchTB
+            // 
+            this.ItemSearchTB.Location = new System.Drawing.Point(532, 150);
+            this.ItemSearchTB.Name = "ItemSearchTB";
+            this.ItemSearchTB.Size = new System.Drawing.Size(485, 26);
+            this.ItemSearchTB.TabIndex = 7;
+            this.ItemSearchTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_KeyDown);
+            // 
+            // ItemSearchBtn
+            // 
+            this.ItemSearchBtn.Location = new System.Drawing.Point(1023, 146);
+            this.ItemSearchBtn.Name = "ItemSearchBtn";
+            this.ItemSearchBtn.Size = new System.Drawing.Size(75, 34);
+            this.ItemSearchBtn.TabIndex = 8;
+            this.ItemSearchBtn.Text = "Search";
+            this.ItemSearchBtn.UseVisualStyleBackColor = true;
+            this.ItemSearchBtn.Click += new System.EventHandler(this.ItemSearchBtn_Click);
+            // 
+            // InvClearBtn
+            // 
+            this.InvClearBtn.Location = new System.Drawing.Point(1113, 146);
+            this.InvClearBtn.Name = "InvClearBtn";
+            this.InvClearBtn.Size = new System.Drawing.Size(75, 34);
+            this.InvClearBtn.TabIndex = 9;
+            this.InvClearBtn.Text = "Clear";
+            this.InvClearBtn.UseVisualStyleBackColor = true;
+            this.InvClearBtn.Click += new System.EventHandler(this.InvClearBtn_Click);
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1373, 769);
+            this.Controls.Add(this.InvClearBtn);
+            this.Controls.Add(this.ItemSearchBtn);
+            this.Controls.Add(this.ItemSearchTB);
+            this.Controls.Add(this.SearchProdLbl);
             this.Controls.Add(this.inventoryTitle);
             this.Controls.Add(this.EditSelectedItemBtn);
             this.Controls.Add(this.InventorydataGridView);
@@ -107,5 +153,9 @@ namespace GotoGrocery
         private System.Windows.Forms.DataGridView InventorydataGridView;
         private System.Windows.Forms.Button EditSelectedItemBtn;
         private System.Windows.Forms.Label inventoryTitle;
+        private System.Windows.Forms.Label SearchProdLbl;
+        private System.Windows.Forms.TextBox ItemSearchTB;
+        private System.Windows.Forms.Button ItemSearchBtn;
+        private System.Windows.Forms.Button InvClearBtn;
     }
 }
