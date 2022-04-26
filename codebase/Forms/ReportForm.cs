@@ -21,37 +21,8 @@ namespace GotoGrocery.Forms
 
         private void SaveReport_Click(object sender, EventArgs e)
         {
-            /*//OpenFileDialog ofd = new OpenFileDialog();
-
-            //ofd.Filter = "Text file(*.txt)|*.txt";
-
-
-            //if (ofd.ShowDialog() == DialogResult.OK)
-            //{
-            //    string dirLocationString = ofd.FileName;
-            //}
-
-            string selectedPath = "";
-
-            Thread t = new Thread((ThreadStart)(() => {
-                FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog();
-
-                // saveFileDialog1.Filter = "Text file(*.txt)|*.txt";
-                //  saveFileDialog1.FilterIndex = 2;
-               // FolderBrowserDialog.RestoreDirectory = true;
-
-                if (FolderBrowserDialog.ShowDialog() == DialogResult.OK)
-                {
-                    selectedPath = FolderBrowserDialog.SelectedPath;
-                }
-            }));
-                
-            // Run your code from a thread that joins the STA Thread
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
-            t.Join();
-            */
             db.ExportInventoryReport();
+            MessageBox.Show("Export successful");
         }
     }
 }
