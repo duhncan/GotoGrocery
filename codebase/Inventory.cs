@@ -16,8 +16,6 @@ namespace GotoGrocery
     {
         class Inventory
         {
-            private DatabaseConnection db;
-
             public Inventory()
             {
                 
@@ -25,8 +23,6 @@ namespace GotoGrocery
 
             public int validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
             {
-                DatabaseConnection db = new DatabaseConnection();
-
                 //check strings not empty and counts not less than or equal to zero
                 if (_productname == "")
                 {
