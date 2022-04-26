@@ -55,32 +55,26 @@ namespace GotoGrocery.Forms.MembersForms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(304, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 30);
-=======
             this.label1.Location = new System.Drawing.Point(228, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 25);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.label1.TabIndex = 0;
             this.label1.Text = "Edit Member information";
             // 
             // CancelEditMemberBtn
             // 
-<<<<<<< HEAD
             this.CancelEditMemberBtn.Location = new System.Drawing.Point(112, 727);
             this.CancelEditMemberBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CancelEditMemberBtn.Name = "CancelEditMemberBtn";
             this.CancelEditMemberBtn.Size = new System.Drawing.Size(114, 42);
-=======
             this.CancelEditMemberBtn.Location = new System.Drawing.Point(84, 582);
             this.CancelEditMemberBtn.Name = "CancelEditMemberBtn";
             this.CancelEditMemberBtn.Size = new System.Drawing.Size(86, 34);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.CancelEditMemberBtn.TabIndex = 24;
             this.CancelEditMemberBtn.Text = "Cancel";
             this.CancelEditMemberBtn.UseVisualStyleBackColor = true;
@@ -88,16 +82,13 @@ namespace GotoGrocery.Forms.MembersForms
             // 
             // AcceptEditMemberDetailsBtn
             // 
-<<<<<<< HEAD
             this.AcceptEditMemberDetailsBtn.Location = new System.Drawing.Point(680, 727);
             this.AcceptEditMemberDetailsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AcceptEditMemberDetailsBtn.Name = "AcceptEditMemberDetailsBtn";
             this.AcceptEditMemberDetailsBtn.Size = new System.Drawing.Size(128, 42);
-=======
             this.AcceptEditMemberDetailsBtn.Location = new System.Drawing.Point(510, 582);
             this.AcceptEditMemberDetailsBtn.Name = "AcceptEditMemberDetailsBtn";
             this.AcceptEditMemberDetailsBtn.Size = new System.Drawing.Size(96, 34);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.AcceptEditMemberDetailsBtn.TabIndex = 23;
             this.AcceptEditMemberDetailsBtn.Text = "Accept";
             this.AcceptEditMemberDetailsBtn.UseVisualStyleBackColor = true;
@@ -106,234 +97,189 @@ namespace GotoGrocery.Forms.MembersForms
             // EditDOBInput
             // 
             this.EditDOBInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-<<<<<<< HEAD
             this.EditDOBInput.Location = new System.Drawing.Point(310, 363);
             this.EditDOBInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditDOBInput.Name = "EditDOBInput";
             this.EditDOBInput.Size = new System.Drawing.Size(184, 31);
-=======
             this.EditDOBInput.Location = new System.Drawing.Point(232, 291);
             this.EditDOBInput.Name = "EditDOBInput";
             this.EditDOBInput.Size = new System.Drawing.Size(139, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditDOBInput.TabIndex = 22;
             // 
             // EditEmailTB
             // 
-<<<<<<< HEAD
             this.EditEmailTB.Location = new System.Drawing.Point(310, 496);
             this.EditEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditEmailTB.Name = "EditEmailTB";
             this.EditEmailTB.Size = new System.Drawing.Size(494, 31);
-=======
             this.EditEmailTB.Location = new System.Drawing.Point(232, 397);
             this.EditEmailTB.Name = "EditEmailTB";
             this.EditEmailTB.Size = new System.Drawing.Size(372, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditEmailTB.TabIndex = 21;
             // 
             // EditPhoneTB
             // 
-<<<<<<< HEAD
             this.EditPhoneTB.Location = new System.Drawing.Point(310, 423);
             this.EditPhoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditPhoneTB.Name = "EditPhoneTB";
             this.EditPhoneTB.Size = new System.Drawing.Size(284, 31);
-=======
             this.EditPhoneTB.Location = new System.Drawing.Point(232, 338);
             this.EditPhoneTB.Name = "EditPhoneTB";
             this.EditPhoneTB.Size = new System.Drawing.Size(214, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditPhoneTB.TabIndex = 20;
             // 
             // EditLNameTB
             // 
-<<<<<<< HEAD
             this.EditLNameTB.Location = new System.Drawing.Point(310, 310);
             this.EditLNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditLNameTB.Name = "EditLNameTB";
             this.EditLNameTB.Size = new System.Drawing.Size(494, 31);
-=======
             this.EditLNameTB.Location = new System.Drawing.Point(232, 248);
             this.EditLNameTB.Name = "EditLNameTB";
             this.EditLNameTB.Size = new System.Drawing.Size(372, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditLNameTB.TabIndex = 19;
             // 
             // EditFNameTB
             // 
-<<<<<<< HEAD
             this.EditFNameTB.Location = new System.Drawing.Point(310, 242);
             this.EditFNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditFNameTB.Name = "EditFNameTB";
             this.EditFNameTB.Size = new System.Drawing.Size(494, 31);
-=======
             this.EditFNameTB.Location = new System.Drawing.Point(232, 194);
             this.EditFNameTB.Name = "EditFNameTB";
             this.EditFNameTB.Size = new System.Drawing.Size(372, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditFNameTB.TabIndex = 18;
             // 
             // EditEmailLbl
             // 
             this.EditEmailLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditEmailLbl.Location = new System.Drawing.Point(124, 496);
             this.EditEmailLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditEmailLbl.Name = "EditEmailLbl";
             this.EditEmailLbl.Size = new System.Drawing.Size(65, 25);
-=======
             this.EditEmailLbl.Location = new System.Drawing.Point(93, 397);
             this.EditEmailLbl.Name = "EditEmailLbl";
             this.EditEmailLbl.Size = new System.Drawing.Size(48, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditEmailLbl.TabIndex = 17;
             this.EditEmailLbl.Text = "Email";
             // 
             // EditPhoneLbl
             // 
             this.EditPhoneLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditPhoneLbl.Location = new System.Drawing.Point(106, 423);
             this.EditPhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditPhoneLbl.Name = "EditPhoneLbl";
             this.EditPhoneLbl.Size = new System.Drawing.Size(107, 25);
-=======
             this.EditPhoneLbl.Location = new System.Drawing.Point(80, 338);
             this.EditPhoneLbl.Name = "EditPhoneLbl";
             this.EditPhoneLbl.Size = new System.Drawing.Size(79, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditPhoneLbl.TabIndex = 16;
             this.EditPhoneLbl.Text = "Phone No";
             // 
             // EditDOBLbl
             // 
             this.EditDOBLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditDOBLbl.Location = new System.Drawing.Point(124, 369);
             this.EditDOBLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditDOBLbl.Name = "EditDOBLbl";
             this.EditDOBLbl.Size = new System.Drawing.Size(69, 25);
-=======
             this.EditDOBLbl.Location = new System.Drawing.Point(93, 295);
             this.EditDOBLbl.Name = "EditDOBLbl";
             this.EditDOBLbl.Size = new System.Drawing.Size(52, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditDOBLbl.TabIndex = 15;
             this.EditDOBLbl.Text = "D.O.B";
             // 
             // EditLNameLbl
             // 
             this.EditLNameLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditLNameLbl.Location = new System.Drawing.Point(106, 310);
             this.EditLNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditLNameLbl.Name = "EditLNameLbl";
             this.EditLNameLbl.Size = new System.Drawing.Size(115, 25);
-=======
             this.EditLNameLbl.Location = new System.Drawing.Point(80, 248);
             this.EditLNameLbl.Name = "EditLNameLbl";
             this.EditLNameLbl.Size = new System.Drawing.Size(86, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditLNameLbl.TabIndex = 14;
             this.EditLNameLbl.Text = "Last Name";
             // 
             // EditFnameLbl
             // 
             this.EditFnameLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditFnameLbl.Location = new System.Drawing.Point(106, 242);
             this.EditFnameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditFnameLbl.Name = "EditFnameLbl";
             this.EditFnameLbl.Size = new System.Drawing.Size(116, 25);
-=======
             this.EditFnameLbl.Location = new System.Drawing.Point(80, 194);
             this.EditFnameLbl.Name = "EditFnameLbl";
             this.EditFnameLbl.Size = new System.Drawing.Size(86, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditFnameLbl.TabIndex = 13;
             this.EditFnameLbl.Text = "First Name";
             // 
             // EditIdLbl
             // 
             this.EditIdLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditIdLbl.Location = new System.Drawing.Point(102, 167);
             this.EditIdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditIdLbl.Name = "EditIdLbl";
             this.EditIdLbl.Size = new System.Drawing.Size(142, 25);
-=======
             this.EditIdLbl.Location = new System.Drawing.Point(76, 134);
             this.EditIdLbl.Name = "EditIdLbl";
             this.EditIdLbl.Size = new System.Drawing.Size(105, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditIdLbl.TabIndex = 25;
             this.EditIdLbl.Text = "ID (read-only)";
             // 
             // MemberIdTB
             // 
-<<<<<<< HEAD
             this.MemberIdTB.Location = new System.Drawing.Point(310, 162);
             this.MemberIdTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MemberIdTB.Name = "MemberIdTB";
             this.MemberIdTB.ReadOnly = true;
             this.MemberIdTB.Size = new System.Drawing.Size(494, 31);
-=======
             this.MemberIdTB.Location = new System.Drawing.Point(232, 129);
             this.MemberIdTB.Name = "MemberIdTB";
             this.MemberIdTB.ReadOnly = true;
             this.MemberIdTB.Size = new System.Drawing.Size(372, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.MemberIdTB.TabIndex = 26;
             // 
             // EditMemberStartDateLbl
             // 
             this.EditMemberStartDateLbl.AutoSize = true;
-<<<<<<< HEAD
             this.EditMemberStartDateLbl.Location = new System.Drawing.Point(106, 565);
             this.EditMemberStartDateLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.EditMemberStartDateLbl.Name = "EditMemberStartDateLbl";
             this.EditMemberStartDateLbl.Size = new System.Drawing.Size(138, 25);
-=======
             this.EditMemberStartDateLbl.Location = new System.Drawing.Point(50, 452);
             this.EditMemberStartDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditMemberStartDateLbl.Name = "EditMemberStartDateLbl";
             this.EditMemberStartDateLbl.Size = new System.Drawing.Size(145, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditMemberStartDateLbl.TabIndex = 27;
             this.EditMemberStartDateLbl.Text = "Member Start Date";
             // 
             // MemberStatusLbl
             // 
             this.MemberStatusLbl.AutoSize = true;
-<<<<<<< HEAD
             this.MemberStatusLbl.Location = new System.Drawing.Point(106, 640);
             this.MemberStatusLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MemberStatusLbl.Name = "MemberStatusLbl";
             this.MemberStatusLbl.Size = new System.Drawing.Size(154, 25);
-=======
             this.MemberStatusLbl.Location = new System.Drawing.Point(80, 512);
             this.MemberStatusLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MemberStatusLbl.Name = "MemberStatusLbl";
             this.MemberStatusLbl.Size = new System.Drawing.Size(115, 20);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.MemberStatusLbl.TabIndex = 29;
             this.MemberStatusLbl.Text = "Member status";
             // 
             // StatusTrueCheck
             // 
             this.StatusTrueCheck.AutoSize = true;
-<<<<<<< HEAD
             this.StatusTrueCheck.Location = new System.Drawing.Point(310, 638);
             this.StatusTrueCheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.StatusTrueCheck.Name = "StatusTrueCheck";
             this.StatusTrueCheck.Size = new System.Drawing.Size(88, 29);
-=======
             this.StatusTrueCheck.Location = new System.Drawing.Point(232, 511);
             this.StatusTrueCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StatusTrueCheck.Name = "StatusTrueCheck";
             this.StatusTrueCheck.Size = new System.Drawing.Size(67, 24);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.StatusTrueCheck.TabIndex = 30;
             this.StatusTrueCheck.Text = "True";
             this.StatusTrueCheck.UseVisualStyleBackColor = true;
@@ -343,17 +289,14 @@ namespace GotoGrocery.Forms.MembersForms
             // StatusFalseCheck
             // 
             this.StatusFalseCheck.AutoSize = true;
-<<<<<<< HEAD
             this.StatusFalseCheck.Location = new System.Drawing.Point(526, 638);
             this.StatusFalseCheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.StatusFalseCheck.Name = "StatusFalseCheck";
             this.StatusFalseCheck.Size = new System.Drawing.Size(97, 29);
-=======
             this.StatusFalseCheck.Location = new System.Drawing.Point(394, 511);
             this.StatusFalseCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StatusFalseCheck.Name = "StatusFalseCheck";
             this.StatusFalseCheck.Size = new System.Drawing.Size(74, 24);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.StatusFalseCheck.TabIndex = 31;
             this.StatusFalseCheck.Text = "False";
             this.StatusFalseCheck.UseVisualStyleBackColor = true;
@@ -362,29 +305,23 @@ namespace GotoGrocery.Forms.MembersForms
             // EditdateStartInput
             // 
             this.EditdateStartInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-<<<<<<< HEAD
             this.EditdateStartInput.Location = new System.Drawing.Point(310, 565);
             this.EditdateStartInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditdateStartInput.Name = "EditdateStartInput";
             this.EditdateStartInput.Size = new System.Drawing.Size(184, 31);
-=======
             this.EditdateStartInput.Location = new System.Drawing.Point(232, 452);
             this.EditdateStartInput.Name = "EditdateStartInput";
             this.EditdateStartInput.Size = new System.Drawing.Size(139, 26);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.EditdateStartInput.TabIndex = 32;
             // 
             // EditMemberForm
             // 
-<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 865);
-=======
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 692);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.Controls.Add(this.EditdateStartInput);
             this.Controls.Add(this.StatusFalseCheck);
             this.Controls.Add(this.StatusTrueCheck);
@@ -406,11 +343,8 @@ namespace GotoGrocery.Forms.MembersForms
             this.Controls.Add(this.EditFnameLbl);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-=======
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
->>>>>>> b5058f364e727a5604424b3f9efa6c1bd456ef92
             this.Name = "EditMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMemberForm";
