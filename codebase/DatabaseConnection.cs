@@ -17,7 +17,7 @@ namespace GotoGrocery
             string _server = "localhost";
             string _database = "grotogodb";
             string _username = "root";
-            string _password = "student85";
+            string _password = "Password";
 
             string _connectionString = "SERVER=" + _server + ";" + "DATABASE=" + _database + ";" +
                 "UID=" + _username + ";" + "PASSWORD=" + _password + ";";
