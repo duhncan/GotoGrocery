@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\GoTo_Gro\\GotoGrocery\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
+    "C:\\Users\\duhnc\\Desktop\\MSP\\FixingPullRequests\\GotoGrocery\\codebase\\GotoGrocery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\GoTo_Gro\\GotoGrocery\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
+    "C:\\Users\\duhnc\\Desktop\\MSP\\FixingPullRequests\\GotoGrocery\\codebase\\GotoGrocery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\GoTo_Gro\\GotoGrocery\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "projectUniqueName": "C:\\Users\\duhnc\\Desktop\\MSP\\FixingPullRequests\\GotoGrocery\\codebase\\GotoGrocery.csproj",
         "projectName": "GotoGrocery",
-        "projectPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\GoTo_Gro\\GotoGrocery\\GotoGrocery\\codebase\\GotoGrocery.csproj",
-        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\GoTo_Gro\\GotoGrocery\\GotoGrocery\\codebase\\obj\\",
+        "projectPath": "C:\\Users\\duhnc\\Desktop\\MSP\\FixingPullRequests\\GotoGrocery\\codebase\\GotoGrocery.csproj",
+        "packagesPath": "C:\\Users\\duhnc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\duhnc\\Desktop\\MSP\\FixingPullRequests\\GotoGrocery\\codebase\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\duhnc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

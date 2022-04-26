@@ -176,12 +176,19 @@ namespace GotoGrocery
             {
                 if (update == "Member_Status")
                 {
+
+                    bool status = false;
+                    if (value == "true")
+                        status = true;
+
                     string query = "UPDATE members"
-                                + " SET " + update + " = " + value
-                                + " WHERE Member_Email = " + "'" + email + "'";
+                                    + " SET " + update + " = " + status
+                                    + " WHERE Member_Email = " + "'" + email + "'";
+
                     MySqlCommand cmd = new MySqlCommand(query, Connect);
                     cmd.ExecuteNonQuery();
                     return true;
+
                 }
                 else
                 {
@@ -193,6 +200,20 @@ namespace GotoGrocery
                     return true;
                 }
             }
+
+        }
+        public DataTable SearchMemberByName(string _name)
+        {
+
+            string fLName = _name;
+            DataTable dtInventory = new DataTable();
+           
+            string query = "SELECT * FROM "+ "members "+"WHERE (Member_FirstName like '%"+ fLName + "%') OR (Member_LastName like '%" + fLName + "%') OR (Member_FirstName + ' ' + Member_LastName like '%" + fLName + "%')";
+           
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtInventory.Load(rdr);
+            return dtInventory;
 
         }
 
@@ -208,6 +229,20 @@ namespace GotoGrocery
             dtInventory.Load(rdr);
             return dtInventory;
         }
+
+        public DataTable SearchInventoryByName(string _name)
+        {
+
+            string qwe = "'%"+_name+"%'";
+            DataTable dtInventory = new DataTable();
+            string query = "SELECT * FROM inventory WHERE product_name Like " +qwe;
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            dtInventory.Load(rdr);
+            return dtInventory;
+        
+        }
+
 
         public void InventoryCollection() //Does a full search of the Inventory Table
         {

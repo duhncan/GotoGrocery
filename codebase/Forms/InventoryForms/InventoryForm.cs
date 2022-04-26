@@ -14,6 +14,8 @@ namespace GotoGrocery
 {
     public partial class InventoryForm : Form
     {
+        DatabaseConnection db = new DatabaseConnection();
+
         public InventoryForm()
         {
             InitializeComponent();
@@ -31,8 +33,8 @@ namespace GotoGrocery
         }
         //inventory table creation
         DataTable dt = new DataTable();
+        
         //method to load table
-
         private void Grid_Load()
         {
             dt.Columns.Add("ID");
@@ -47,7 +49,6 @@ namespace GotoGrocery
         }
         public void LoadItemIntoTable()
         {
-            DatabaseConnection db = new DatabaseConnection();
             //get inventory from db
             InventorydataGridView.DataSource = db.GetInventoryList();
         }
@@ -75,6 +76,28 @@ namespace GotoGrocery
             }
 
 
+        }
+        private void Tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //enter key is down
+                String name = ItemSearchTB.Text;
+                InventorydataGridView.DataSource = db.SearchInventoryByName(name);
+            }
+        }
+
+        private void ItemSearchBtn_Click(object sender, EventArgs e)
+        {
+            String search = ItemSearchTB.Text;
+            InventorydataGridView.DataSource = db.SearchInventoryByName(search);
+
+        }
+
+        private void InvClearBtn_Click(object sender, EventArgs e)
+        {
+            ItemSearchTB.Text = "";
+            InventorydataGridView.DataSource = db.GetInventoryList();
         }
     }
 }
