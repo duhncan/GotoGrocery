@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+## GotoGrocery Documentation
 
-You can use the [editor on GitHub](https://github.com/duhncan/GotoGrocery/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+On this webpage, you will find all the documentation about the GotoGrocery API and Documentation.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Introduction
+This program is written in C#. The team has collaborated on the project in Visual Studio (VS) Community and all VS Solutions are included within the repository for convenience.
 
-### Markdown
+### Prerequisites
+In order for this application to work, it must be able to contact a MySQL server with all the database information being stored there. For testing purposes, MySQL Workbench was run and simulated in order to design this application. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Usage
+This section will detail how to use the application.
 
-```markdown
-Syntax highlighted code block
+### Member Class
+#### Methods
+The methods for this class are as follows:
+- Method 1: Something
+  - This is to do with this...
+- Method 1: Something
+  - This is to do with this...
+##### Validation
+The validation method returns a binary value with each bit representing whether validation has passed or failed for a specific property of the class. The relation of bit to property is as follows:
+- Bit 0: NA
+- Bit 1: First Name
+- Bit 2: Last Name
+- Bit 3: Phone Number
+- Bit 4: Membership Status
+- Bit 5: Membership Start Date
+- Bit 6: NA
+- Bit 7: NA
+If any of the bits are not returned as a "1" or set high, then it is the programmer's job to rectify the issue. 
 
-# Header 1
-## Header 2
-### Header 3
+#### Properties
+All properties within the Member Class are able to get and set. No validation occurs when setting and the validation method must be called to check for the respective validity of set variable.
+- Property 1: Something
+  - This is to do with this...
+- Property 1: Something
+  - This is to do with this...
+### Inventory Class
 
-- Bulleted
-- List
+### Database Class
 
-1. Numbered
-2. List
+### GUI Class
+Forms
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/duhncan/GotoGrocery/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### Markdown Help (Internal)
+This files are written in markdown so if you need any help with syntax: see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
