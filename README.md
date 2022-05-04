@@ -14,5 +14,8 @@ The team behind this project are as follows:
 # Usage
 To be continued...
 
+For any extra information, see the documentation section below.
+
 # Documentation 
-To be continued...
+
+All the documentation for this application is detailed in the webpage [here](https://duhncan.github.io/GotoGrocery/)
