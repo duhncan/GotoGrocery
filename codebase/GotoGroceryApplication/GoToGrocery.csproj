@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DD758EE-509A-4DC1-9C13-7BE2967ACAD5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GotoGrocery</RootNamespace>
+    <AssemblyName>GotoGrocery</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\InventorySystem.exe.config" />
+    <None Include="obj\GotoGrocery.csproj.nuget.dgspec.json" />
+    <None Include="obj\GotoGrocery.csproj.nuget.g.props" />
+    <None Include="obj\GotoGrocery.csproj.nuget.g.targets" />
+    <None Include="obj\project.assets.json" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="packages\Syncfusion.Licensing.20.1.0.47\.signature.p7s" />
+    <None Include="packages\Syncfusion.Licensing.20.1.0.47\Syncfusion.Licensing.20.1.0.47.nupkg" />
+    <None Include="packages\Syncfusion.Shared.Base.20.1.0.47\.signature.p7s" />
+    <None Include="packages\Syncfusion.Shared.Base.20.1.0.47\README.md" />
+    <None Include="packages\Syncfusion.Shared.Base.20.1.0.47\Syncfusion.Shared.Base.20.1.0.47.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="ExportReport.cs" />
+    <Compile Include="Forms\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\AddItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\AddItemForm.Designer.cs">
+      <DependentUpon>AddItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\EditItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\EditItemForm.Designer.cs">
+      <DependentUpon>EditItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\InventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForms\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MembersForms\AddMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MembersForms\AddMemberForm.Designer.cs">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MembersForms\EditMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MembersForms\EditMemberForm.Designer.cs">
+      <DependentUpon>EditMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MembersForms\MembersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MembersForms\MembersForm.Designer.cs">
+      <DependentUpon>MembersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Members.cs" />
+    <Compile Include="Navigation.cs" />
+    <Compile Include="ProgramA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\InventorySystem.exe" />
+    <Content Include="bin\Debug\InventorySystem.pdb" />
+    <Content Include="bin\Debug\Syncfusion.Licensing.dll" />
+    <Content Include="bin\Debug\Syncfusion.Shared.Base.dll" />
+    <Content Include="bin\Debug\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\MonoAndroid10.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\MonoAndroid90\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net20\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net35\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net40\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net451\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net45\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net46\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net5.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\net6.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\netcoreapp3.1\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\netstandard1.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\netstandard1.2\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\netstandard1.4\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\netstandard2.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\uap10.0\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\Xamarin.iOS10\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\lib\Xamarin.Mac\Syncfusion.Licensing.dll" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\LICENSE.txt" />
+    <Content Include="packages\Syncfusion.Licensing.20.1.0.47\syncfusion_logo.png" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net20\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net20\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net35\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net35\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net40\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net40\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net451\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net451\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net45\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net45\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net46\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net46\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net5.0-windows7.0\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\net5.0-windows7.0\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\netcoreapp3.1\Syncfusion.Shared.Base.dll" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\lib\netcoreapp3.1\Syncfusion.Shared.Base.xml" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\LICENSE.txt" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\syncfusion_logo.png" />
+    <Content Include="packages\Syncfusion.Shared.Base.20.1.0.47\tools\VisualStudioToolsManifest.xml" />
+    <Content Include="testing4321.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\AddItemForm.resx">
+      <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\EditItemForm.resx">
+      <DependentUpon>EditItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForms\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MembersForms\AddMemberForm.resx">
+      <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MembersForms\EditMemberForm.resx">
+      <DependentUpon>EditMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MembersForms\MembersForm.resx">
+      <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.9</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data">
+      <Version>8.0.28</Version>
+    </PackageReference>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore">
+      <Version>8.0.22</Version>
+    </PackageReference>
+    <PackageReference Include="MySqlConnector">
+      <Version>2.1.8</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
