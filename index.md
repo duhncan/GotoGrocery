@@ -41,7 +41,7 @@ All properties within the Member Class are able to get and set. No validation oc
 ### Database Class - RONDIGITYDOG
 
 
-### GUI Class
+### GUI Class - Aiden
 Forms
 
 #### Markdown Help (Internal)
