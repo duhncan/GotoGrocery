@@ -66,10 +66,7 @@ namespace GotoGrocery
             if (text == null || text.Length == 0) // Checks if exists
                 return false;
 
-            if (text.Any(char.IsUpper)) // Checks whether capitalised 
-                return false;
-
-            if (text.Any(char.IsDigit)) // Checks whether there are numbers within
+            if (!Regex.IsMatch(text, @"^[a-zA-Z]+$")) // If !charactersonly
                 return false;
 
             return true; // True if all test cases pass
@@ -90,8 +87,8 @@ namespace GotoGrocery
             set
             {
                 // Validation based on method textValidation()
-                if (!textValidation(value.ToLower())) { fName = ""; }
-                else { fName = value.ToLower(); }
+                if (!textValidation(value)) { fName = ""; }
+                else { fName = value; }
             }
         }
         public string LName
@@ -100,8 +97,8 @@ namespace GotoGrocery
             set
             {
                 // Validation based on method textValidation()
-                if (!textValidation(value.ToLower())) { lName = ""; }
-                else { lName = value.ToLower(); }
+                if (!textValidation(value)) { lName = ""; }
+                else { lName = value; }
             }
         }
 
@@ -135,6 +132,7 @@ namespace GotoGrocery
             set { dob = value; }
             // Assumes that the dates are ordered as "yyyy-MM-dd"
             // as this is how mySQL Database stores this variable
+            // and how the gui forms should pass the dates
         }
 
         public string MembershipStatus
@@ -155,9 +153,10 @@ namespace GotoGrocery
             set { membershipStartDate = value; }
             // Assumes that the dates are ordered as "yyyy-MM-dd"
             // as this is how mySQL Database stores this variable
+            // and how the gui forms should pass the dates
         }
 
-        
+
         public int MembID
         {
             get => membID;
