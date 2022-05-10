@@ -39,6 +39,40 @@ All properties within the Member Class are able to get and set. No validation oc
 ### Inventory Class
 
 ### Database Class - RONDIGITYDOG
+The Database class is the lowest level class in the program, its purpose is to directly push and pull data from both the inventory and members table within the database. The purpose of this class is to provide other classes with simple defintion to connect to the database, this class required to have many methods as only one connection can exist during a single run time.
+
+- DatabaseConnection()
+  - Database contructor used to initalize the connection to the database.
+
+- GetMemberList():DataTable
+  - Pulls data from the member database which can be used to display the data in a table.
+
+- MembersCollection()
+  - Prints out all the data in the members table to the console, used for validation and testing.
+
+- NumberOfMembers(): int
+  - Returns the number of members thats in the database.
+
+- HighestMemberId(): int
+  - Returns the highest member id.
+
+- AddMember(string, string, string, string, string): bool
+  - Adds a member into the members table returns true when successfully added to the table.
+
+- RemoveMemberById(int)
+  - Removes a member from the database using the members id.
+
+- GetMemberId(string): int
+  - Returns the member ID based on the members email.
+
+- CheckIfMemberExists(string)
+  - Checks if the member exists using the members email.
+
+- MembertoString(int): List<string>
+  - Returns a row from the members table as a list of strings, using the members ID.
+  
+-
+  
 
 
 ### GUI Class - Aiden
