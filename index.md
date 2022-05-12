@@ -116,8 +116,10 @@ The Database class is the lowest level class in the program, its purpose is to d
 Overview
 
 Windows Forms is a UI framework that was used to design and implement this windows desktop application. Windows forms was an efficient way to provide the client a simple and intuitive GUI which would allow a user to perform tasks required to manage Members and Inventory. Within .NET, Windows Forms provides a set of useful libraries which have simplified the overall development. Utilizing the visual designer provided in Visual Studio, forms were created to display pages containing labels, interactive text boxes and buttons and grids to display data from the database.
-Interactivity
-To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form class from which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the respective Member and Inventory classes including validation and sending queries with the database class.
+
+  Interactivity
+
+  To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form class from which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the respective Member and Inventory classes including validation and sending queries with the database class.
 
 Classes....
 
