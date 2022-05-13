@@ -2559,24 +2559,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\duhnc\\.nuget\\packages\\": {},
+    "C:\\Users\\dinod\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duhnc\\Desktop\\MSP\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+      "projectUniqueName": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
       "projectName": "GotoGrocery",
-      "projectPath": "C:\\Users\\duhnc\\Desktop\\MSP\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
-      "packagesPath": "C:\\Users\\duhnc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duhnc\\Desktop\\MSP\\codebase\\GotoGroceryApplication\\obj\\",
+      "projectPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+      "packagesPath": "C:\\Users\\dinod\\.nuget\\packages\\",
+      "outputPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\duhnc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dinod\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

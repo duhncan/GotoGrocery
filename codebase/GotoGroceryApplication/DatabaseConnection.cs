@@ -305,6 +305,14 @@ namespace GotoGrocery
             }
         }
 
+
+        public void RemoveProductByname(string name) //Removes a member from there Member ID
+        {
+            string query = "DELETE FROM inventory WHERE product_name= '" + name + "'";
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            cmd.ExecuteNonQuery();
+        }
+
         public List<string> SearchInventoryById(int _id)
         {
             string query = "SELECT * FROM inventory WHERE product_id=" + _id.ToString();
@@ -341,7 +349,7 @@ namespace GotoGrocery
 
             rdr.Close();
             return _row;
-        }
+        } 
 
         public bool CheckIfProductExists(string name)
         {
