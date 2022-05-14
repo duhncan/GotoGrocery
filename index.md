@@ -112,7 +112,7 @@ The Database class is the lowest level class in the program, its purpose is to d
   
 
 
-####**GUI Classes**
+#### GUI Classes
 
 ### **Overview**
 WHAT VERSION
