@@ -109,3 +109,9 @@ C:\Users\duhnc\Desktop\MSP\codebase\Testing\obj\Debug\net6.0\refint\Testing.dll
 C:\Users\duhnc\Desktop\MSP\codebase\Testing\obj\Debug\net6.0\Testing.pdb
 C:\Users\duhnc\Desktop\MSP\codebase\Testing\obj\Debug\net6.0\Testing.genruntimeconfig.cache
 C:\Users\duhnc\Desktop\MSP\codebase\Testing\obj\Debug\net6.0\ref\Testing.dll
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\obj\Debug\net6.0\Testing.csproj.AssemblyReference.cache
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\obj\Debug\net6.0\Testing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\obj\Debug\net6.0\Testing.AssemblyInfoInputs.cache
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\obj\Debug\net6.0\Testing.AssemblyInfo.cs
+C:\Users\Daniel\Desktop\uni_work\Managing Software Projects\sprint2\GotoGrocery\codebase\Testing\obj\Debug\net6.0\Testing.csproj.CoreCompileInputs.cache

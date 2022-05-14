@@ -3,51 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using GoToGrocery;
 
-namespace GotoGrocery
+namespace GoToGrocery
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    namespace GoToGrocery
+    class Inventory
     {
-        class Inventory
+        public Inventory()
         {
-            public Inventory()
+            
+        }
+        public int validateProduct(string _productname, string _inventorylevel, string  _productsize, string _shelfquantity, string _orderamount)
+        {
+            //check strings not empty and counts not less than or equal to zero
+            if (!Regex.IsMatch(_productname, @"(\w+)"))
             {
-                
+                return 1;
             }
 
-            public int validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
+            if (!Regex.IsMatch(_inventorylevel, @"\d+"))
             {
-                //check strings not empty and counts not less than or equal to zero
-                if (_productname == "")
-                {
-                    return 1;
-                }
-                else if (_inventorylevel <= 0)
-                {
-                    return 2;
-                }
-                else if (_productsize == "")
-                {
-                    return 3;
-                }
-                else if (_shelfquantity <= 0)
-                {
-                    return 4;
-                }
-                else if(_orderamount <= 0)
-                {
-                    return 5;
-                }
-
-                //All tests pass
-                return 0;       
+                return 2;
             }
+
+            if (!Regex.IsMatch(_productsize, @"\d+\s\w+"))
+            {
+                return 3;
+            }
+
+            if (!Regex.IsMatch(_shelfquantity, @"\d+"))
+            {
+                return 4;
+            }
+
+            if (!Regex.IsMatch(_orderamount, @"\d+"))
+            {
+                return 5;
+            }
+
+            //All tests pass
+            return 0;       
         }
     }
 }
