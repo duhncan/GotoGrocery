@@ -16,27 +16,31 @@ namespace GoToGrocery
         }
         public int validateProduct(string _productname, string _inventorylevel, string  _productsize, string _shelfquantity, string _orderamount)
         {
-            //check strings not empty and counts not less than or equal to zero
+            //Check name contains characters
             if (!Regex.IsMatch(_productname, @"(\w+)"))
             {
                 return 1;
             }
 
+            //Check inventory is only digits
             if (!Regex.IsMatch(_inventorylevel, @"\d+"))
             {
                 return 2;
             }
 
+            //Check product is is digits then space then letters, eg. "200 ml"
             if (!Regex.IsMatch(_productsize, @"\d+\s\w+"))
             {
                 return 3;
             }
 
+            //Check shelf quantity is digits
             if (!Regex.IsMatch(_shelfquantity, @"\d+"))
             {
                 return 4;
             }
 
+            //Check order amount is digits
             if (!Regex.IsMatch(_orderamount, @"\d+"))
             {
                 return 5;
