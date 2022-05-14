@@ -114,7 +114,7 @@ The Database class is the lowest level class in the program, its purpose is to d
 
 ## GUI Classes
 
-### Overview
+#### Overview
 WHAT VERSION
 Windows Forms is a UI framework that was used to design and implement this windows desktop application. Windows forms was an efficient way to provide the client a 
 simple and intuitive GUI which would allow a user to perform tasks required to manage Members and Inventory. Within .NET, Windows Forms provides a set of useful 
@@ -122,19 +122,20 @@ libraries which have simplified the overall development. Utilizing the visual de
 labels, interactive text boxes and buttons and grids to display data from the database. For more information relating to the usage of this framework visit: 
 https://docs.microsoft.com/en-us/dotnet/desktop/winforms/windows-forms-overview?view=netframeworkdesktop-4.8 
 
-### Interactivity
-To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts 
-data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form 
+#### Interactivity
+To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element(‘s) that displays data or accepts 
+data input’ are used to generate events by performing some action. These events execute some code which is implemented through methods existing within the form 
 class which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the 
 respective Member and Inventory classes including validation and sending queries with the database class.
 
-### Structure
+#### Structure
 For each form displayed to the user there is a corresponding class and designer class. The ‘main’ class file e.g. InventoryForm.cs contains the methods, properties 
 and variables used for interacting with Member, Inventory and Database classes whereas the designer classes contain the windows form designer generated code which 
 includes the initialization of control variables, values and events used within the form.
-Classes
 
-### MainForm
+### Classes
+
+#### MainForm
 
 As the name suggest this is the form from which all other forms are bound to provide navigation for the application. Using a panel the size of the main body of the 
 application, forms once selected via the navigation to the left of the application will open and fill into this panel through the LoadForm() method taking a form as 
@@ -144,7 +145,7 @@ A simple welcome screen noting the documentation number to follow.
 ReportForm
 This form only use is to export a CSV report file containing data concerning inventory levels for analysis. This file is stored in the root c:\CSV folder.
 
-### InventoryForm
+#### InventoryForm
 
 This class interfaces with the other inventory forms allowing for such functions as adding new items, editing existing items and searching for items through various 
 button click events. The entire inventory database is displayed through a table like grid named InventotorydataGridView which contains a datatable bound with data 
@@ -179,12 +180,12 @@ AddItemDetailsBtn item data is parsed and validated through try and catch blocks
 switch statement: switch (_errorcode){…}. If the new item details pass the validation the product is added to the database: db.AddProduct(//product param) and the 
 grid within the Inventory form is refreshed after the switch statement.
 
-### MembersForm
+#### MembersForm
 This class interfaces with the other inventory forms allowing for such functions as adding new members, editing existing members, searching for members. It contains 
 several similar methods to the InventoryForm class such as Grid_Load(), a click event methods for adding and editing a Member. These methods initialise new Forms 
 passing itself and member id for refreshing the table and getting member data respectively.
 
-### EditMemberForm
+#### EditMemberForm
 This form aims to obtain a specified member for editing and display there details to the new form. The user will have the ability to alter this information inside 
 text boxes (excluding ID). Once the user initiates the AcceptEditMemberDetailsBtn_Click event all the user data is validated through the Members class method 
 Validate() as described in the Members class section. Based on the returning steam of bits messages will be displayed to the user either showing the edit was 
@@ -194,7 +195,7 @@ one is selected at a time for submission. As the format for dates differs betwee
 into proper MySQL date format: ‘01-11-2020’. 
 
   
-### AddMemberForm
+#### AddMemberForm
 This form provides methods for using user input to add a new member to the system including another date fix method to change the format of the date string so it 
 can be entered into the database.
 
