@@ -8,12 +8,13 @@ using GoToGrocery;
 
 namespace GoToGrocery
 {
-    class Inventory
+    public class Inventory
     {
         public Inventory()
         {
             
         }
+
         public int validateProduct(string _productname, string _inventorylevel, string  _productsize, string _shelfquantity, string _orderamount)
         {
             //Check name contains characters
