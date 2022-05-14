@@ -112,9 +112,9 @@ The Database class is the lowest level class in the program, its purpose is to d
   
 
 
-**#### GUI Classes **
+####** GUI Classes **
 
-**### Overview**
+### **Overview**
 WHAT VERSION
 Windows Forms is a UI framework that was used to design and implement this windows desktop application. Windows forms was an efficient way to provide the client a 
 simple and intuitive GUI which would allow a user to perform tasks required to manage Members and Inventory. Within .NET, Windows Forms provides a set of useful 
@@ -133,7 +133,7 @@ For each form displayed to the user there is a corresponding class and designer 
 and variables used for interacting with Member, Inventory and Database classes whereas the designer classes contain the windows form designer generated code which 
 includes the initialization of control variables, values and events used within the form.
 Classes
-## MainForm
+### MainForm
 As the name suggest this is the form from which all other forms are bound to provide navigation for the application. Using a panel the size of the main body of the 
 application, forms once selected via the navigation to the left of the application will open and fill into this panel through the LoadForm() method taking a form as 
 a parameter.
@@ -141,7 +141,7 @@ DashboardForm
 A simple welcome screen noting the documentation number to follow.
 ReportForm
 This form only use is to export a CSV report file containing data concerning inventory levels for analysis. This file is stored in the root c:\CSV folder.
-InventoryForm
+### InventoryForm
 This class interfaces with the other inventory forms allowing for such functions as adding new items, editing existing items and searching for items through various 
 button click events. The entire inventory database is displayed through a table like grid named InventotorydataGridView which contains a datatable bound with data 
 and the respective columns: ID, Name, inventory Level, product size, shelf qty and order qty.
