@@ -3,51 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using GoToGrocery;
 
-namespace GotoGrocery
+namespace GoToGrocery
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    namespace GoToGrocery
+    public class Inventory
     {
-        class Inventory
+        public Inventory()
         {
-            public Inventory()
+            
+        }
+
+        public int validateProduct(string _productname, string _inventorylevel, string  _productsize, string _shelfquantity, string _orderamount)
+        {
+            //Check name contains characters
+            if (!Regex.IsMatch(_productname, @"(\w+)"))
             {
-                
+                return 1;
             }
 
-            public int validateProduct(string _productname, int _inventorylevel, string  _productsize, int _shelfquantity, int _orderamount)
+            //Check inventory is only digits
+            if (!Regex.IsMatch(_inventorylevel, @"\d+"))
             {
-                //check strings not empty and counts not less than or equal to zero
-                if (_productname == "")
-                {
-                    return 1;
-                }
-                else if (_inventorylevel <= 0)
-                {
-                    return 2;
-                }
-                else if (_productsize == "")
-                {
-                    return 3;
-                }
-                else if (_shelfquantity <= 0)
-                {
-                    return 4;
-                }
-                else if(_orderamount <= 0)
-                {
-                    return 5;
-                }
-
-                //All tests pass
-                return 0;       
+                return 2;
             }
+
+            //Check product is is digits then space then letters, eg. "200 ml"
+            if (!Regex.IsMatch(_productsize, @"\d+\s\w+"))
+            {
+                return 3;
+            }
+
+            //Check shelf quantity is digits
+            if (!Regex.IsMatch(_shelfquantity, @"\d+"))
+            {
+                return 4;
+            }
+
+            //Check order amount is digits
+            if (!Regex.IsMatch(_orderamount, @"\d+"))
+            {
+                return 5;
+            }
+
+            //All tests pass
+            return 0;       
         }
     }
 }

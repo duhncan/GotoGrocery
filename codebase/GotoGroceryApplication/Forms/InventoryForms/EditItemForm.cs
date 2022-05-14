@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GotoGrocery.GoToGrocery;
+using GoToGrocery;
 
 namespace GotoGrocery.Forms.InventoryForms
 {
@@ -69,7 +69,7 @@ namespace GotoGrocery.Forms.InventoryForms
 
         private void AcceptEditItemDetailsBtn_Click(object sender, EventArgs e)
         {
-            _errorcode = _inventory.validateProduct(_newproductname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
+            _errorcode = _inventory.validateProduct(EditItemNameTB.Text, EditInventoryLevelTB.Text, EditProdSizeTB.Text, EditShelfQtyTB.Text, EditOrderAmountTB.Text);
 
             //Set product name
             _newproductname = EditItemNameTB.Text.ToLower();
@@ -121,6 +121,10 @@ namespace GotoGrocery.Forms.InventoryForms
                     MessageBox.Show("Item edited successfully");
                     //Console.WriteLine("Item edited successfully");
                     this.Close();
+
+                    //close and Refresh table
+                    this.Close();
+                    _inventoryForm.LoadItemIntoTable();
                     break;
 
                 case 1:
@@ -152,14 +156,7 @@ namespace GotoGrocery.Forms.InventoryForms
                     MessageBox.Show("Item could not be added to database");
                     //Console.WriteLine("Item could not be added to database");
                     break;
-            }
-
-            //close and Refresh table
-            this.Close();
-            _inventoryForm.LoadItemIntoTable();
-            
-
-           
+            }           
         }
     }
 }

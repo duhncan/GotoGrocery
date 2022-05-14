@@ -1,4 +1,4 @@
-using GotoGrocery.GoToGrocery;
+using GoToGrocery;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +38,7 @@ namespace GotoGrocery
 
         private void AddItemDetailsBtn_Click(object sender, EventArgs e)
         {
-            _errorcode = inv.validateProduct(_productname, _inventorylevel, _productsize, _shelfquantity, _orderamount);
+            _errorcode = inv.validateProduct(ItemNameTB.Text, InventoryLevelTB.Text, ItemSizeTB.Text, ShelfQuantityTB.Text, OrderAmountTB.Text);
 
             //Set product name
             _productname = ItemNameTB.Text.ToLower();
