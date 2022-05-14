@@ -112,7 +112,7 @@ The Database class is the lowest level class in the program, its purpose is to d
   
 
 
-####** GUI Classes **
+####**GUI Classes**
 
 ### **Overview**
 WHAT VERSION
@@ -122,7 +122,7 @@ libraries which have simplified the overall development. Utilizing the visual de
 labels, interactive text boxes and buttons and grids to display data from the database. For more information relating to the usage of this framework visit: 
 https://docs.microsoft.com/en-us/dotnet/desktop/winforms/windows-forms-overview?view=netframeworkdesktop-4.8 
 
-**### Interactivity**
+### ** Interactivity **
 To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts 
 data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form 
 class which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the 
