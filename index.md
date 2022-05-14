@@ -112,17 +112,85 @@ The Database class is the lowest level class in the program, its purpose is to d
   
 
 
-### GUI Class - Aiden
-Overview
+**#### GUI Classes **
 
-Windows Forms is a UI framework that was used to design and implement this windows desktop application. Windows forms was an efficient way to provide the client a simple and intuitive GUI which would allow a user to perform tasks required to manage Members and Inventory. Within .NET, Windows Forms provides a set of useful libraries which have simplified the overall development. Utilizing the visual designer provided in Visual Studio, forms were created to display pages containing labels, interactive text boxes and buttons and grids to display data from the database.
+**### Overview**
+WHAT VERSION
+Windows Forms is a UI framework that was used to design and implement this windows desktop application. Windows forms was an efficient way to provide the client a 
+simple and intuitive GUI which would allow a user to perform tasks required to manage Members and Inventory. Within .NET, Windows Forms provides a set of useful 
+libraries which have simplified the overall development. Utilizing the visual designer provided in Visual Studio, forms were created to display pages containing 
+labels, interactive text boxes and buttons and grids to display data from the database. For more information relating to the usage of this framework visit: 
+https://docs.microsoft.com/en-us/dotnet/desktop/winforms/windows-forms-overview?view=netframeworkdesktop-4.8 
 
-  Interactivity
+**### Interactivity**
+To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts 
+data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form 
+class which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the 
+respective Member and Inventory classes including validation and sending queries with the database class.
 
-  To provide interactivity within the application, controls which are defined by Microsoft as ‘discrete user interface (UI) element (‘s) that displays data or accepts data input’ are used to generate events by performing some action. These events execute some code which are implemented through methods existing within the form class from which the event takes place (methods and classes are detailed below).  Using a Façade design pattern operations on user data are largely performed by the respective Member and Inventory classes including validation and sending queries with the database class.
+**### Structure**
+For each form displayed to the user there is a corresponding class and designer class. The ‘main’ class file e.g. InventoryForm.cs contains the methods, properties 
+and variables used for interacting with Member, Inventory and Database classes whereas the designer classes contain the windows form designer generated code which 
+includes the initialization of control variables, values and events used within the form.
+Classes
+## MainForm
+As the name suggest this is the form from which all other forms are bound to provide navigation for the application. Using a panel the size of the main body of the 
+application, forms once selected via the navigation to the left of the application will open and fill into this panel through the LoadForm() method taking a form as 
+a parameter.
+DashboardForm
+A simple welcome screen noting the documentation number to follow.
+ReportForm
+This form only use is to export a CSV report file containing data concerning inventory levels for analysis. This file is stored in the root c:\CSV folder.
+InventoryForm
+This class interfaces with the other inventory forms allowing for such functions as adding new items, editing existing items and searching for items through various 
+button click events. The entire inventory database is displayed through a table like grid named InventotorydataGridView which contains a datatable bound with data 
+and the respective columns: ID, Name, inventory Level, product size, shelf qty and order qty.
+A DatabaseConnection object is initialized so methods can create queries to the database from the methods below.
+Methods:
+LoadItemIntoTable()
+Returns a dataTable containing Inventory items and adds to the existing datasource using: InventorydataGridView.DataSource = db.GetInventoryList();
 
-Classes....
+EditSelectedItemBtn_Click()
+An event method that loops through InventorydataGridView.SelectedRows to obtain the selected row cells that the user has clicked. If not null an EditItemForm is 
+created and filled to screen with a passing ID.
+ItemSearchBtn_Click()
+Gets the user entered string from the ItemSearchTB search bar and uses it as the parameter for the SearchInventoryByName(search) method from the DatabaseConnection 
+class. This method adds values to the InventorydataGridView based on the resulting query for item names.
+AddItemBtn_Click() 
+Is the event method read when the AddItemBtn button is clicked. Its purpose is to initialize a need AddItemForm passing in itself as a means retaining the current 
+form to process methods
+
+EditItemForm 
+This form uses parameters string and InventoryForm in the constructor of the class, using the id from the EditSelectedItemBtn_Click() method to initialize the new 
+EditItemform. Then an additional inventory search can be completed to obtain a new set of information regarding the item. The functionality behind the InventoryForm 
+parameter is the same the AddItemBtn method. Text boxes are filled in using the data from the database which are available for the user to change (except the ID) 
+and pass new information though the DatabaseConnection methods.
+
+AddItemForm
+This class allows users to add new items into the database by filling in text boxes. Once the AddItemDetailsBtn_Click() event occurs by clicking the 
+AddItemDetailsBtn item data is parsed and validated through try and catch blocks assigning an int variable a number relating to the type of error specified in the 
+switch statement: switch (_errorcode){…}. If the new item details pass the validation the product is added to the database: db.AddProduct(//product param) and the 
+grid within the Inventory form is refreshed after the switch statement.
+
+MembersForm
+This class interfaces with the other inventory forms allowing for such functions as adding new members, editing existing members, searching for members. It contains 
+several similar methods to the InventoryForm class such as Grid_Load(), a click event methods for adding and editing a Member. These methods initialise new Forms 
+passing itself and member id for refreshing the table and getting member data respectively.
+
+EditMemberForm
+This form aims to obtain a specified member for editing and display there details to the new form. The user will have the ability to alter this information inside 
+text boxes (excluding ID). Once the user initiates the AcceptEditMemberDetailsBtn_Click event all the user data is validated through the Members class method 
+Validate() as described in the Members class section. Based on the returning steam of bits messages will be displayed to the user either showing the edit was 
+successful and the new member details are stored in the database or one or more validation errors have occurred. The Members table contains a field for whether or 
+not the member is currently a paying member through the methods status[True/False]Check_CheckedChanged(). These control event methods alter the check boxes so only 
+one is selected at a time for submission. As the format for dates differs between the Windows Forms control and MySQL database a method is provided to turn the date 
+into proper MySQL date format: ‘01-11-2020’. 
+AddMemberForm
+This form provides methods for using user input to add a new member to the system including another date fix method to change the format of the date string so it 
+can be entered into the database.
+
 
 
 #### Markdown Help (Internal)
-This files are written in markdown so if you need any help with syntax: see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+This files are written in markdown so if you need any help with syntax: see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-
+github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
