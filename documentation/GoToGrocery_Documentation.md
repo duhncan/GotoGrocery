@@ -18,7 +18,7 @@ To be continued...
 ## Member Class
 
 ## Inventory Class
-The Inventory class only consists of an empty constructor method and a validateProduct method which is used for checking the user input when adding or editing a product. It compares each aspect of the product details, product name, inventory level, product size, shelf quantity, and order amount, against a regex string which matches the valid input pattern for each item. It returns an integer depending on whather or not any fields were invalid and also which field was invalid. This integer is used by the AddItem and EditItem form classes to create a popup message informing the user of which field is invalid, or to add/edit the item if all of teh fields pass teh regex tests.
+The Inventory class only consists of an empty constructor method and a validateProduct method which is used for checking the user input when adding or editing a product. It compares each aspect of the product details (product name, inventory level, product size, shelf quantity, and order amount) against a regex string which matches a valid input pattern for each item. It returns an integer depending on whether or not any fields were invalid and also which field was invalid. This integer is used by the AddItem and EditItem form classes to create a popup message informing the user of which field is invalid, or to add/edit the item if all of the fields pass the regex tests.
 
 ## Database Class
 
