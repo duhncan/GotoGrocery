@@ -37,6 +37,24 @@ All properties within the Member Class are able to get and set. No validation oc
 - Property 1: Something
   - This is to do with this...
 ### Inventory Class
+#### Methods
+- Inventory()
+  - Inventory constructor used to create an inventory instance
+
+- validateProduct(string, string, string, string, string): int
+  - This method checks each component of the item trying to be added or edited and comapres each of them to a corresponding regex pattern. The method returns an integer that indicates which of the fields are invalid, if any. This integer is used by the AddItemForm and EditItemForm classes to display an error message to the user if an invalid field was found, or add/edit the item successfully if none of the fields are found to be invalid. 
+  
+  - The intger value returned indicates the following:
+    Integer Returned  | Meaning
+    ----------------- | -------------
+    0      | All fields correct
+    1      | \_productName is invalid
+    2      | \_inventoryLevel is invalid
+    3      | \_productSize is invalid
+    4      | \_shelfQuantity is invalid
+    5      | \_orderAmount is invalid
+    
+  - If multiple fields are invalid, the field checked earliest, as indicated by the integer to be returned, will be displayed on the error message.
 
 ### Database Class
 The Database class is the lowest level class in the program, its purpose is to directly push and pull data from both the inventory and members table within the database. The purpose of this class is to provide other classes with simple definition to connect to the database, this class required to have many methods as only one connection can exist during a single run time.
