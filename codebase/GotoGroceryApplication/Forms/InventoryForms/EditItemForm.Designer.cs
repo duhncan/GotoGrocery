@@ -133,11 +133,11 @@ namespace GotoGrocery.Forms.InventoryForms
             // EditProdSizeLbl
             // 
             this.EditProdSizeLbl.AutoSize = true;
-            this.EditProdSizeLbl.Location = new System.Drawing.Point(165, 285);
+            this.EditProdSizeLbl.Location = new System.Drawing.Point(120, 288);
             this.EditProdSizeLbl.Name = "EditProdSizeLbl";
-            this.EditProdSizeLbl.Size = new System.Drawing.Size(96, 20);
+            this.EditProdSizeLbl.Size = new System.Drawing.Size(170, 20);
             this.EditProdSizeLbl.TabIndex = 30;
-            this.EditProdSizeLbl.Text = "Product size";
+            this.EditProdSizeLbl.Text = "Product size (e.g. 5 kg)";
             // 
             // EditInventoryLvlLbl
             // 

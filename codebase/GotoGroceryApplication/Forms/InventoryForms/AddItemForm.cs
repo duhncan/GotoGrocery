@@ -22,7 +22,6 @@ namespace GotoGrocery
         private Inventory inv;
         private InventoryForm _inventoryForm;
         private DatabaseConnection db;
-
         public AddItemForm()
         {
         }
@@ -98,7 +97,7 @@ namespace GotoGrocery
                     break;
 
                 case 3:
-                    MessageBox.Show("Product size is not valid");
+                    MessageBox.Show("Product size is not valid. Ensure a space is between the number and unit of measurement");
                     //Console.WriteLine("Product size is not valid");
                     break;
 

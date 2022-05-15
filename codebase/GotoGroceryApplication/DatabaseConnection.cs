@@ -5,6 +5,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Data;
+using System.Linq;
 
 namespace GotoGrocery
 
@@ -204,12 +205,23 @@ namespace GotoGrocery
         }
         public DataTable SearchMemberByName(string _name)
         {
-
-            string fLName = _name;
+            string query = "";
+            string[] names = _name.Split();
             DataTable dtInventory = new DataTable();
-           
-            string query = "SELECT * FROM "+ "members "+"WHERE (Member_FirstName like '%"+ fLName + "%') OR (Member_LastName like '%" + fLName + "%') OR (Member_FirstName + ' ' + Member_LastName like '%" + fLName + "%')";
-           
+
+            if (names.Count() == 1)
+            {
+                 query = "SELECT * FROM " + "members " + "WHERE (Member_FirstName like '%" + names[0] + "%') OR (Member_LastName like '%" + names[0] + "%')";
+            }
+            else if (names.Count() == 2)
+            {
+                 query = "SELECT * FROM " + "members " + "WHERE (Member_FirstName like '%" + names[0] + "%') AND (Member_LastName like '%" + names[1] + "%')";
+            }
+            else
+            {
+                query = "SELECT * FROM members"; 
+            }
+
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
             dtInventory.Load(rdr);

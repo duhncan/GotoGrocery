@@ -138,7 +138,7 @@ namespace GotoGrocery.Forms.InventoryForms
                     break;
 
                 case 3:
-                    MessageBox.Show("Product size is not valid");
+                    MessageBox.Show("Product size is not valid. Ensure a space is between the number and unit of measurement");
                     //Console.WriteLine("Product size is not valid");
                     break;
 

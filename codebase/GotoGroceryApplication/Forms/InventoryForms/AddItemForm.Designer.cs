@@ -113,11 +113,11 @@ namespace GotoGrocery
             // ItemSizeLbl
             // 
             this.ItemSizeLbl.AutoSize = true;
-            this.ItemSizeLbl.Location = new System.Drawing.Point(38, 205);
+            this.ItemSizeLbl.Location = new System.Drawing.Point(77, 208);
             this.ItemSizeLbl.Name = "ItemSizeLbl";
-            this.ItemSizeLbl.Size = new System.Drawing.Size(231, 20);
+            this.ItemSizeLbl.Size = new System.Drawing.Size(191, 20);
             this.ItemSizeLbl.TabIndex = 15;
-            this.ItemSizeLbl.Text = "Size of Product (e.g. ml, cm, kg)";
+            this.ItemSizeLbl.Text = "Size of Product (e.g. 2 kg)";
             // 
             // ProductNameLbl
             // 
