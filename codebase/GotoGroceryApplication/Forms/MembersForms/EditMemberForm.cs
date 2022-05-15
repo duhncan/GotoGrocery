@@ -109,10 +109,10 @@ namespace GotoGrocery.Forms.MembersForms
             bool passDB = false;
             passDB = db.UpdateMember(memb.Email, "Member_FirstName", memb.FName);
             passDB = db.UpdateMember(memb.Email, "Member_LastName", memb.LName);
-            passDB = db.UpdateMember(memb.Email, "Member_DOB", datefix(memb.Dob));
+            passDB = db.UpdateMember(memb.Email, "Member_DOB", Datefix(memb.Dob));
             passDB = db.UpdateMember(memb.Email, "Member_phoneNumber", memb.PhoneNo);
             passDB = db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
-            passDB = db.UpdateMember(memb.Email, "Member_StartDate", datefix(memb.MembershipStartDate));
+            passDB = db.UpdateMember(memb.Email, "Member_StartDate", Datefix(memb.MembershipStartDate));
 
             // Error Messages
             if (errorMsg != "")
@@ -152,13 +152,8 @@ namespace GotoGrocery.Forms.MembersForms
             StatusFalseCheck.Checked = false;
 
         }
-
-        private void EditMemberForm_Load(object sender, EventArgs e)
-        {
-
-        }
-        //ahhhhhhhhhhhhh
-        private string datefix(string givenDate)
+        //changes the date to mysql DB format
+        private string Datefix(string givenDate)
         {
             string[] split = givenDate.Split('/');
             return split[2] + "-" + split[1] + "-" + split[0];
