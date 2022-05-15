@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Repo\\GotoGrocery\\codebase\\Testing\\Testing.csproj": {}
   },
   "projects": {
@@ -12,13 +13,30 @@
         "projectPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
         "packagesPath": "C:\\Users\\dinod\\.nuget\\packages\\",
         "outputPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\obj\\",
+=======
+    "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\Testing\\Testing.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+        "projectName": "GotoGrocery",
+        "projectPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\obj\\",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\dinod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -69,6 +87,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Repo\\GotoGrocery\\codebase\\Testing\\Testing.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -77,12 +96,26 @@
         "projectPath": "C:\\Repo\\GotoGrocery\\codebase\\Testing\\Testing.csproj",
         "packagesPath": "C:\\Users\\dinod\\.nuget\\packages\\",
         "outputPath": "C:\\Repo\\GotoGrocery\\codebase\\Testing\\obj\\",
+=======
+    "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\Testing\\Testing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\Testing\\Testing.csproj",
+        "projectName": "Testing",
+        "projectPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\Testing\\Testing.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\Testing\\obj\\",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\dinod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,8 +130,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj": {
                 "projectPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj"
+=======
+              "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj": {
+                "projectPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj"
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
               }
             }
           }

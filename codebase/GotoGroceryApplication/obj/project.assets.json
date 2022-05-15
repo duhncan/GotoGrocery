@@ -2559,24 +2559,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\dinod\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {},
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
       "projectName": "GotoGrocery",
       "projectPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
       "packagesPath": "C:\\Users\\dinod\\.nuget\\packages\\",
       "outputPath": "C:\\Repo\\GotoGrocery\\codebase\\GotoGroceryApplication\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+      "projectName": "GotoGrocery",
+      "projectPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\GotoGrocery.csproj",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniel\\Desktop\\uni_work\\Managing Software Projects\\sprint2\\GotoGrocery\\codebase\\GotoGroceryApplication\\obj\\",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\dinod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 23c3d70e28e183c4f7722aa7a392cd0ba8a07a97
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
