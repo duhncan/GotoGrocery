@@ -11,7 +11,7 @@ namespace GotoGrocery
         public InventoryForm()
         {
             InitializeComponent();
-            Grid_Load();
+
             LoadItemIntoTable();
 
         }
@@ -29,20 +29,20 @@ namespace GotoGrocery
         //method to load table
         private void Grid_Load()
         {
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Inventory level");
-            dt.Columns.Add("Product size");
-            dt.Columns.Add("Shelf Qty");
-            dt.Columns.Add("Order Qty");
-
-            InventorydataGridView.DataSource = dt;
-
+           InventorydataGridView.Columns[0].HeaderText = "ID";
+            InventorydataGridView.Columns[1].HeaderText = "Name";
+            InventorydataGridView.Columns[2].HeaderText = "Inventory Level";
+            InventorydataGridView.Columns[3].HeaderText = "Product Size";
+            InventorydataGridView.Columns[4].HeaderText = "Shelf Qty";
+            InventorydataGridView.Columns[5].HeaderText = "Order Qty";
         }
         public void LoadItemIntoTable()
         {
             //get inventory from db
-            InventorydataGridView.DataSource = db.GetInventoryList();
+              InventorydataGridView.DataSource = db.GetInventoryList();
+              Grid_Load();
+            
+
         }
 
         private void EditSelectedItemBtn_Click(object sender, EventArgs e)

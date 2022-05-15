@@ -18,7 +18,6 @@ namespace GotoGrocery
         public MembersForm()
         {
             InitializeComponent();
-            Grid_Load();
             LoadMembersIntoTable();
         }
         DatabaseConnection db = new DatabaseConnection();
@@ -30,36 +29,25 @@ namespace GotoGrocery
         {
 
             //column setup
-            dt.Columns.Add("ID");
-            dt.Columns.Add("fName");
-            dt.Columns.Add("lName");
-            dt.Columns.Add("DOB");
-            dt.Columns.Add("Email");
-            dt.Columns.Add("ContactNumber");
-            dt.Columns.Add("Start-Date");
-            dt.Columns.Add("Status");
+    
+            membersdataGridView.Columns[0].HeaderText = "ID";
+            membersdataGridView.Columns[1].HeaderText = "fName";
+            membersdataGridView.Columns[2].HeaderText = "lName";
+            membersdataGridView.Columns[3].HeaderText = "DOB";
+            membersdataGridView.Columns[4].HeaderText = "ContactNumber";
+            membersdataGridView.Columns[5].HeaderText = "Start-Date";
+            membersdataGridView.Columns[5].HeaderText = "Status";
 
-            membersdataGridView.DataSource = dt;
 
         }
         public void LoadMembersIntoTable()
         {
             DatabaseConnection db = new DatabaseConnection();
             membersdataGridView.DataSource = db.GetMembersList();
+            Grid_Load();
 
         }
        
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-        //    if ((this.ActiveControl == MembersSearchTB) && (keyData == Keys.Return))
-        //    {
-        //        //do something
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return base.ProcessCmdKey(ref msg, keyData);
-        //    }
           
         
 

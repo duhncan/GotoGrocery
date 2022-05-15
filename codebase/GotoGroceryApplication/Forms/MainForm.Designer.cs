@@ -53,7 +53,7 @@ namespace GotoGrocery
             this.headerpanel1.Location = new System.Drawing.Point(0, 0);
             this.headerpanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.headerpanel1.Name = "headerpanel1";
-            this.headerpanel1.Size = new System.Drawing.Size(1560, 92);
+            this.headerpanel1.Size = new System.Drawing.Size(1659, 92);
             this.headerpanel1.TabIndex = 0;
             // 
             // pageTitle
@@ -61,7 +61,7 @@ namespace GotoGrocery
             this.pageTitle.AutoSize = true;
             this.pageTitle.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageTitle.ForeColor = System.Drawing.Color.Transparent;
-            this.pageTitle.Location = new System.Drawing.Point(666, 28);
+            this.pageTitle.Location = new System.Drawing.Point(716, 28);
             this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pageTitle.Name = "pageTitle";
             this.pageTitle.Size = new System.Drawing.Size(201, 38);
@@ -80,7 +80,7 @@ namespace GotoGrocery
             this.sideflowLayoutPanel.Location = new System.Drawing.Point(0, 92);
             this.sideflowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sideflowLayoutPanel.Name = "sideflowLayoutPanel";
-            this.sideflowLayoutPanel.Size = new System.Drawing.Size(241, 808);
+            this.sideflowLayoutPanel.Size = new System.Drawing.Size(241, 748);
             this.sideflowLayoutPanel.TabIndex = 0;
             // 
             // dashboardBtn
@@ -155,7 +155,7 @@ namespace GotoGrocery
             this.mainWindowPanel1.Location = new System.Drawing.Point(241, 92);
             this.mainWindowPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainWindowPanel1.Name = "mainWindowPanel1";
-            this.mainWindowPanel1.Size = new System.Drawing.Size(1319, 808);
+            this.mainWindowPanel1.Size = new System.Drawing.Size(1418, 748);
             this.mainWindowPanel1.TabIndex = 1;
             // 
             // currentPagePanel
@@ -164,20 +164,20 @@ namespace GotoGrocery
             this.currentPagePanel.Location = new System.Drawing.Point(0, 0);
             this.currentPagePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.currentPagePanel.Name = "currentPagePanel";
-            this.currentPagePanel.Size = new System.Drawing.Size(1319, 808);
+            this.currentPagePanel.Size = new System.Drawing.Size(1418, 748);
             this.currentPagePanel.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 900);
+            this.ClientSize = new System.Drawing.Size(1659, 840);
             this.Controls.Add(this.mainWindowPanel1);
             this.Controls.Add(this.sideflowLayoutPanel);
             this.Controls.Add(this.headerpanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
-            this.Text = "InventoryManager";
+            this.Text = "Goto Grocery Application";
             this.headerpanel1.ResumeLayout(false);
             this.headerpanel1.PerformLayout();
             this.sideflowLayoutPanel.ResumeLayout(false);

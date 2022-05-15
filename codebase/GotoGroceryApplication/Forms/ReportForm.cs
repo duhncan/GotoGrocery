@@ -24,5 +24,6 @@ namespace GotoGrocery.Forms
             db.ExportInventoryReport();
             MessageBox.Show("Export successful");
         }
+
     }
 }
