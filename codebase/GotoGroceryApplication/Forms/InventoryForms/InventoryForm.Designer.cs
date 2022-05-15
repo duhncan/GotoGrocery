@@ -42,7 +42,7 @@ namespace GotoGrocery
             // 
             // AddItemBtn
             // 
-            this.AddItemBtn.Location = new System.Drawing.Point(50, 231);
+            this.AddItemBtn.Location = new System.Drawing.Point(246, 639);
             this.AddItemBtn.Name = "AddItemBtn";
             this.AddItemBtn.Size = new System.Drawing.Size(209, 52);
             this.AddItemBtn.TabIndex = 1;
@@ -56,22 +56,24 @@ namespace GotoGrocery
             this.InventorydataGridView.AllowUserToDeleteRows = false;
             this.InventorydataGridView.AllowUserToOrderColumns = true;
             this.InventorydataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.InventorydataGridView.Location = new System.Drawing.Point(334, 191);
+            this.InventorydataGridView.Location = new System.Drawing.Point(182, 186);
             this.InventorydataGridView.MultiSelect = false;
             this.InventorydataGridView.Name = "InventorydataGridView";
             this.InventorydataGridView.ReadOnly = true;
+            this.InventorydataGridView.RowHeadersVisible = false;
             this.InventorydataGridView.RowHeadersWidth = 62;
             this.InventorydataGridView.RowTemplate.Height = 28;
+            this.InventorydataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.InventorydataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InventorydataGridView.Size = new System.Drawing.Size(948, 434);
+            this.InventorydataGridView.Size = new System.Drawing.Size(916, 434);
             this.InventorydataGridView.TabIndex = 3;
             // 
             // EditSelectedItemBtn
             // 
-            this.EditSelectedItemBtn.Location = new System.Drawing.Point(418, 661);
+            this.EditSelectedItemBtn.Location = new System.Drawing.Point(485, 639);
             this.EditSelectedItemBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EditSelectedItemBtn.Name = "EditSelectedItemBtn";
-            this.EditSelectedItemBtn.Size = new System.Drawing.Size(112, 35);
+            this.EditSelectedItemBtn.Size = new System.Drawing.Size(212, 52);
             this.EditSelectedItemBtn.TabIndex = 4;
             this.EditSelectedItemBtn.Text = "Edit";
             this.EditSelectedItemBtn.UseVisualStyleBackColor = true;
@@ -81,7 +83,7 @@ namespace GotoGrocery
             // 
             this.inventoryTitle.AutoSize = true;
             this.inventoryTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryTitle.Location = new System.Drawing.Point(482, 29);
+            this.inventoryTitle.Location = new System.Drawing.Point(512, 41);
             this.inventoryTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.inventoryTitle.Name = "inventoryTitle";
             this.inventoryTitle.Size = new System.Drawing.Size(129, 29);
@@ -92,7 +94,7 @@ namespace GotoGrocery
             // 
             this.SearchProdLbl.AutoSize = true;
             this.SearchProdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProdLbl.Location = new System.Drawing.Point(528, 116);
+            this.SearchProdLbl.Location = new System.Drawing.Point(382, 109);
             this.SearchProdLbl.Name = "SearchProdLbl";
             this.SearchProdLbl.Size = new System.Drawing.Size(183, 22);
             this.SearchProdLbl.TabIndex = 6;
@@ -100,7 +102,7 @@ namespace GotoGrocery
             // 
             // ItemSearchTB
             // 
-            this.ItemSearchTB.Location = new System.Drawing.Point(532, 150);
+            this.ItemSearchTB.Location = new System.Drawing.Point(246, 150);
             this.ItemSearchTB.Name = "ItemSearchTB";
             this.ItemSearchTB.Size = new System.Drawing.Size(485, 26);
             this.ItemSearchTB.TabIndex = 7;
@@ -108,7 +110,7 @@ namespace GotoGrocery
             // 
             // ItemSearchBtn
             // 
-            this.ItemSearchBtn.Location = new System.Drawing.Point(1023, 146);
+            this.ItemSearchBtn.Location = new System.Drawing.Point(760, 146);
             this.ItemSearchBtn.Name = "ItemSearchBtn";
             this.ItemSearchBtn.Size = new System.Drawing.Size(75, 34);
             this.ItemSearchBtn.TabIndex = 8;
@@ -118,7 +120,7 @@ namespace GotoGrocery
             // 
             // InvClearBtn
             // 
-            this.InvClearBtn.Location = new System.Drawing.Point(1113, 146);
+            this.InvClearBtn.Location = new System.Drawing.Point(854, 146);
             this.InvClearBtn.Name = "InvClearBtn";
             this.InvClearBtn.Size = new System.Drawing.Size(75, 34);
             this.InvClearBtn.TabIndex = 9;

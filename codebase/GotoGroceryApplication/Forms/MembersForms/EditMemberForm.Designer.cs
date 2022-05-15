@@ -348,7 +348,6 @@ namespace GotoGrocery.Forms.MembersForms
             this.Name = "EditMemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditMemberForm";
-            this.Load += new System.EventHandler(this.EditMemberForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

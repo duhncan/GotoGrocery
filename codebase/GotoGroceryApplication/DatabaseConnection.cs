@@ -225,8 +225,9 @@ namespace GotoGrocery
             DataTable dtInventory = new DataTable();
             string query = "SELECT * FROM inventory";
             MySqlCommand cmd = new MySqlCommand(query, Connect);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            MySqlDataReader rdr = cmd.ExecuteReader();    
             dtInventory.Load(rdr);
+           
             return dtInventory;
         }
 
