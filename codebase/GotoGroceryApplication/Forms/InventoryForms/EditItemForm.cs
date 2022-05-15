@@ -32,7 +32,7 @@ namespace GotoGrocery.Forms.InventoryForms
             _inventory = new Inventory();
             _inventoryForm = inv;
 
-
+            //try catch to get lsit of item data
             try
             {
                 int result = Int32.Parse(id);
@@ -42,7 +42,7 @@ namespace GotoGrocery.Forms.InventoryForms
             {
                 Console.WriteLine($"Unable to parse '{id}'");
             }
-
+            //get variables from list
             String ID = m[0];
             _productname = m[1];
             _inventorylevel = int.Parse(m[2]);
