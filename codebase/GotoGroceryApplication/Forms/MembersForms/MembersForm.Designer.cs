@@ -45,7 +45,7 @@ namespace GotoGrocery
             // 
             this.memberTitle.AutoSize = true;
             this.memberTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberTitle.Location = new System.Drawing.Point(513, 35);
+            this.memberTitle.Location = new System.Drawing.Point(632, 35);
             this.memberTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.memberTitle.Name = "memberTitle";
             this.memberTitle.Size = new System.Drawing.Size(122, 29);
@@ -55,7 +55,7 @@ namespace GotoGrocery
             // AddMemberBtn
             // 
             this.AddMemberBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMemberBtn.Location = new System.Drawing.Point(239, 651);
+            this.AddMemberBtn.Location = new System.Drawing.Point(351, 651);
             this.AddMemberBtn.Name = "AddMemberBtn";
             this.AddMemberBtn.Size = new System.Drawing.Size(209, 52);
             this.AddMemberBtn.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace GotoGrocery
             this.membersdataGridView.AllowUserToDeleteRows = false;
             this.membersdataGridView.AllowUserToOrderColumns = true;
             this.membersdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.membersdataGridView.Location = new System.Drawing.Point(137, 180);
+            this.membersdataGridView.Location = new System.Drawing.Point(256, 180);
             this.membersdataGridView.MultiSelect = false;
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
@@ -82,7 +82,7 @@ namespace GotoGrocery
             // 
             // EditSelectedMemberBtn
             // 
-            this.EditSelectedMemberBtn.Location = new System.Drawing.Point(474, 651);
+            this.EditSelectedMemberBtn.Location = new System.Drawing.Point(609, 651);
             this.EditSelectedMemberBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EditSelectedMemberBtn.Name = "EditSelectedMemberBtn";
             this.EditSelectedMemberBtn.Size = new System.Drawing.Size(210, 52);
@@ -95,7 +95,7 @@ namespace GotoGrocery
             // 
             this.SearchLbl.AutoSize = true;
             this.SearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchLbl.Location = new System.Drawing.Point(283, 104);
+            this.SearchLbl.Location = new System.Drawing.Point(402, 104);
             this.SearchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchLbl.Name = "SearchLbl";
             this.SearchLbl.Size = new System.Drawing.Size(271, 22);
@@ -104,7 +104,7 @@ namespace GotoGrocery
             // 
             // MembersSearchTB
             // 
-            this.MembersSearchTB.Location = new System.Drawing.Point(239, 140);
+            this.MembersSearchTB.Location = new System.Drawing.Point(358, 140);
             this.MembersSearchTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MembersSearchTB.Name = "MembersSearchTB";
             this.MembersSearchTB.Size = new System.Drawing.Size(477, 26);
@@ -113,7 +113,7 @@ namespace GotoGrocery
             // 
             // MemberSearchBtn
             // 
-            this.MemberSearchBtn.Location = new System.Drawing.Point(740, 138);
+            this.MemberSearchBtn.Location = new System.Drawing.Point(859, 138);
             this.MemberSearchBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MemberSearchBtn.Name = "MemberSearchBtn";
             this.MemberSearchBtn.Size = new System.Drawing.Size(112, 34);
@@ -124,7 +124,7 @@ namespace GotoGrocery
             // 
             // MemberClearBtn
             // 
-            this.MemberClearBtn.Location = new System.Drawing.Point(874, 138);
+            this.MemberClearBtn.Location = new System.Drawing.Point(993, 138);
             this.MemberClearBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MemberClearBtn.Name = "MemberClearBtn";
             this.MemberClearBtn.Size = new System.Drawing.Size(112, 34);

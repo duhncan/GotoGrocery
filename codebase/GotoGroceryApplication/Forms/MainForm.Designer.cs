@@ -61,7 +61,7 @@ namespace GotoGrocery
             this.pageTitle.AutoSize = true;
             this.pageTitle.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageTitle.ForeColor = System.Drawing.Color.Transparent;
-            this.pageTitle.Location = new System.Drawing.Point(716, 28);
+            this.pageTitle.Location = new System.Drawing.Point(857, 27);
             this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pageTitle.Name = "pageTitle";
             this.pageTitle.Size = new System.Drawing.Size(201, 38);
