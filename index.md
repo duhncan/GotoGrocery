@@ -204,9 +204,9 @@ several similar methods to the InventoryForm class such as Grid_Load(), a click 
 passing itself and member id for refreshing the table and getting member data respectively.
 
 #### EditMemberForm
-This form aims to obtain a specified member for editing and display there details to the new form. The user will have the ability to alter this information inside 
+This form aims to obtain a specified member for editing and display their details to the new form. The user will have the ability to alter this information inside 
 text boxes (excluding ID). Once the user initiates the AcceptEditMemberDetailsBtn_Click event all the user data is validated through the Members class method 
-Validate() as described in the Members class section. Based on the returning steam of bits messages will be displayed to the user either showing the edit was 
+Validate() as described in the Members class section. Based on the returning stream of bits, messages will be displayed to the user either showing the edit was 
 successful and the new member details are stored in the database or one or more validation errors have occurred. The Members table contains a field for whether or 
 not the member is currently a paying member through the methods status[True/False]Check_CheckedChanged(). These control event methods alter the check boxes so only 
 one is selected at a time for submission. As the format for dates differs between the Windows Forms control and MySQL database a method is provided to turn the date 
@@ -214,8 +214,7 @@ into proper MySQL date format: ‘01-11-2020’.
 
   
 #### AddMemberForm
-This form provides methods for using user input to add a new member to the system including another date fix method to change the format of the date string so it 
-can be entered into the database.
+This form provides methods for obtaining user input to add a new member to the system including another date fix method to change the format of the date string so it can be entered into the database. 
 
 
 
