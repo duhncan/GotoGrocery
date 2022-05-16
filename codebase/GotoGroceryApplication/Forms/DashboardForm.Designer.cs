@@ -37,7 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(494, 29);
+            this.label1.Location = new System.Drawing.Point(615, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 40);
@@ -48,7 +48,7 @@
             // 
             this.WelcomeLbl.AutoSize = true;
             this.WelcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLbl.Location = new System.Drawing.Point(332, 141);
+            this.WelcomeLbl.Location = new System.Drawing.Point(453, 144);
             this.WelcomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WelcomeLbl.Name = "WelcomeLbl";
             this.WelcomeLbl.Size = new System.Drawing.Size(513, 26);
@@ -58,7 +58,7 @@
             // DashboardInfoLbl
             // 
             this.DashboardInfoLbl.AutoSize = true;
-            this.DashboardInfoLbl.Location = new System.Drawing.Point(444, 379);
+            this.DashboardInfoLbl.Location = new System.Drawing.Point(564, 330);
             this.DashboardInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DashboardInfoLbl.Name = "DashboardInfoLbl";
             this.DashboardInfoLbl.Size = new System.Drawing.Size(283, 20);

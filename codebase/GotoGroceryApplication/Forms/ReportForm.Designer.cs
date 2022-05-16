@@ -36,7 +36,7 @@ namespace GotoGrocery.Forms
             // 
             // SaveReport
             // 
-            this.SaveReport.Location = new System.Drawing.Point(496, 273);
+            this.SaveReport.Location = new System.Drawing.Point(645, 278);
             this.SaveReport.Name = "SaveReport";
             this.SaveReport.Size = new System.Drawing.Size(155, 46);
             this.SaveReport.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace GotoGrocery.Forms
             // 
             this.ReportLbl.AutoSize = true;
             this.ReportLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportLbl.Location = new System.Drawing.Point(403, 203);
+            this.ReportLbl.Location = new System.Drawing.Point(552, 208);
             this.ReportLbl.Name = "ReportLbl";
             this.ReportLbl.Size = new System.Drawing.Size(336, 25);
             this.ReportLbl.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace GotoGrocery.Forms
             // 
             this.ReportFormTtl.AutoSize = true;
             this.ReportFormTtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportFormTtl.Location = new System.Drawing.Point(522, 55);
+            this.ReportFormTtl.Location = new System.Drawing.Point(671, 60);
             this.ReportFormTtl.Name = "ReportFormTtl";
             this.ReportFormTtl.Size = new System.Drawing.Size(98, 29);
             this.ReportFormTtl.TabIndex = 2;
