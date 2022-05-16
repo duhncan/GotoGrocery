@@ -78,14 +78,11 @@ namespace GotoGrocery.Forms.MembersForms
             memb.MembID = Int32.Parse(MemberIdTB.Text);
             memb.FName = EditFNameTB.Text;
             memb.LName = EditLNameTB.Text;
-            memb.Dob = EditDOBInput.Text;
+            memb.Dob = Date_forDB(EditDOBInput.Text);
             memb.Email = EditEmailTB.Text;
             memb.PhoneNo = EditPhoneTB.Text;
-            memb.MembershipStartDate = EditdateStartInput.Text;
-            memb.MembershipStatus = "true";
-
-            //Membership Status Logic
-            if (StatusTrueCheck.Checked == true)
+            memb.MembershipStartDate = Date_forDB(EditdateStartInput.Text);
+            if (StatusTrueCheck.Checked == true) //Membership Status Logic
                 memb.MembershipStatus = "true";
             else
                 memb.MembershipStatus = "false";
@@ -93,45 +90,39 @@ namespace GotoGrocery.Forms.MembersForms
             // Validate
             uint pass = memb.Validate();
             string errorMsg = "";
-            if (!IsBitSet(pass, 0)) { errorMsg += "\nID Invalid"; }
-            if (!IsBitSet(pass, 1)) { errorMsg += "\nFirst Name Invalid"; }
-            if (!IsBitSet(pass, 2)) { errorMsg += "\nLast Name Invalid"; }
-            //if (!IsBitSet(pass, 3)) { errorMsg += "\nEmail Invalid"; } Email Validation not needed at is used as first point of reference and validated upon adding
-            if (!IsBitSet(pass, 4)) { errorMsg += "\nMembership Status Name Invalid"; }
-            if (!IsBitSet(pass, 5)) { errorMsg += "\nPhone Number Invalid"; }
-            if (!IsBitSet(pass, 6)) { errorMsg += "\nDoB Invalid"; }
-            if (!IsBitSet(pass, 7)) { errorMsg += "\nMembership Start Date Invalid"; }
+            if (!IsBitSet(pass, 7)) { errorMsg += "\nID Invalid"; }
+            if (!IsBitSet(pass, 6)) { errorMsg += "\nFirst Name Invalid"; }
+            if (!IsBitSet(pass, 5)) { errorMsg += "\nLast Name Invalid"; }
+            //if (!IsBitSet(pass, 4)) { errorMsg += "\nEmail Invalid"; } Email Validation not needed at is used as first point of reference and validated upon adding
+            if (!IsBitSet(pass, 3)) { errorMsg += "\nMembership Status Name Invalid"; }
+            if (!IsBitSet(pass, 2)) { errorMsg += "\nPhone Number Invalid"; }
+            if (!IsBitSet(pass, 1)) { errorMsg += "\nDoB Invalid"; }
+            if (!IsBitSet(pass, 0)) { errorMsg += "\nMembership Start Date Invalid"; }
 
-
-            // Push to database
-            DatabaseConnection db = new DatabaseConnection();
-            //bool passDB = db.AddMember(memb.FName, memb.LName, memb.Dob, memb.PhoneNo, memb.Email, memb.MembershipStartDate);
-            bool passDB = false;
-            passDB = db.UpdateMember(memb.Email, "Member_FirstName", memb.FName);
-            passDB = db.UpdateMember(memb.Email, "Member_LastName", memb.LName);
-            passDB = db.UpdateMember(memb.Email, "Member_DOB", Datefix(memb.Dob));
-            passDB = db.UpdateMember(memb.Email, "Member_phoneNumber", memb.PhoneNo);
-            passDB = db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
-            passDB = db.UpdateMember(memb.Email, "Member_StartDate", Datefix(memb.MembershipStartDate));
-
-            // Error Messages
+            // Error Management
             if (errorMsg != "")
             {
-                MessageBox.Show(errorMsg + "\n" + Convert.ToString(pass, 2));
+                MessageBox.Show(errorMsg);
                 Console.WriteLine(errorMsg);
             }
-            else if (passDB)
+            else
             {
+                // Push to database
+                DatabaseConnection db = new DatabaseConnection();
+
+                db.UpdateMember(memb.Email, "Member_FirstName", memb.FName);
+                db.UpdateMember(memb.Email, "Member_LastName", memb.LName);
+                db.UpdateMember(memb.Email, "Member_DOB", memb.Dob);
+                db.UpdateMember(memb.Email, "Member_phoneNumber", memb.PhoneNo);
+                db.UpdateMember(memb.Email, "Member_Status", memb.MembershipStatus);
+                db.UpdateMember(memb.Email, "Member_StartDate", memb.MembershipStartDate);
+
                 MessageBox.Show("Member edited successfully!");
                 Console.WriteLine("Member edited successfully!");
                 this.Close();
                 mf.LoadMembersIntoTable();
             }
-            else if (!passDB)
-            {
-                MessageBox.Show("Error pushing to database!");
-                Console.WriteLine("Error pushing to database!");
-            }
+
         }
 
         bool IsBitSet(uint b, int pos)
@@ -152,14 +143,26 @@ namespace GotoGrocery.Forms.MembersForms
             StatusFalseCheck.Checked = false;
 
         }
-        //changes the date to mysql DB format
-        private string Datefix(string givenDate)
+
+        // Private method that changes the Date to one acceptable by MYSQL database
+        // Assumes that Forms yield a date in the format "dd/MM/yyyy"
+        // Converts it into "yyyy-MM-dd" otherwise returns empty string
+        private string Date_forDB(string givenDate)
         {
-            string[] split = givenDate.Split('/');
-            return split[2] + "-" + split[1] + "-" + split[0];
+            DateTime dt;
+            string[] formats = { "dd/MM/yyyy" };
+            if (!DateTime.TryParseExact(givenDate, formats, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
+                return "";
+            else
+                return dt.ToString("yyyy-MM-dd");
         }
 
         private void StatusTrueCheck_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditMemberForm_Load(object sender, EventArgs e)
         {
 
         }

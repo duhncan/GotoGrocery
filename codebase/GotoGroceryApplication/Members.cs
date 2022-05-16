@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace GotoGrocery
 {
@@ -42,13 +44,13 @@ namespace GotoGrocery
         {
             uint valid = 0b_1000_0000;
 
-            if (this.FName != "") { valid = valid & 0b_0100_0000; }
-            if (this.LName != "") { valid = valid & 0b_0010_0000; }
-            if (this.Email != "") { valid = valid & 0b_0001_0000; }
-            if (this.MembershipStatus != "") { valid = valid & 0b_0000_1000; }
-            if (this.PhoneNo != "") { valid = valid & 0b_0000_0100; }
-            if (this.Dob != "") { valid = valid & 0b_0000_0010; }
-            if (this.MembershipStartDate != "") { valid = valid & 0b_0000_0001; }
+            if (this.FName != "") { valid = valid | 0b_0100_0000; }
+            if (this.LName != "") { valid = valid | 0b_0010_0000; }
+            if (this.Email != "") { valid = valid | 0b_0001_0000; }
+            if (this.MembershipStatus != "") { valid = valid | 0b_0000_1000; }
+            if (this.PhoneNo != "") { valid = valid | 0b_0000_0100; }
+            if (this.Dob != "") { valid = valid | 0b_0000_0010; }
+            if (this.MembershipStartDate != "") { valid = valid | 0b_0000_0001; }
 
             return valid;
         }
@@ -107,10 +109,10 @@ namespace GotoGrocery
             get => email;
             set {
                 // Validation for Email
-                Regex regex = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",RegexOptions.CultureInvariant | RegexOptions.Singleline);
-                bool isValidEmail = regex.IsMatch(value);
-                if (isValidEmail) { email = value; }
-                else { email = ""; }
+                if (Regex.IsMatch(value, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+                    email = value;
+                else
+                    email = "";
             }
         }
 
@@ -122,17 +124,22 @@ namespace GotoGrocery
                 Regex regex = new Regex(@"^(\+?\(61\)|\(\+?61\)|\+?61|\(0[1-9]\)|0[1-9])?( ?-?[0-9]){7,9}$", RegexOptions.CultureInvariant | RegexOptions.Singleline);
                 bool isValidPhone = regex.IsMatch(value);
                 if (isValidPhone) { phoneNo = value; }
-                else { email = ""; }
+                else { phoneNo = ""; }
             }
         }
 
         public string Dob
         {
             get => dob;
-            set { dob = value; }
+            set {
+                DateTime tmp;
+                bool check = DateTime.TryParseExact( value, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out tmp);
+                if (check)
+                    dob = value;
+                else
+                    dob = "";
+            }
             // Assumes that the dates are ordered as "yyyy-MM-dd"
-            // as this is how mySQL Database stores this variable
-            // and how the gui forms should pass the dates
         }
 
         public string MembershipStatus
@@ -150,10 +157,15 @@ namespace GotoGrocery
         public string MembershipStartDate
         {
             get => membershipStartDate;
-            set { membershipStartDate = value; }
-            // Assumes that the dates are ordered as "yyyy-MM-dd"
-            // as this is how mySQL Database stores this variable
-            // and how the gui forms should pass the dates
+            set {
+                DateTime tmp;
+                bool check = DateTime.TryParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out tmp);
+                if (check)
+                    membershipStartDate = value;
+                else
+                    membershipStartDate = "";
+                }
+
         }
 
 
