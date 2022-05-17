@@ -93,6 +93,7 @@ namespace GotoGrocery.Forms.MembersForms
             // 
             this.EditEmailTB.Location = new System.Drawing.Point(155, 258);
             this.EditEmailTB.Name = "EditEmailTB";
+            this.EditEmailTB.ReadOnly = true;
             this.EditEmailTB.Size = new System.Drawing.Size(249, 20);
             this.EditEmailTB.TabIndex = 21;
             // 
