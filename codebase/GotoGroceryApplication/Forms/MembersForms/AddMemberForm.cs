@@ -75,14 +75,22 @@ namespace GotoGrocery
         // Private method that changes the Date to one acceptable by MYSQL database
         // Assumes that Forms yield a date in the format "dd/MM/yyyy"
         // Converts it into "yyyy-MM-dd" otherwise returns empty string
+        //private string Date_forDB(string givenDate)
+        //{
+        //    DateTime dt;
+        //    string[] formats = { "dd/MM/yyyy" };
+        //    if (!DateTime.TryParseExact(givenDate, formats, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
+        //        return "";
+        //    else
+        //        return dt.ToString("yyyy-MM-dd");
+        //}
+
+        // Private method that changes the Date to one acceptable by MYSQL database
+        // Assumes that Forms yield a date in the format "dd/MM/yyyy"
+        // Converts it into "yyyy-MM-dd" otherwise returns empty string
         private string Date_forDB(string givenDate)
         {
-            DateTime dt;
-            string[] formats = { "dd/MM/yyyy" };
-            if (!DateTime.TryParseExact(givenDate, formats, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
-                return "";
-            else
-                return dt.ToString("yyyy-MM-dd");
+            return Convert.ToDateTime(givenDate).ToString("yyyy-MM-dd");
         }
 
         bool IsBitSet(uint b, int pos)

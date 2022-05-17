@@ -23,10 +23,10 @@ namespace GotoGrocery.Forms.MembersForms
             MemberIdTB.Text = memb.MembID.ToString();
             EditFNameTB.Text = Capitalize(memb.FName);
             EditLNameTB.Text = Capitalize(memb.LName);
-            EditDOBInput.Text = memb.Dob;
+            EditDOBInput.Text = Date_forFORM(memb.Dob);
             EditEmailTB.Text = memb.Email;
             EditPhoneTB.Text = memb.PhoneNo;
-            EditdateStartInput.Text = memb.MembershipStartDate;
+            EditdateStartInput.Text = Date_forFORM(memb.MembershipStartDate);
 
         }
 
@@ -45,11 +45,11 @@ namespace GotoGrocery.Forms.MembersForms
             member.MembID = id;
             member.FName = m[1];
             member.LName = m[2];
-            member.Dob = m[3];
+            member.Dob = Date_forDB(m[3]);
             member.PhoneNo = m[4];
             member.Email = m[5];
             member.MembershipStatus = m[6].ToLower();
-            member.MembershipStartDate = m[7];
+            member.MembershipStartDate = Date_forDB(m[7]);
 
             // Membership Status Logic
             if (member.MembershipStatus == "true")
@@ -76,8 +76,8 @@ namespace GotoGrocery.Forms.MembersForms
             Members memb = new Members();
 
             memb.MembID = Int32.Parse(MemberIdTB.Text);
-            memb.FName = EditFNameTB.Text;
-            memb.LName = EditLNameTB.Text;
+            memb.FName = EditFNameTB.Text.ToLower();
+            memb.LName = EditLNameTB.Text.ToLower();
             memb.Dob = Date_forDB(EditDOBInput.Text);
             memb.Email = EditEmailTB.Text;
             memb.PhoneNo = EditPhoneTB.Text;
@@ -102,7 +102,7 @@ namespace GotoGrocery.Forms.MembersForms
             // Error Management
             if (errorMsg != "")
             {
-                MessageBox.Show(errorMsg);
+                MessageBox.Show(errorMsg + "\n" + EditDOBInput.Text);
                 Console.WriteLine(errorMsg);
             }
             else
@@ -149,12 +149,16 @@ namespace GotoGrocery.Forms.MembersForms
         // Converts it into "yyyy-MM-dd" otherwise returns empty string
         private string Date_forDB(string givenDate)
         {
-            DateTime dt;
-            string[] formats = { "dd/MM/yyyy" };
-            if (!DateTime.TryParseExact(givenDate, formats, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
-                return "";
-            else
-                return dt.ToString("yyyy-MM-dd");
+               return Convert.ToDateTime(givenDate).ToString("yyyy-MM-dd");
+        }
+
+
+        // Private method that changes the Date to one acceptable by MYSQL database
+        // Assumes that Forms yield a date in the format "dd/MM/yyyy"
+        // Converts it into "yyyy-MM-dd" otherwise returns empty string
+        private string Date_forFORM(string givenDate)
+        {
+            return Convert.ToDateTime(givenDate).ToString("dd/MM/yyyy");
         }
 
         private void StatusTrueCheck_CheckedChanged_1(object sender, EventArgs e)
