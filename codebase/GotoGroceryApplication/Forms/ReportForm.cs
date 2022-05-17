@@ -22,7 +22,7 @@ namespace GotoGrocery.Forms
         private void SaveReport_Click(object sender, EventArgs e)
         {
             db.ExportInventoryReport();
-            MessageBox.Show("Export successful");
+            MessageBox.Show("Report exported to C:\\CSV\\data.csv");
         }
 
     }

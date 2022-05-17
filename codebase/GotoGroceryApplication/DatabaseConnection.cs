@@ -410,13 +410,15 @@ namespace GotoGrocery
            // string _filePath = fileLocation;
            string _filePath = @"c:\CSV\data.csv";
 
-
+            string updateflags = "UPDATE inventory SET order_flag = false WHERE inventory_level >= shelf_quantity; UPDATE inventory Set order_flag = true WHERE inventory_level < shelf_quantity";
             string query = "SELECT * FROM inventory";
+            MySqlCommand flagcmd = new MySqlCommand(updateflags, Connect);
+            flagcmd.ExecuteNonQuery();
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            string firstline = string.Format("{0},{1},{2},{3},{4},{5}", "Product ID", "Product Name", "Inventory Level",
-                "Product Size", "Shelf Quantity", "Order Amount");
+            string firstline = string.Format("{0},{1},{2},{3},{4},{5}, {6}", "Product ID", "Product Name", "Inventory Level",
+                "Product Size", "Shelf Quantity", "Order Amount", "Order Flag");
             csv.AppendLine(firstline);
 
             while (rdr.Read())
@@ -428,8 +430,9 @@ namespace GotoGrocery
                 string size = rdr["product_size"].ToString();
                 string shelf = rdr["shelf_quantity"].ToString();
                 string amount = rdr["order_amount"].ToString();
+                string flag = rdr["order_flag"].ToString();
 
-                string newLine = string.Format("{0},{1},{2},{3},{4},{5}", id, name, level, size, shelf, amount);
+                string newLine = string.Format("{0},{1},{2},{3},{4},{5},{6}", id, name, level, size, shelf, amount, flag);
                 //add new line to the csv
                 csv.AppendLine(newLine);
             }
