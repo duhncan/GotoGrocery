@@ -102,7 +102,7 @@ namespace GotoGrocery.Forms.MembersForms
             // Error Management
             if (errorMsg != "")
             {
-                MessageBox.Show(errorMsg + "\n" + EditDOBInput.Text);
+                MessageBox.Show(errorMsg);
                 Console.WriteLine(errorMsg);
             }
             else
